@@ -22,15 +22,15 @@
 		    </div>
 			<!-- /.box-header -->
 			<!-- form start -->
-            <form role="form" name="age_group_form" action="<?php echo base_url();?>usadmin/users/add" method="post" enctype="multipart/form-data">
+            <form role="form" name="age_group_form" action="<?php echo base_url();?>usadmin/age-groups/edit/<?php echo $age_group["age_group_id"];?>" method="post" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group col-xs-9">
                   <label for="age_group_name">Age Group Name</label>
-                  <input type="text" class="form-control" id="age_group_name" placeholder="Enter Age Group Name">
+                  <input value="<?php echo $age_group["age_group_name"]; ?>" type="text" name="age_group_name" class="form-control" id="age_group_name" placeholder="Enter Age Group Name">
                 </div>
 				<div class="form-group col-xs-9">
                   <label for="sort_order">Sort Order</label>
-                  <input type="text" class="form-control" id="sort_order" placeholder="Enter Sort Order">
+                  <input value="<?php echo $age_group["sort_order"]; ?>" name="sort_order" type="text" class="form-control" id="sort_order" placeholder="Enter Sort Order">
                 </div>
                 
               </div>

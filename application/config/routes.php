@@ -68,6 +68,7 @@ $route['usadmin/users/view/(:num)'] = 'admin/users/view_user/$1';
 // Age Group
 $route['usadmin/age-groups'] = 'admin/age_groups/list_age_groups';
 $route['usadmin/age-groups/add'] = 'admin/age_groups/add_age_group';
+$route['usadmin/age-groups/delete'] = 'admin/age_groups/delete_age_group';
 $route['usadmin/age-groups/edit/(:num)'] = 'admin/age_groups/edit_age_group/$1';
 
 // Error

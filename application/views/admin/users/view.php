@@ -31,9 +31,6 @@
                   <b>Child Added</b> <a class="pull-right">{##}</a>
                 </li>
                 <li class="list-group-item">
-                  <b>User Type</b> <a class="pull-right">{USER TYPE}</a>
-                </li>
-				<li class="list-group-item">
                   <b>Parent Type</b> <a class="pull-right">{PARENT TYPE}</a>
                 </li>
 				<li class="list-group-item">

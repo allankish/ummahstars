@@ -1,13 +1,16 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-		
-		$this->load->helper('url');
-		$this->load->helper('form');
-		$this->load->library('form_validation');
+
+        $this->load->helper('url');
+        $this->load->helper('form');
+        $this->load->library('form_validation');
 
         if ($this->session->userdata('admin_auth'))
             redirect('usadmin/dashboard', 'refresh');
@@ -16,16 +19,16 @@ class Login extends CI_Controller {
     }
 
     public function index() {
-		$data["title"] = 'Ummah Stars Admin';
-		
-		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$this->auth();
-		}
+        $data["title"] = 'Ummah Stars Admin';
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $this->auth();
+        }
         $this->load->view('admin/login/index', $data);
     }
 
     public function auth() {
-		
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') { //allow only the http method is POST
             $this->request = $this->input->post();
 
@@ -36,7 +39,7 @@ class Login extends CI_Controller {
                 $this->response = array("error" => true,
                     "messages" => array("email_id" => form_error('email_id'),
                         "password" => form_error('password')));
-				$this->session->set_flashdata('flashError', 'Please enter valid login credentials');
+                $this->session->set_flashdata('flashError', 'Please enter valid login credentials');
             } else {
                 $result = $this->login_model->admin_authentication($this->request);
 
@@ -49,7 +52,7 @@ class Login extends CI_Controller {
                     $this->session->set_userdata($admin_data);
 
                     if ($this->session->userdata('admin_auth')) {
-						redirect('usadmin/dashboard', 'refresh');
+                        redirect('usadmin/dashboard', 'refresh');
                     }
                 } else {
                     $this->session->set_flashdata('flashError', 'Invalid EmailId or Password');

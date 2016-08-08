@@ -21,8 +21,8 @@ class Login_Model extends CI_Model
     
     public function admin_authentication($post)
     {
-		$email_id = $post['email_id'];
-		$password = $post['password'];
+        $email_id = $post['email_id'];
+        $password = $post['password'];
         $this->db->select('*')->from('admin')->where(array('admin_email' => $email_id, "password" => md5($password)));
         //run the query
         $query = $this->db->get();

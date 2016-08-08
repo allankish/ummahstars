@@ -19,18 +19,22 @@
 		  <div class="box box-primary">
 			<div class="box-header with-border">
 			  <h3 class="box-title">Add Age Group</h3>
-		    </div>
+                          <div class="alert alert-danger alert-dismissible">
+                              <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                              <?php echo validation_errors();?>
+                          </div>
+                        </div>
 			<!-- /.box-header -->
 			<!-- form start -->
-            <form role="form" name="age_group_form" action="<?php echo base_url();?>usadmin/users/add" method="post" enctype="multipart/form-data">
+            <form role="form" name="age_group_form" action="<?php echo base_url();?>usadmin/age-groups/add" method="post" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group col-xs-9">
                   <label for="age_group_name">Age Group Name</label>
-                  <input type="text" class="form-control" id="age_group_name" placeholder="Enter Age Group Name">
+                  <input type="text" name="age_group_name" class="form-control" id="age_group_name" placeholder="Enter Age Group Name">
                 </div>
 				<div class="form-group col-xs-9">
                   <label for="sort_order">Sort Order</label>
-                  <input type="text" class="form-control" id="sort_order" placeholder="Enter Sort Order">
+                  <input type="text" name="sort_order" class="form-control" id="sort_order" placeholder="Enter Sort Order">
                 </div>
                 
               </div>
