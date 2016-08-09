@@ -64,7 +64,11 @@ class Age_groups extends CI_Controller {
             $this->form_validation->set_rules('sort_order', 'Sort Order', 'trim|required');
             
             if ($this->form_validation->run() != FALSE) {
-                $data = array("age_group_id" => $age_group_id, "age_group_name" => $this->input->post("age_group_name"), "sort_order" => $this->input->post("sort_order"));
+                $data = array(
+                            "age_group_id"      => $age_group_id, 
+                            "age_group_name"    => $this->input->post("age_group_name"), 
+                            "sort_order"        => $this->input->post("sort_order")
+                        );
                 $this->age_groups_model->update_age_group($data);
                 $this->session->set_flashdata('Success', 'Age Group updated successfully.');
                 redirect('usadmin/age-groups', 'refresh');

@@ -6,9 +6,9 @@
         Add User
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
+        <li><a href="<?php echo base_url() . 'usadmin';?>"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li><a href="<?php echo base_url() . 'usadmin/users';?>">Users</a></li>
+        <li class="active">Add New</li>
       </ol>
     </section>
 

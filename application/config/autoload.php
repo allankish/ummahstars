@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url','cookie','cipl_auth');
+$autoload['helper'] = array('url','cookie','cipl_auth', 'cipl_common');
 
 /*
 | -------------------------------------------------------------------

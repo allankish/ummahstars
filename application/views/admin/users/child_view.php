@@ -3,12 +3,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            User Details
+            Child Details
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url() . 'usadmin';?>"><i class="fa fa-dashboard"></i>Home</a></li>
-            <li><a href="<?php echo base_url() . 'usadmin/users';?>">User</a></li>
-            <li class="active">View</li>
+            <li><a href="<?php echo base_url() . 'usadmin/users';?>">Users</a></li>
+            <li class="active">Child Details</li>
         </ol>
     </section>
 
@@ -28,17 +28,16 @@
                                 <b>Gender</b> <a class="pull-right"><?php echo ucwords($user_details["gender"]); ?></a>
                             </li>
                             <li class="list-group-item">
-                                <b>Child Added</b> <a class="pull-right"><?php echo $total_childs; ?></a>
+                                <b>Age</b> <a class="pull-right"><?php echo $user_details["age"]; ?></a>
                             </li>
                             <li class="list-group-item">
-                                <b>Parent Type</b> <a class="pull-right"><?php echo ucwords($user_details["parent_type"]); ?></a>
+                                <b>Age Group</b> <a class="pull-right"><?php echo $user_details["age_group_name"]; ?></a>
                             </li>
                             <li class="list-group-item">
                                 <b>Member Since</b> <a class="pull-right"><?php echo date('m/d/Y', strtotime($user_details["created_on"])); ?></a>
                             </li>
                         </ul>
-
-                        <a href="<?php echo base_url();?>usadmin/users/edit/<?php echo $user_details["user_id"];?>" class="btn btn-primary btn-block"><b>Edit</b></a>
+                        <a href="<?php echo base_url();?>usadmin/users/view/<?php echo $user_details["parent_id"];?>" class="btn btn-primary btn-block"><b>Back</b></a>
                     </div>
                     <!-- /.box-body -->
                 </div>
@@ -48,37 +47,16 @@
             <div class="col-md-9">
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#childs" data-toggle="tab">All Child</a></li>
-                        <li><a href="#transactions" data-toggle="tab">Transactions</a></li>
+                        <li class="active"><a href="#tab1" data-toggle="tab">TAB 1</a></li>
+                        <li><a href="#tab2" data-toggle="tab">TAB 2</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div class="active tab-pane" id="childs">
-                            <table id="child_table" class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Gender</th>
-                                        <th>Age</th>
-                                        <th>Age Group</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($all_child as $child) { ?>
-                                        <tr>
-                                            <td><?php echo ucwords($child['uname']); ?></td>
-                                            <td><?php echo ucwords($child['gender']); ?></td>
-                                            <td><?php echo $child['age']; ?></td>
-                                            <td><?php echo $child['age_group_name']; ?></td>
-                                            <td><a href='<?php echo base_url() ?>usadmin/child/view/<?php echo $child['user_id'] ?>'>View</a></td>
-                                        </tr>
-                                    <?php } ?>               
-                                </tbody>
-                            </table>
+                        <div class="active tab-pane" id="tab1">
+                            <p>Tab content goes here.</p>
                         </div>
                         <!-- /.tab-pane -->
-                        <div class="tab-pane" id="transactions">
-                            {TRANSACTION ITEMS}
+                        <div class="tab-pane" id="tab2">
+                            {TAB Content goes here.}
                         </div>
                         <!-- /.tab-pane -->
 

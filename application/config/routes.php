@@ -65,6 +65,8 @@ $route['usadmin/users'] = 'admin/users/list_users';
 $route['usadmin/users/add'] = 'admin/users/add_user';
 $route['usadmin/users/edit/(:num)'] = 'admin/users/edit_user/$1';
 $route['usadmin/users/view/(:num)'] = 'admin/users/view_user/$1';
+$route['usadmin/child/view/(:num)'] = 'admin/users/view_child/$1';
+
 // Age Group
 $route['usadmin/age-groups'] = 'admin/age_groups/list_age_groups';
 $route['usadmin/age-groups/add'] = 'admin/age_groups/add_age_group';
