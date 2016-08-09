@@ -89,6 +89,28 @@
 		$age_groups_menu_active = "active";
 		$age_groups_list_menu_active = "active";
 	}
+        
+        // Subscription Menu
+       
+	$subscription_menu_active = '';
+	$subscription_list_menu_active = '';
+	$subscription_add_menu_active = '';
+	
+	if ( $this->uri->segment($second_segment) == "subscription" ) {
+		$subscription_menu_active = "active";
+		$subscription_list_menu_active = "active";
+	}
+	if( ( $this->uri->segment($second_segment) == "subscription" ) && ( $this->uri->segment($third_segment) == "add") ) {
+		$subscription_menu_active = "active";
+		$subscription_add_menu_active = "active";
+                $subscription_list_menu_active = "";
+	}
+        
+        if( ( $this->uri->segment($second_segment) == "subscription" ) && ( $this->uri->segment($third_segment) == "edit") ) {
+		$subscription_menu_active = "active";
+		$subscription_list_menu_active = "active";
+	}
+	
 ?>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -183,6 +205,23 @@
 			<li <?php echo 'class="' . $age_groups_add_menu_active . '"';?>><a href="<?php echo base_url()?>usadmin/age-groups/add"><i class="fa fa-circle-o"></i>Add New</a></li>
           </ul>
 		</li>
+                
+                
+                <li class="treeview <?php echo $subscription_menu_active; ?>">
+          <a href="#">
+            <i class="fa fa-th-large"></i>
+            <span>Subscription Plans</span>
+            <span class="pull-right-container">
+              <span class="fa fa-angle-left pull-right"></span>
+            </span>
+          </a>
+		  <ul class="treeview-menu">
+            <li <?php echo 'class="' . $subscription_list_menu_active . '"';?>><a href="<?php echo base_url()?>usadmin/subscription/"><i class="fa fa-circle-o"></i>Plan List</a></li>
+			<li <?php echo 'class="' . $subscription_add_menu_active . '"';?>><a href="<?php echo base_url()?>usadmin/subscription/add"><i class="fa fa-circle-o"></i>Add New</a></li>
+          </ul>
+		</li>
+                
+                
 		<li>
 		  <a href="#">
             <i class="fa fa-cog"></i>

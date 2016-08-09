@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://colanapps.in/ummahstars/';
-$config['base_url'] = 'http://localhost/ummahstars/';
+$config['base_url'] = 'http://localhost/ummahstars/ummahstars/';
 
 /*
 |--------------------------------------------------------------------------
