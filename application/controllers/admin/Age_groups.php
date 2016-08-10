@@ -18,7 +18,7 @@ class Age_groups extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->model('admin/age_groups_model');
 
-        cipl_admin_auth($this);
+        cipl_admin_auth();
     }
 
     public function index() {

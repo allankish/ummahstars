@@ -6,8 +6,8 @@
             Edit Profile
         </h1>
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url() . 'usadmin';?>"><i class="fa fa-dashboard"></i>Home</a></li>
-            <li><a href="<?php echo base_url() . 'usadmin/profile';?>">Profile</a></li>
+            <li><a href="<?php echo base_url() . 'usadmin'; ?>"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li><a href="<?php echo base_url() . 'usadmin/profile'; ?>">Profile</a></li>
             <li class="active">Edit</li>
         </ol>
     </section>
@@ -26,13 +26,23 @@
                             </div>
                         <?php } ?>
                         <?php if ($this->session->flashdata('Error')) { ?>
-                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert alert-danger alert-dismissible">
                                 <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
                                 <h4>
                                     <i class="icon fa fa-ban"></i>
                                     Error!
                                 </h4>
                                 <?php echo $this->session->flashdata('Error'); ?>
+                            </div>
+                        <?php } ?>
+                        <?php if ($this->session->flashdata('Success')) { ?>
+                            <div class="alert alert-success alert-dismissible">
+                                <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                                <h4>
+                                    <i class="icon fa fa-check"></i>
+                                    Success!
+                                </h4>
+                                <?php echo $this->session->flashdata('Success'); ?>
                             </div>
                         <?php } ?>
                     </div>
@@ -64,11 +74,11 @@
                             <div class="form-group col-xs-9">
                                 <label for="profile_image">Profile Image</label>
                                 <?php if ($admin_details["profile_image"] != '') { ?>
-                                <br />
-                                <img src="<?php echo base_url() . $admin_details["profile_image"];?>" />
+                                    <br />
+                                    <img src="<?php echo base_url() . $admin_details["profile_image"]; ?>" />
                                 <?php } ?>
                                 <input type="file" id="profile_image" name="profile_image">
-                                
+
                             </div>
                         </div>
                         <!-- /.box-body -->

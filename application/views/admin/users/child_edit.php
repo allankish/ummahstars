@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Edit User
+            Edit Child
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url() . 'usadmin';?>"><i class="fa fa-dashboard"></i>Home</a></li>
-            <li><a href="<?php echo base_url() . 'usadmin/users';?>">Users</a></li>
+            <li><a href="<?php echo base_url() . 'usadmin/users/' . $parent_id;?>">All Child</a></li>
             <li class="active">Edit</li>
         </ol>
     </section>
@@ -18,7 +18,7 @@
             <div class="col-md-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Edit User</h3>
+                        <h3 class="box-title">Edit Child</h3>
                         <?php if (validation_errors()) { ?>
                             <div class="alert alert-danger alert-dismissible">
                                 <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
@@ -38,15 +38,11 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" name="user_form" action="<?php echo base_url(); ?>usadmin/users/edit/<?php echo $user_details['user_id']; ?>" method="post" enctype="multipart/form-data">
+                    <form role="form" name="child_form" action="<?php echo base_url(); ?>usadmin/child/edit/<?php echo $child_details['user_id']; ?>" method="post" enctype="multipart/form-data">
                         <div class="box-body">
                             <div class="form-group col-xs-9">
-                                <label for="parent_name">Parent Name</label>
-                                <input type="text" class="form-control" name="parent_name" id="parent_name" placeholder="Enter parent name" value="<?php echo $user_details['uname']; ?>">
-                            </div>
-                            <div class="form-group col-xs-9">
-                                <label for="parent_email">Email Id</label>
-                                <input type="text" class="form-control" name="parent_email" id="parent_email" placeholder="Enter parent email id" value="<?php echo $user_details["email_id"]; ?>">
+                                <label for="child_name">Child Name</label>
+                                <input type="text" class="form-control" name="child_name" id="child_name" value="<?php echo $child_details['uname'];?>">
                             </div>
                             <div class="form-group col-xs-9">
                                 <label for="password">New Password</label>
@@ -59,7 +55,7 @@
                             <div class="form-group col-xs-9">
                                 <label>Gender</label>
                                 <?php
-                                $gender = $user_details["gender"];
+                                $gender = $child_details["gender"];
                                 $male_selected = $female_selected = "";
                                 ($gender == 'female') ? $female_selected = " selected='selected'" : $male_selected = " selected='selected'";
                                 ?>
@@ -68,29 +64,25 @@
                                     <option value="female"<?php echo $female_selected; ?>>Female</option>
                                 </select>
                             </div>
-
                             <div class="form-group col-xs-9">
-                                <label>Parent Type</label>
-                                <?php
-                                $parent_type = $user_details["parent_type"];
-                                $active_selected = $passive_selected = "";
-                                ($parent_type == 'active') ? $active_selected = " selected='selected'" : $passive_selected = " selected='selected'";
-                                ?>
-                                <select class="form-control" name="parent_type">
-                                    <option value="active"<?php echo $active_selected; ?>>Active</option>
-                                    <option value="passive"<?php echo $passive_selected; ?>>Passive</option>
-                                </select>
+                                <label for="age">Age</label>
+                                <input type="text" class="form-control" name="age" id="age" value="<?php echo $child_details["age"];?>">
                             </div>
+                            
                             <div class="form-group col-xs-9">
-                                <label for="child_allowed">Child Allowed</label>
-                                <input type="text" class="form-control" name="child_allowed" id="child_allowed" value="<?php echo $user_details['child_allowed'];?>">
+                                <label>Age Group</label>
+                                <select class="form-control" name="age_group">
+                                    <?php foreach ($age_groups as $age_group): ?>
+                                    <option value="<?php echo $age_group["age_group_id"]; ?>"<?php echo ($age_group["age_group_id"] == $child_details["age_group"]) ? ' selected="selected"' : '';?>><?php echo $age_group["age_group_name"];?></option>
+                                    <?php endforeach;?>
+                                </select>
                             </div>
 
                             <div class="form-group col-xs-9">
                                 <label for="profile_image">Profile Image</label>
-                                <?php if ($user_details["profile_image"] != '') { ?>
+                                <?php if ($child_details["profile_image"] != '') { ?>
                                 <br />
-                                <img src="<?php echo base_url() . $user_details["profile_image"];?>" />
+                                <img src="<?php echo base_url() . $child_details["profile_image"];?>" />
                                 <?php } ?>
                                 <input type="file" id="profile_image" name="profile_image">
                                 
@@ -99,7 +91,6 @@
                         <!-- /.box-body -->
 
                         <div class="box-footer">
-                            <input type="hidden" name="user_id" value="<?php echo $user_details["user_id"]; ?>" />
                             <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>

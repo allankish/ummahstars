@@ -5,7 +5,7 @@
  * Dashboard Class
  */
 class Dashboard extends CI_Controller {
-
+      
     function __construct() {
         parent::__construct();
 
@@ -15,12 +15,13 @@ class Dashboard extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
 
-        cipl_admin_auth($this);
+        cipl_admin_auth();
     }
 
     public function index() {
+        $data = '';
         $this->load->view('admin/common/header');
-        $this->load->view('admin/dashboard/index');
+        $this->load->view('admin/dashboard/index', $data);
         $this->load->view('admin/common/footer');
     }
 

@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 /**
- *  Language Model Class
+ *  Users Model Class
  *
  *  @version         1.0
  *  @author          Colan
@@ -61,6 +61,45 @@ class Users_Model extends CI_Model {
         $this->db->set($data);
         $this->db->where("user_id", $user_id);
         return $this->db->update($this->users_tbl);
+    }
+    
+    public function add_user($data) {
+        $this->db->set($data);
+        return $this->db->insert($this->users_tbl);
+    }
+    
+    public function delete_user($data) {
+        $user_id            = $data["user_id"];
+        $result             = $this->db->delete($this->users_tbl, array('user_id' => $user_id));
+        if ($result) {
+            echo 'success';
+        } else {
+            echo 'Error when delete the data. Try again.';
+        }
+    }
+    
+    public function delete_child($data) {
+        $child_id            = $data["child_id"];
+        $result             = $this->db->delete($this->users_tbl, array('user_id' => $child_id));
+        if ($result) {
+            echo 'success';
+        } else {
+            echo 'Error when delete the data. Try again.';
+        }
+    }
+    
+    public function validate_email($email, $user_id = '') {
+        if ($user_id != '') {
+            $this->db->select('*')->where(array('email_id = ' => $email, "user_id" => $user_id));
+        } else {
+            $this->db->select('*')->where(array('email_id = ' => $email));
+        }
+        $rows = $this->db->count_all_results($this->users_tbl);
+        if ($rows > 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
 }

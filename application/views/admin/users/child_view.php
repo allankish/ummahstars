@@ -8,6 +8,7 @@
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url() . 'usadmin';?>"><i class="fa fa-dashboard"></i>Home</a></li>
             <li><a href="<?php echo base_url() . 'usadmin/users';?>">Users</a></li>
+            <li><a href="<?php echo base_url() . 'usadmin/users/view/'. $user_details["parent_id"];?>">User</a></li>
             <li class="active">Child Details</li>
         </ol>
     </section>

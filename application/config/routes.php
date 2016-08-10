@@ -64,12 +64,17 @@ $route['usadmin/profile'] = 'admin/profile/index';
 // Dashboard
 $route['usadmin'] = 'admin/dashboard';
 $route['usadmin/dashboard'] = 'admin/dashboard';
+
 // Users
 $route['usadmin/users'] = 'admin/users/list_users';
 $route['usadmin/users/add'] = 'admin/users/add_user';
 $route['usadmin/users/edit/(:num)'] = 'admin/users/edit_user/$1';
 $route['usadmin/users/view/(:num)'] = 'admin/users/view_user/$1';
+$route['usadmin/users/delete'] = 'admin/users/delete_user';
 $route['usadmin/child/view/(:num)'] = 'admin/users/view_child/$1';
+$route['usadmin/child/add/(:num)'] = 'admin/users/add_child/$1';
+$route['usadmin/child/edit/(:num)'] = 'admin/users/edit_child/$1';
+$route['usadmin/child/delete'] = 'admin/users/delete_child';
 
 // Age Group
 $route['usadmin/age-groups'] = 'admin/age_groups/list_age_groups';
