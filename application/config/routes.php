@@ -57,6 +57,10 @@ $route['default_controller'] = 'welcome';
 // Login
 $route['usadmin/login'] = 'admin/login/index';
 $route['usadmin/logout'] = 'admin/logout';
+
+// Profile
+$route['usadmin/profile'] = 'admin/profile/index';
+
 // Dashboard
 $route['usadmin'] = 'admin/dashboard';
 $route['usadmin/dashboard'] = 'admin/dashboard';
@@ -72,6 +76,14 @@ $route['usadmin/age-groups'] = 'admin/age_groups/list_age_groups';
 $route['usadmin/age-groups/add'] = 'admin/age_groups/add_age_group';
 $route['usadmin/age-groups/delete'] = 'admin/age_groups/delete_age_group';
 $route['usadmin/age-groups/edit/(:num)'] = 'admin/age_groups/edit_age_group/$1';
+
+// Subscription Plan
+$route['usadmin/subscription'] = 'admin/subscription/list_subscription_plans';
+$route['usadmin/subscription/add'] = 'admin/subscription/add_subscription';
+$route['usadmin/subscription/save'] = 'admin/subscription/save_subscription';
+$route['usadmin/subscription/edit/(:num)'] = 'admin/subscription/edit_subscription/$1';
+$route['usadmin/subscription/update/(:num)'] = 'admin/subscription/update_subscription/$1';
+$route['usadmin/subscription/delete/(:num)'] = 'admin/subscription/delete_subscription/$1';
 
 // Error
 $route['404_override'] = '';
