@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            User Details
+            Users
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url() . 'usadmin'; ?>"><i class="fa fa-dashboard"></i>Home</a></li>
@@ -88,6 +88,8 @@
                     </ul>
                     <div class="tab-content">
                         <div class="active tab-pane" id="childs">
+                            <a href="<?php echo base_url(); ?>usadmin/child/add/<?php echo $user_details["user_id"]; ?>" class="btn btn-primary pull-left">Add New</a>
+                            <br /><br />
                             <table id="child_table" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>

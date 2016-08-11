@@ -200,9 +200,10 @@ class Users extends CI_Controller {
             
             if ($result) {
                 $this->session->set_flashdata('Success', 'User deleted successfully.');
+                echo 'success';
+            } else {
+                echo 'Error when delete the data. Try again.';
             }
-        
-            echo $result;
         }
     }
 
@@ -402,9 +403,10 @@ class Users extends CI_Controller {
             
             if ($result) {
                 $this->session->set_flashdata('Success', 'Child deleted successfully.');
+                echo 'success';
+            } else {
+                echo 'Error when delete the data. Try again.';
             }
-        
-            echo $result;
         }
     }
 

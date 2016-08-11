@@ -90,6 +90,15 @@ $route['usadmin/subscription/edit/(:num)'] = 'admin/subscription/edit_subscripti
 $route['usadmin/subscription/update/(:num)'] = 'admin/subscription/update_subscription/$1';
 $route['usadmin/subscription/delete/(:num)'] = 'admin/subscription/delete_subscription/$1';
 
+// Sections
+$route['usadmin/section'] = 'admin/section/list_section';
+$route['usadmin/section/add'] = 'admin/section/add_section';
+$route['usadmin/section/edit/(:num)'] = 'admin/section/edit_section/$1';
+$route['usadmin/section/delete'] = 'admin/section/delete_section';
+
+// Categories
+$route['usadmin/categories'] = 'admin/categories/list_categories';
+
 // Error
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

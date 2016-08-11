@@ -6,8 +6,8 @@
             Age Groups
         </h1>
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url() . 'usadmin';?>"><i class="fa fa-dashboard"></i>Home</a></li>
-            <li><a href="<?php echo base_url() . 'usadmin/age-groups';?>"><i class="fa fa-dashboard"></i>Age Groups</a></li>
+            <li><a href="<?php echo base_url() . 'usadmin'; ?>"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li><a href="<?php echo base_url() . 'usadmin/age-groups'; ?>"><i class="fa fa-dashboard"></i>Age Groups</a></li>
             <li class="active">Edit Age Group</li>
         </ol>
     </section>

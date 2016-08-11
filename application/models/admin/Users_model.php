@@ -71,21 +71,13 @@ class Users_Model extends CI_Model {
     public function delete_user($data) {
         $user_id            = $data["user_id"];
         $result             = $this->db->delete($this->users_tbl, array('user_id' => $user_id));
-        if ($result) {
-            echo 'success';
-        } else {
-            echo 'Error when delete the data. Try again.';
-        }
+        return $result;
     }
     
     public function delete_child($data) {
         $child_id            = $data["child_id"];
         $result             = $this->db->delete($this->users_tbl, array('user_id' => $child_id));
-        if ($result) {
-            echo 'success';
-        } else {
-            echo 'Error when delete the data. Try again.';
-        }
+        return $result;
     }
     
     public function validate_email($email, $user_id = '') {

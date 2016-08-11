@@ -55,7 +55,7 @@
     $users_list_menu_active = '';
     $users_add_menu_active = '';
 
-    if ($this->uri->segment($second_segment) == "users") {
+    if ( ($this->uri->segment($second_segment) == "users") || ($this->uri->segment($second_segment) == "child") ) {
         $users_menu_active = "active";
     }
     if (( $this->uri->segment($second_segment) == "users" ) && ( $this->uri->segment($third_segment) == "")) {
@@ -91,7 +91,6 @@
     }
 
     // Subscription Menu
-
     $subscription_menu_active = '';
     $subscription_list_menu_active = '';
     $subscription_add_menu_active = '';
@@ -109,6 +108,25 @@
     if (( $this->uri->segment($second_segment) == "subscription" ) && ( $this->uri->segment($third_segment) == "edit")) {
         $subscription_menu_active = "active";
         $subscription_list_menu_active = "active";
+    }
+    
+    // Contents Menu
+    $contents_menu_active = '';
+    $sections_menu_active = '';
+    $categories_menu_active = '';
+    $articles_menu_active = '';
+    
+    if ($this->uri->segment($second_segment) == "section") {
+        $contents_menu_active = "active";
+        $sections_menu_active = "active";
+    }
+    if ($this->uri->segment($second_segment) == "categories") {
+        $contents_menu_active = "active";
+        $categories_menu_active = "active";
+    }
+    if ($this->uri->segment($second_segment) == "articles") {
+        $contents_menu_active = "active";
+        $articles_menu_active = "active";
     }
     ?>
     <body class="hold-transition skin-blue sidebar-mini">
@@ -143,7 +161,7 @@
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header">
-                                        <img src="<?php echo base_url(); ?><?php echo ($admin_profile_image != '')? $admin_profile_image : 'assets/dist/img/user2-160x160.jpg';?>" class="img-circle" alt="User Image">
+                                        <img src="<?php echo base_url(); ?><?php echo ($admin_profile_image != '') ? $admin_profile_image : 'assets/dist/img/user2-160x160.jpg'; ?>" class="img-circle" alt="User Image">
                                         <p>
                                             <?php echo $admin_first_name . ' ' . $admin_last_name; ?>
                                             <small>Member since <?php echo date('M Y', strtotime($admin_created_on)); ?></small>
@@ -153,7 +171,7 @@
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="<?php echo base_url();?>usadmin/profile" class="btn btn-default btn-flat">Profile</a>
+                                            <a href="<?php echo base_url(); ?>usadmin/profile" class="btn btn-default btn-flat">Profile</a>
                                         </div>
                                         <div class="pull-right">
                                             <a href="<?php echo base_url(); ?>usadmin/logout" class="btn btn-default btn-flat">Sign out</a>
@@ -189,6 +207,20 @@
                             <ul class="treeview-menu">
                                 <li <?php echo 'class="' . $users_list_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/users/"><i class="fa fa-circle-o"></i>Users List</a></li>
                                 <li <?php echo 'class="' . $users_add_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/users/add"><i class="fa fa-circle-o"></i>Add New</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview <?php echo $contents_menu_active; ?>">
+                            <a href="#">
+                                <i class="fa fa-th-large"></i>
+                                <span>Contents</span>
+                                <span class="pull-right-container">
+                                    <span class="fa fa-angle-left pull-right"></span>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li <?php echo 'class="' . $sections_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/section"><i class="fa fa-circle-o"></i>Sections</a></li>
+                                <li <?php echo 'class="' . $categories_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/categories"><i class="fa fa-circle-o"></i>Categories</a></li>
+                                <li <?php echo 'class="' . $articles_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/articles"><i class="fa fa-circle-o"></i>Articles</a></li>
                             </ul>
                         </li>
                         <li class="treeview <?php echo $age_groups_menu_active; ?>">

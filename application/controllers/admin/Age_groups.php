@@ -87,10 +87,10 @@ class Age_groups extends CI_Controller {
             
             if ($result) {
                 $this->session->set_flashdata('Success', 'Age Group deleted successfully.');
+                echo 'success';
+            } else {
+                echo 'Error when delete the data. Try again.';
             }
-        
-            echo $result;
-            //redirect('usadmin/age-groups', 'refresh');
         }
     }
 }

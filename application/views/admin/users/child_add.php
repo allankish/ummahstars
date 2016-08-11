@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Add Child
+            Users
         </h1>
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url() . 'usadmin';?>"><i class="fa fa-dashboard"></i>Home</a></li>
-            <li><a href="<?php echo base_url() . 'usadmin/users/' . $parent_id;?>">All Child</a></li>
+            <li><a href="<?php echo base_url() . 'usadmin'; ?>"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li><a href="<?php echo base_url() . 'usadmin/users/' . $parent_id; ?>">All Child</a></li>
             <li class="active">Add</li>
         </ol>
     </section>
@@ -26,7 +26,7 @@
                             </div>
                         <?php } ?>
                         <?php if ($this->session->flashdata('Error')) { ?>
-                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert alert-danger alert-dismissible">
                                 <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
                                 <h4>
                                     <i class="icon fa fa-ban"></i>
@@ -63,20 +63,20 @@
                                 <label for="age">Age</label>
                                 <input type="text" class="form-control" name="age" id="age" placeholder="Enter child age">
                             </div>
-                            
+
                             <div class="form-group col-xs-9">
                                 <label>Age Group</label>
                                 <select class="form-control" name="age_group">
                                     <?php foreach ($age_groups as $age_group): ?>
-                                    <option value="<?php echo $age_group["age_group_id"]; ?>"><?php echo $age_group["age_group_name"];?></option>
-                                    <?php endforeach;?>
+                                        <option value="<?php echo $age_group["age_group_id"]; ?>"><?php echo $age_group["age_group_name"]; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
 
                             <div class="form-group col-xs-9">
                                 <label for="profile_image">Profile Image</label>
                                 <input type="file" id="profile_image" name="profile_image">
-                                
+
                             </div>
                         </div>
                         <!-- /.box-body -->

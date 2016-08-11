@@ -4,29 +4,27 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 /**
- *  Age Groups Model Class
+ *  Categories Model Class
  *
  *  @version         1.0
  *  @author          Colan
  */
-class Age_groups_model extends CI_Model {
+class Categories_model extends CI_Model {
 
     /**
      * Constructor
      * 
      * @access public
      */
-    public $age_group_tbl;
+    public $categories_tbl;
     function __construct() {
         parent::__construct();
-        $this->age_group_tbl = "age_group";
+        $this->categories_tbl = "categories";
     }
 
-    public function get_all_age_groups() {
-        $this->db->select('*')->from($this->age_group_tbl)->order_by('sort_order', 'ASC');
-
+    public function get_all_categories() {
+        $this->db->select('*')->from($this->categories_tbl)->order_by('sort_order', 'ASC');
         $query = $this->db->get();
-
         return $result = $query->result_array();
     }
     
