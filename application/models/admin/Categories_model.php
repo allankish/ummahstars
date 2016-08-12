@@ -16,45 +16,73 @@ class Categories_model extends CI_Model {
      * 
      * @access public
      */
-    public $categories_tbl;
+    protected $categories_tbl;
+    protected $sections_tbl;
+
     function __construct() {
         parent::__construct();
         $this->categories_tbl = "categories";
+        $this->sections_tbl = 'sections';
     }
 
-    public function get_all_categories() {
-        $this->db->select('*')->from($this->categories_tbl)->order_by('sort_order', 'ASC');
+    public function getAllCategories() {
+        $this->db->select($this->categories_tbl.'.*,' . $this->sections_tbl . '.section_name')->from($this->categories_tbl)->where('parent_id', '0')->order_by($this->categories_tbl . '.sort_order', 'ASC');
+        $this->db->join($this->sections_tbl, $this->sections_tbl . '.section_id = ' . $this->categories_tbl . '.section_id');
         $query = $this->db->get();
-        return $result = $query->result_array();
-    }
-    
-    public function get_age_group($age_group_id) {
-        $this->db->select('*')->from($this->age_group_tbl)->where('age_group_id', $age_group_id);
-
-        $query = $this->db->get();
+        $root_categories = $query->result_array();
         
+        $all_categories = array();
+        foreach ($root_categories as $root_category) {
+            $this->db->select($this->categories_tbl.'.*,' . $this->sections_tbl . '.section_name')->from($this->categories_tbl)->where('parent_id', $root_category['category_id'])->order_by($this->categories_tbl . '.sort_order', 'ASC');
+            $this->db->join($this->sections_tbl, $this->sections_tbl . '.section_id = ' . $this->categories_tbl . '.section_id');
+            $query = $this->db->get();
+            $child_categories = $query->result_array();
+            $all_categories[] = array(
+                "category_id" => $root_category["category_id"],
+                "category_name" => $root_category["category_name"],
+                "category_type" => $root_category["category_type"],
+                "parent_id" => $root_category["parent_id"],
+                "section_id" => $root_category["section_id"],
+                "section_name" => $root_category["section_name"],
+                "background_image" => $root_category["background_image"],
+                "need_payment" => $root_category["need_payment"],
+                "sort_order" => $root_category["sort_order"],
+                "created_on" => $root_category["created_on"],
+                "updated_on" => $root_category["updated_on"],
+                "child_categories" => $child_categories
+            );
+        }
+        //echo '<pre>';print_r($all_categories);
+        return $all_categories;
+    }
+    
+    public function getRootCategories() {
+        $this->db->select('*')->from($this->categories_tbl)->where('parent_id', '0')->order_by($this->categories_tbl . '.sort_order', 'ASC');
+        $query = $this->db->get();
+        return $root_categories = $query->result_array();
+    }
+
+    public function getAllSections() {
+        $section_ids = array('1', '2');
+        $this->db->select('*')->from($this->sections_tbl)->order_by('sort_order', 'asc');
+
+        $this->db->where_not_in('section_id', $section_ids);
+        $query = $this->db->get();
         return $result = $query->result_array();
     }
-    
-    public function add_age_group($data) {
-        $age_group_name     = $data["age_group_name"];
-        $sort_order         = $data["sort_order"];
-        $data = array("age_group_name" => $age_group_name, "sort_order" => $sort_order);
-        return $this->db->insert($this->age_group_tbl, $data);
+
+    public function addCategory($data) {
+        return $this->db->insert($this->categories_tbl, $data);
     }
-    
-    public function update_age_group($data) {
-        $age_group_name     = $data["age_group_name"];
-        $sort_order         = $data["sort_order"];
-        $data_array         = array("age_group_name" => $age_group_name, "sort_order" => $sort_order);
-        $this->db->set($data_array);
-        $this->db->where('age_group_id', $data["age_group_id"]);
-        return $this->db->update($this->age_group_tbl);
+
+    public function updateCategory($data, $category_id) {
+        $this->db->where('category_id', $category_id);
+        return $this->db->update($this->categories_tbl, $data);
     }
-    
-    public function delete_age_group($data) {
-        $age_group_id       = $data["age_group_id"];
-        $result             = $this->db->delete($this->age_group_tbl, array('age_group_id' => $age_group_id));
+
+    public function deleteCategory($data) {
+        $category_id = $data["category_id"];
+        $result = $this->db->delete($this->categories_tbl, array('category_id' => $category_id));
         return $result;
     }
 

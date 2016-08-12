@@ -1,3 +1,4 @@
+<link href="<?php echo base_url(); ?>assets/plugins/treeview/jquery.treegrid.css" rel="stylesheet">
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -40,26 +41,49 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <a href="<?php echo base_url(); ?>usadmin/section/add" class="btn btn-primary pull-left">Add New</a>
+                        <a href="<?php echo base_url(); ?>usadmin/categories/add" class="btn btn-primary pull-left">Add New</a>
                         <br /><br />
-                        <table id="sections-table" class="table table-bordered table-striped">
+                        <table id="categories-table" class="table table-bordered table-striped tree">
                             <thead>
                                 <tr>
-                                    <th>Section Name</th>
+                                    <th>Category Name</th>
+                                    <th>Category Type</th>
+                                    <th>Section</th>
+                                    <th>Payment Required</th>
                                     <th>Background Image</th>
                                     <th>Sort Order</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($sections as $section) { ?>
-                                    <tr>
-                                        <td><?php echo $section['section_name'] ?></td>
-                                        <td><a href="javascript:void(0)" class="sec_image" image_url="<?php echo base_url() . $section['background_image'] ?>" data-toggle="modal" data-target="#myModal"><img src="<?php echo base_url() . $section['background_image'] ?>" width="20" /></a></td>
-                                        <td><?php echo $section['sort_order'] ?></td>
-                                        <td><a href='<?php echo base_url() ?>usadmin/section/edit/<?php echo $section['section_id'] ?>'>Edit</a> | <a id="delete_section-<?php echo $section["section_id"]; ?>" data-id="<?php echo $section["section_id"]; ?>" href='#'>Delete</a></td>
+                                <?php 
+                                    foreach ($categories as $category) { 
+                                        $parent_category_id = $category['category_id'];
+                                ?>
+                                    <tr class="treegrid-<?php echo $parent_category_id;?> pointer">
+                                        <td><?php echo $category['category_name']; ?></td>
+                                        <td><?php echo $category['category_type']; ?></td>
+                                        <td><?php echo $category['section_name']; ?></td>
+                                        <td><?php echo ($category['need_payment'] === 'true') ? 'Yes' : 'No'; ?></td>
+                                        <td><?php if ($category['background_image'] != '') { ?><a href="javascript:void(0)" class="category_image" image_url="<?php echo base_url() . $category['background_image'] ?>" data-toggle="modal" data-target="#myModal"><img src="<?php echo base_url() . $category['background_image'] ?>" width="20" /></a><?php } ?></td>
+                                        <td><?php echo $category['sort_order'] ?></td>
+                                        <td><a href='<?php echo base_url() ?>usadmin/categories/edit/<?php echo $category['category_id'] ?>'>Edit</a> | <a id="delete_category-<?php echo $category["category_id"]; ?>" data-id="<?php echo $category["category_id"]; ?>" href='#'>Delete</a></td>
                                     </tr>
-                                <?php } ?>
+                                    <?php 
+                                        foreach ($category['child_categories'] as $child_category):
+                                    ?>
+                                    <tr class="treegrid-<?php echo $child_category['category_id'];?> treegrid-parent-<?php echo $parent_category_id;?> pointer">
+                                        <td><?php echo $child_category['category_name']; ?></td>
+                                        <td><?php echo $child_category['category_type']; ?></td>
+                                        <td><?php echo $child_category['section_name']; ?></td>
+                                        <td><?php echo ($child_category['need_payment'] === 'true') ? 'Yes' : 'No'; ?></td>
+                                        <td><?php if ($child_category['background_image'] != '') { ?><a href="javascript:void(0)" class="category_image" image_url="<?php echo base_url() . $child_category['background_image'] ?>" data-toggle="modal" data-target="#myModal"><img src="<?php echo base_url() . $child_category['background_image'] ?>" width="20" /></a><?php } ?></td>
+                                        <td><?php echo $child_category['sort_order'] ?></td>
+                                        <td><a href='<?php echo base_url() ?>usadmin/categories/edit/<?php echo $child_category['category_id'] ?>'>Edit</a> | <a id="delete_category-<?php echo $child_category["category_id"]; ?>" data-id="<?php echo $child_category["category_id"]; ?>" href='#'>Delete</a></td>
+                                    </tr>
+                                <?php 
+                                        endforeach;
+                                    } ?>
                             </tbody>
                         </table>
                     </div>
@@ -86,11 +110,11 @@
                     <h4 class="modal-title">Warning!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure want to delete this section?</p>
+                    <p>Are you sure want to delete this category?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline" data-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-outline" id="confirm-delete-section">Yes</button>
+                    <button type="button" class="btn btn-outline" id="confirm-delete-category">Yes</button>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -105,7 +129,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <img src="" id="section_image_pop" class="img-responsive">
+                <img src="" id="category_image_pop" class="img-responsive">
             </div>
         </div>
     </div>
@@ -115,11 +139,12 @@
 <!-- DataTables -->
 <script src="<?php echo base_url() ?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?php echo base_url() ?>assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/treeview/jquery.treegrid.min.js"></script>
 
 <script>
     $(function () {
 
-        $('#sections-table').DataTable({
+        $('#categories-table1').DataTable({
             "paging": true,
             "deferRender": true,
             "lengthChange": false,
@@ -128,36 +153,25 @@
             "info": true,
             "autoWidth": false
         });
-
-
-
-
-        $('.sec_image').click(function () {
-
-
-// Get the modal
-
-            $('#section_image_pop').attr('src', $(this).attr('image_url'));
-
-
-
+        $('.category_image').click(function () {
+            // Get the modal
+            $('#category_image_pop').attr('src', $(this).attr('image_url'));
         });
 
-
-        $('a[id^="delete_section-"]').on('click', function () {
-            var section_id = $(this).attr('data-id');
+        $('a[id^="delete_category-"]').on('click', function () {
+            var category_id = $(this).attr('data-id');
             $('#confirm-modal').modal('toggle');
-            $('#confirm-delete-section').on('click', function () {
+            $('#confirm-delete-category').on('click', function () {
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo base_url(); ?>usadmin/section/delete',
+                    url: '<?php echo base_url(); ?>usadmin/category/delete',
                     dataType: 'html',
-                    data: 'section_id=' + section_id,
+                    data: 'category_id=' + category_id,
                     success: function (result) {
                         if (result == 'success') {
                             $('#confirm-modal').modal('hide');
-                            window.location.href = "<?php echo base_url(); ?>usadmin/section/";
+                            window.location.href = "<?php echo base_url(); ?>usadmin/category/";
                         } else {
                             $('#confirm-modal').modal('hide');
                             alert(result);
@@ -165,6 +179,12 @@
                     }
                 });
             });
+        });
+        
+        $('.tree').treegrid({
+            initialState: 'collapsed',
+            expanderExpandedClass: 'fa fa-minus-circle',
+            expanderCollapsedClass: 'fa fa-plus-circle'
         });
 
     });
