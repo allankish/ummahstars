@@ -56,6 +56,12 @@ class Categories_model extends CI_Model {
         return $all_categories;
     }
     
+    public function getCategory($category_id) {
+        $this->db->select('*')->from($this->categories_tbl)->where('category_id', $category_id);
+        $query = $this->db->get();
+        return $category_details = $query->result_array();
+    }
+    
     public function getRootCategories() {
         $this->db->select('*')->from($this->categories_tbl)->where('parent_id', '0')->order_by($this->categories_tbl . '.sort_order', 'ASC');
         $query = $this->db->get();

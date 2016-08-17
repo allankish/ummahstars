@@ -99,6 +99,9 @@ $route['usadmin/section/delete'] = 'admin/section/delete_section';
 // Categories
 $route['usadmin/categories'] = 'admin/categories/list_categories';
 $route['usadmin/categories/add'] = 'admin/categories/add_category';
+$route['usadmin/categories/edit/(:num)'] = 'admin/categories/edit_category/$1';
+$route['usadmin/categories/delete'] = 'admin/categories/delete_category';
+
 // Error
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

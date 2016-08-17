@@ -161,25 +161,28 @@ class Categories extends CI_Controller {
                         $background_image_array = array("background_image" => $upload_path . $file_name);
                         $update_array = array_merge($background_image_array, $update_array);
                        
-                        $this->section_model->editSection($update_array, $category_id);
+                        $this->categories_model->updateCategory($update_array, $category_id);
                         $this->session->set_flashdata('Success', 'Category updated successfully.');
                         redirect('usadmin/categories', 'refresh');
                     } else {
                         $this->session->set_flashdata('Error', $background_image['messages']['error']);
                     }
                 } else {
-                    $this->section_model->editSection($update_array, $category_id);
+                    $this->categories_model->updateCategory($update_array, $category_id);
                     $this->session->set_flashdata('Success', 'Category updated successfully.');
                     redirect('usadmin/categories', 'refresh');
                 }
             }
         }
         
-        $result = $this->category_model->getCategory($category_id);
+        $result = $this->categories_model->getCategory($category_id);
         $data['category'] = $result[0];
         
+        $data['root_categories'] = $this->categories_model->getRootCategories();
+        $data['sections'] = $this->categories_model->getAllSections();
+        
         $this->load->view('admin/common/header');
-        $this->load->view('admin/category/edit', $data);
+        $this->load->view('admin/categories/edit', $data);
         $this->load->view('admin/common/footer');
     }
 
@@ -187,7 +190,7 @@ class Categories extends CI_Controller {
     public function delete_category() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $data["category_id"] = $this->input->post('category_id');
-            $result = $this->category_model->deleteCategory($data);
+            $result = $this->categories_model->deleteCategory($data);
             
             if ($result) {
                 $this->session->set_flashdata('Success', 'Category deleted successfully.');

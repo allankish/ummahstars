@@ -165,13 +165,13 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo base_url(); ?>usadmin/category/delete',
+                    url: '<?php echo base_url(); ?>usadmin/categories/delete',
                     dataType: 'html',
                     data: 'category_id=' + category_id,
                     success: function (result) {
                         if (result == 'success') {
                             $('#confirm-modal').modal('hide');
-                            window.location.href = "<?php echo base_url(); ?>usadmin/category/";
+                            window.location.href = "<?php echo base_url(); ?>usadmin/categories/";
                         } else {
                             $('#confirm-modal').modal('hide');
                             alert(result);
