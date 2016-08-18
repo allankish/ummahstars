@@ -55,7 +55,20 @@
                                 <?php foreach ($sections as $section) { ?>
                                     <tr>
                                         <td><?php echo $section['section_name'] ?></td>
-                                        <td><a href="javascript:void(0)" class="sec_image" image_url="<?php echo base_url() . $section['background_image'] ?>" data-toggle="modal" data-target="#myModal"><img src="<?php echo base_url() . $section['background_image'] ?>" width="20" /></a></td>
+                                        <?php 
+                                        $background_images = unserialize($section["background_image"]);
+                                        ?>
+                                        <td>
+                                        <?php 
+                                        foreach($background_images as $background_image):
+                                            if ($background_image != '') {
+                                        ?>
+                                            <a href="javascript:void(0)" class="section_image" image_url="<?php echo base_url() . $background_image; ?>" data-toggle="modal" data-target="#myModal"><img src="<?php echo base_url() . $background_image; ?>" width="20" /></a>
+                                        <?php 
+                                            }
+                                        endforeach; 
+                                        ?>
+                                        </td>
                                         <td><?php echo $section['sort_order'] ?></td>
                                         <td><a href='<?php echo base_url() ?>usadmin/section/edit/<?php echo $section['section_id'] ?>'>Edit</a> | <a id="delete_section-<?php echo $section["section_id"]; ?>" data-id="<?php echo $section["section_id"]; ?>" href='#'>Delete</a></td>
                                     </tr>
@@ -132,7 +145,7 @@
 
 
 
-        $('.sec_image').click(function () {
+        $('.section_image').click(function () {
 
 
 // Get the modal

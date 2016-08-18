@@ -18,6 +18,7 @@ class Section extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->model('admin/section_model');
+        $this->load->model('admin/age_groups_model');
 
         cipl_admin_auth();
     }
@@ -64,39 +65,51 @@ class Section extends CI_Controller {
                     "created_on"    => date('Y-m-d H:i:s'),
                     "updated_on"    => date('Y-m-d H:i:s')
                 );
+                
+                $age_groups = $this->age_groups_model->get_all_age_groups();
+                $background_images_array = array();
+                $background_images_error = false;
+                $background_images_error_messages = '';
+                foreach($age_groups as $age_group):
+                    if ( isset($_FILES['background_image-' . $age_group['age_group_id']]) && $_FILES['background_image-' . $age_group['age_group_id']]["name"] != '' ) {
+                        $upload_path = 'assets/sectionImages/';
+                        $ext_image_name = explode(".", $_FILES['background_image-' . $age_group['age_group_id']]['name']);
+                        $count_ext_img = count($ext_image_name);
+                        $image_ext = $ext_image_name[$count_ext_img - 1];
+                        $file_name = base64_encode(trim($this->input->post('section_name'))) . '_' . md5(rand(1000000, 1000000000)) . '.' . $image_ext;
+                        $file_name = str_replace('=', '', $file_name);
+                        $image_info = getimagesize($_FILES["background_image-" . $age_group["age_group_id"]]["tmp_name"]);
+                        $image_width = $image_info[0];
+                        $image_height = $image_info[1];
+                        $background_image = cipl_image_upload($_FILES['background_image-' . $age_group['age_group_id']], 'background_image-' . $age_group['age_group_id'], $upload_path, $file_name, $image_width, $image_height);
 
-                if ( isset($_FILES['background_image']) && $_FILES['background_image']["name"] != '' ) {
-                    $upload_path = 'assets/sectionImages/';
-                    $ext_image_name = explode(".", $_FILES['background_image']['name']);
-                    $count_ext_img = count($ext_image_name);
-                    $image_ext = $ext_image_name[$count_ext_img - 1];
-                    $file_name = base64_encode(trim($this->input->post('section_name'))) . '_' . md5(rand(1000000, 1000000000)) . '.' . $image_ext;
-                    $file_name = str_replace('=', '', $file_name);
-                    $image_info = getimagesize($_FILES["background_image"]["tmp_name"]);
-                    $image_width = $image_info[0];
-                    $image_height = $image_info[1];
-                    $background_image = cipl_image_upload($_FILES['background_image'], 'background_image', $upload_path, $file_name, $image_width, $image_height);
-
-                    if (isset($background_image['success'])) {
-                        $background_image_array = array("background_image" => $upload_path . $file_name);
-                        $update_array = array_merge($background_image_array, $update_array);
-                       
-                        $this->section_model->addSection($update_array);
-                        $this->session->set_flashdata('Success', 'Section added successfully.');
-                        redirect('usadmin/section', 'refresh');
+                        if (isset($background_image['success'])) {
+                            $background_images_array[$age_group["age_group_id"]] = $upload_path . $file_name;
+                        } else {
+                            $background_images_error = true;
+                            $background_images_array[$age_group["age_group_id"]] = '';
+                            $background_images_error_messages .= $background_image['messages']['error'];
+                        }
                     } else {
-                        $this->session->set_flashdata('Error', $background_image['messages']['error']);
+                        $background_images_array[$age_group["age_group_id"]] = '';
                     }
-                } else {
+                endforeach;
+                if ($background_images_error == false) {
+                    $background_image_result_array = array("background_image" => serialize($background_images_array));
+                    $update_array = array_merge($background_image_result_array, $update_array);
                     $this->section_model->addSection($update_array);
                     $this->session->set_flashdata('Success', 'Section added successfully.');
                     redirect('usadmin/section', 'refresh');
-                }            
+                } else {
+                    $this->session->set_flashdata('Error', $background_images_error_messages);
+                }
             }
         }
         
+        $data['age_groups'] = $this->age_groups_model->get_all_age_groups();
+        
         $this->load->view('admin/common/header');
-        $this->load->view('admin/section/add');
+        $this->load->view('admin/section/add', $data);
         $this->load->view('admin/common/footer');
     }
 
@@ -126,39 +139,52 @@ class Section extends CI_Controller {
                     "sort_order"    => $this->input->post("sort_order"),
                     "updated_on"    => date('Y-m-d H:i:s')
                 );
+                
+                $age_groups = $this->age_groups_model->get_all_age_groups();
+                $background_images_array = array();
+                $background_images_error = false;
+                $background_images_error_messages = '';
+                foreach($age_groups as $age_group):
+                    if ( isset($_FILES['background_image-' . $age_group['age_group_id']]) && $_FILES['background_image-' . $age_group['age_group_id']]["name"] != '' ) {
+                        $upload_path = 'assets/sectionImages/';
+                        $ext_image_name = explode(".", $_FILES['background_image-' . $age_group['age_group_id']]['name']);
+                        $count_ext_img = count($ext_image_name);
+                        $image_ext = $ext_image_name[$count_ext_img - 1];
+                        $file_name = base64_encode(trim($this->input->post('section_name'))) . '_' . md5(rand(1000000, 1000000000)) . '.' . $image_ext;
+                        $file_name = str_replace('=', '', $file_name);
+                        $image_info = getimagesize($_FILES["background_image-" . $age_group["age_group_id"]]["tmp_name"]);
+                        $image_width = $image_info[0];
+                        $image_height = $image_info[1];
+                        $background_image = cipl_image_upload($_FILES['background_image-' . $age_group['age_group_id']], 'background_image-' . $age_group['age_group_id'], $upload_path, $file_name, $image_width, $image_height);
 
-                if ( isset($_FILES['background_image']) && $_FILES['background_image']["name"] != '' ) {
-                    $upload_path = 'assets/sectionImages/';
-                    $ext_image_name = explode(".", $_FILES['background_image']['name']);
-                    $count_ext_img = count($ext_image_name);
-                    $image_ext = $ext_image_name[$count_ext_img - 1];
-                    $file_name = base64_encode(trim($this->input->post('section_name'))) . '_' . md5(rand(1000000, 1000000000)) . '.' . $image_ext;
-                    $file_name = str_replace('=', '', $file_name);
-                    $image_info = getimagesize($_FILES["background_image"]["tmp_name"]);
-                    $image_width = $image_info[0];
-                    $image_height = $image_info[1];
-                    $background_image = cipl_image_upload($_FILES['background_image'], 'background_image', $upload_path, $file_name, $image_width, $image_height);
-
-                    if (isset($background_image['success'])) {
-                        $background_image_array = array("background_image" => $upload_path . $file_name);
-                        $update_array = array_merge($background_image_array, $update_array);
-                       
-                        $this->section_model->editSection($update_array, $section_id);
-                        $this->session->set_flashdata('Success', 'Section updated successfully.');
-                        redirect('usadmin/section', 'refresh');
+                        if (isset($background_image['success'])) {
+                            // Delete the old background image
+                            unlink(FCPATH . base64_decode($this->input->post('background_image_old-' . $age_group['age_group_id'])));
+                            $background_images_array[$age_group["age_group_id"]] = $upload_path . $file_name;
+                        } else {
+                            $background_images_error = true;
+                            $background_images_array[$age_group["age_group_id"]] = '';
+                            $background_images_error_messages .= $background_image['messages']['error'];
+                        }
                     } else {
-                        $this->session->set_flashdata('Error', $background_image['messages']['error']);
+                        $background_images_array[$age_group["age_group_id"]] = base64_decode($this->input->post('background_image_old-' . $age_group['age_group_id']));
                     }
-                } else {
+                endforeach;
+                if ($background_images_error == false) {
+                    $background_image_result_array = array("background_image" => serialize($background_images_array));
+                    $update_array = array_merge($background_image_result_array, $update_array);
                     $this->section_model->editSection($update_array, $section_id);
                     $this->session->set_flashdata('Success', 'Section updated successfully.');
                     redirect('usadmin/section', 'refresh');
-                }            
+                } else {
+                    $this->session->set_flashdata('Error', $background_images_error_messages);
+                }
             }
         }
         
         $result = $this->section_model->getSection($section_id);
         $data['section'] = $result[0];
+        $data['age_groups'] = $this->age_groups_model->get_all_age_groups();
         
         $this->load->view('admin/common/header');
         $this->load->view('admin/section/edit', $data);

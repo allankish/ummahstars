@@ -49,17 +49,26 @@
                                 <input type="text" class="form-control" id="sort_order" name="sort_order"  value="<?php echo $section["sort_order"]; ?>">
                             </div>
                             <div class="form-group col-xs-9">
-                                <label for="background_image">Background Image</label>
-                                <?php if ($section["background_image"] != '') { ?>
-                                    <br />
-                                    <img src="<?php echo base_url() . $section["background_image"]; ?>" width="100" />
+                                <label for="background_image">Background Image</label><?php 
+                                foreach($age_groups as $age_group): 
+                                    $background_images = unserialize($section["background_image"]);
+                                ?>
+                                <br />
+                                <label for="background_image-<?php echo $age_group['age_group_id']; ?>">Age Group: <?php echo $age_group['age_group_name']; ?></label>
+                                <?php if (isset($background_images[$age_group["age_group_id"]]) && $background_images[$age_group["age_group_id"]] != '') { ?>
+                                <br />
+                                <img width="200" src="<?php echo base_url() . $background_images[$age_group["age_group_id"]];?>" />
+                                <input value="<?php echo base64_encode($background_images[$age_group["age_group_id"]]); ?>" type="hidden" name="background_image_old-<?php echo $age_group["age_group_id"];?>" id="background_image_old-<?php echo $age_group["age_group_id"];?>">
                                 <?php } ?>
-                                <input type="file" name="background_image" id="background_image">
+                                <input type="file" name="background_image-<?php echo $age_group["age_group_id"];?>" id="background_image-<?php echo $age_group["age_group_id"];?>">
+                                
+                                <?php endforeach; ?>
                             </div>
                         </div>
                         <!-- /.box-body -->
 
                         <div class="box-footer">
+                            <a href="<?php echo base_url();?>usadmin/section" class="btn btn-primary">Back</a>
                             <button type="submit" id="section_submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>

@@ -34,6 +34,7 @@ if (!function_exists('cipl_image_upload')) {
     
     function cipl_image_upload($file, $field_name, $upload_path, $file_name, $width, $height) {
         $CI = & get_instance();
+        $CI->load->library('upload');
         if (isset($file) && !empty($file['name'])) :
             $config = array(
                 'file_name' => $file_name,
@@ -42,7 +43,7 @@ if (!function_exists('cipl_image_upload')) {
                 'overwrite' => false,
                 'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
             );
-        $CI->load->library('upload', $config);
+        $CI->upload->initialize($config);
         if ($CI->upload->do_upload($field_name)) :
                 $upload_data = $CI->upload->data();
                 if ($upload_data['image_width'] > $width || $upload_data['image_height'] > $height):

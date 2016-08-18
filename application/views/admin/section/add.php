@@ -49,13 +49,17 @@
                                 <input type="text" class="form-control" id="sort_order" name="sort_order"  value="<?php echo $this->session->flashdata('sort_order') ?>" placeholder="Enter Sort Order">
                             </div>
                             <div class="form-group col-xs-9">
-                                <label for="background_image">Background Image</label>
-                                <input type="file" name="background_image" id="background_image">
+                                <label for="background_image">Background Image</label><br />
+                                <?php foreach($age_groups as $age_group): ?>
+                                <label for="background_image-<?php echo $age_group['age_group_id']; ?>">Age Group: <?php echo $age_group['age_group_name']; ?></label>
+                                <input type="file" name="background_image-<?php echo $age_group['age_group_id']; ?>" id="background_image-<?php echo $age_group['age_group_id']; ?>">
+                                <?php endforeach; ?>
                             </div>
                         </div>
                         <!-- /.box-body -->
 
                         <div class="box-footer">
+                            <a href="<?php echo base_url();?>usadmin/section" class="btn btn-primary">Back</a>
                             <button type="submit" id="section_submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>

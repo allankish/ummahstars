@@ -65,7 +65,20 @@
                                         <td><?php echo $category['category_type']; ?></td>
                                         <td><?php echo $category['section_name']; ?></td>
                                         <td><?php echo ($category['need_payment'] === 'true') ? 'Yes' : 'No'; ?></td>
-                                        <td><?php if ($category['background_image'] != '') { ?><a href="javascript:void(0)" class="category_image" image_url="<?php echo base_url() . $category['background_image'] ?>" data-toggle="modal" data-target="#myModal"><img src="<?php echo base_url() . $category['background_image'] ?>" width="20" /></a><?php } ?></td>
+                                        <?php 
+                                        $background_images = unserialize($category["background_image"]);
+                                        ?>
+                                        <td>
+                                        <?php 
+                                        foreach($background_images as $background_image):
+                                            if ($background_image != '') {
+                                        ?>
+                                            <a href="javascript:void(0)" class="category_image" image_url="<?php echo base_url() . $background_image; ?>" data-toggle="modal" data-target="#myModal"><img src="<?php echo base_url() . $background_image; ?>" width="20" /></a>
+                                        <?php 
+                                            }
+                                        endforeach; 
+                                        ?>
+                                        </td>
                                         <td><?php echo $category['sort_order'] ?></td>
                                         <td><a href='<?php echo base_url() ?>usadmin/categories/edit/<?php echo $category['category_id'] ?>'>Edit</a> | <a id="delete_category-<?php echo $category["category_id"]; ?>" data-id="<?php echo $category["category_id"]; ?>" href='#'>Delete</a></td>
                                     </tr>
@@ -77,7 +90,13 @@
                                         <td><?php echo $child_category['category_type']; ?></td>
                                         <td><?php echo $child_category['section_name']; ?></td>
                                         <td><?php echo ($child_category['need_payment'] === 'true') ? 'Yes' : 'No'; ?></td>
-                                        <td><?php if ($child_category['background_image'] != '') { ?><a href="javascript:void(0)" class="category_image" image_url="<?php echo base_url() . $child_category['background_image'] ?>" data-toggle="modal" data-target="#myModal"><img src="<?php echo base_url() . $child_category['background_image'] ?>" width="20" /></a><?php } ?></td>
+                                        <?php 
+                                        $background_images = unserialize($child_category["background_image"]);
+                                        ?>
+                                        <td><?php foreach($background_images as $background_image):
+                                            if ($background_image != '') { ?><a href="javascript:void(0)" class="category_image" image_url="<?php echo base_url() . $background_image; ?>" data-toggle="modal" data-target="#myModal"><img src="<?php echo base_url() . $background_image; ?>" width="20" /></a><?php } ?>
+                                            <?php endforeach; ?>
+                                        </td>
                                         <td><?php echo $child_category['sort_order'] ?></td>
                                         <td><a href='<?php echo base_url() ?>usadmin/categories/edit/<?php echo $child_category['category_id'] ?>'>Edit</a> | <a id="delete_category-<?php echo $child_category["category_id"]; ?>" data-id="<?php echo $child_category["category_id"]; ?>" href='#'>Delete</a></td>
                                     </tr>
