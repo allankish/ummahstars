@@ -61,7 +61,10 @@
                                         $parent_category_id = $category['category_id'];
                                 ?>
                                     <tr class="treegrid-<?php echo $parent_category_id;?> pointer">
-                                        <td><?php echo $category['category_name']; ?></td>
+                                        <td>
+                                            <?php echo $category['category_name']; ?>
+                                            <?php echo ($category['category_name_arabic'] != '') ? ' ( '.$category['category_name_arabic'] . ' )': ''; ?>
+                                        </td>
                                         <td><?php echo $category['category_type']; ?></td>
                                         <td><?php echo $category['section_name']; ?></td>
                                         <td><?php echo ($category['need_payment'] === 'true') ? 'Yes' : 'No'; ?></td>

@@ -4618,3 +4618,72 @@ INFO - 2016-08-18 15:12:24 --> File loaded: C:\xampp\htdocs\ummahstars\applicati
 INFO - 2016-08-18 15:12:24 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/common/footer.php
 INFO - 2016-08-18 15:12:24 --> Final output sent to browser
 DEBUG - 2016-08-18 15:12:24 --> Total execution time: 0.1560
+INFO - 2016-08-18 16:03:54 --> Config Class Initialized
+INFO - 2016-08-18 16:03:54 --> Hooks Class Initialized
+DEBUG - 2016-08-18 16:03:54 --> UTF-8 Support Enabled
+INFO - 2016-08-18 16:03:54 --> Utf8 Class Initialized
+INFO - 2016-08-18 16:03:54 --> URI Class Initialized
+INFO - 2016-08-18 16:03:54 --> Router Class Initialized
+INFO - 2016-08-18 16:03:54 --> Output Class Initialized
+INFO - 2016-08-18 16:03:54 --> Security Class Initialized
+DEBUG - 2016-08-18 16:03:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-08-18 16:03:54 --> Input Class Initialized
+INFO - 2016-08-18 16:03:54 --> Language Class Initialized
+INFO - 2016-08-18 16:03:54 --> Loader Class Initialized
+INFO - 2016-08-18 16:03:54 --> Helper loaded: url_helper
+INFO - 2016-08-18 16:03:54 --> Helper loaded: cookie_helper
+INFO - 2016-08-18 16:03:54 --> Helper loaded: cipl_auth_helper
+INFO - 2016-08-18 16:03:54 --> Helper loaded: cipl_common_helper
+INFO - 2016-08-18 16:03:54 --> Database Driver Class Initialized
+DEBUG - 2016-08-18 16:03:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-08-18 16:03:55 --> Session: Class initialized using 'files' driver.
+INFO - 2016-08-18 16:03:55 --> Controller Class Initialized
+DEBUG - 2016-08-18 16:03:55 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-08-18 16:03:55 --> Helper loaded: form_helper
+INFO - 2016-08-18 16:03:55 --> Form Validation Class Initialized
+INFO - 2016-08-18 16:03:55 --> Model Class Initialized
+INFO - 2016-08-18 16:03:55 --> Model Class Initialized
+INFO - 2016-08-18 16:03:56 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/common/header.php
+ERROR - 2016-08-18 16:03:56 --> Severity: Notice --> unserialize(): Error at offset 0 of 83 bytes C:\xampp\htdocs\ummahstars\application\views\admin\categories\list.php 72
+ERROR - 2016-08-18 16:03:56 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\ummahstars\application\views\admin\categories\list.php 76
+ERROR - 2016-08-18 16:03:56 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\ummahstars\application\views\admin\categories\list.php 99
+ERROR - 2016-08-18 16:03:56 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\ummahstars\application\views\admin\categories\list.php 99
+ERROR - 2016-08-18 16:03:56 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\ummahstars\application\views\admin\categories\list.php 76
+ERROR - 2016-08-18 16:03:56 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\ummahstars\application\views\admin\categories\list.php 99
+INFO - 2016-08-18 16:03:56 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/categories/list.php
+INFO - 2016-08-18 16:03:56 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/common/footer.php
+INFO - 2016-08-18 16:03:56 --> Final output sent to browser
+DEBUG - 2016-08-18 16:03:56 --> Total execution time: 2.1581
+INFO - 2016-08-18 16:04:13 --> Config Class Initialized
+INFO - 2016-08-18 16:04:13 --> Hooks Class Initialized
+DEBUG - 2016-08-18 16:04:13 --> UTF-8 Support Enabled
+INFO - 2016-08-18 16:04:13 --> Utf8 Class Initialized
+INFO - 2016-08-18 16:04:13 --> URI Class Initialized
+INFO - 2016-08-18 16:04:13 --> Router Class Initialized
+INFO - 2016-08-18 16:04:13 --> Output Class Initialized
+INFO - 2016-08-18 16:04:13 --> Security Class Initialized
+DEBUG - 2016-08-18 16:04:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-08-18 16:04:13 --> Input Class Initialized
+INFO - 2016-08-18 16:04:13 --> Language Class Initialized
+INFO - 2016-08-18 16:04:13 --> Loader Class Initialized
+INFO - 2016-08-18 16:04:13 --> Helper loaded: url_helper
+INFO - 2016-08-18 16:04:13 --> Helper loaded: cookie_helper
+INFO - 2016-08-18 16:04:13 --> Helper loaded: cipl_auth_helper
+INFO - 2016-08-18 16:04:13 --> Helper loaded: cipl_common_helper
+INFO - 2016-08-18 16:04:13 --> Database Driver Class Initialized
+DEBUG - 2016-08-18 16:04:14 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-08-18 16:04:14 --> Session: Class initialized using 'files' driver.
+INFO - 2016-08-18 16:04:14 --> Controller Class Initialized
+DEBUG - 2016-08-18 16:04:14 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-08-18 16:04:14 --> Helper loaded: form_helper
+INFO - 2016-08-18 16:04:14 --> Form Validation Class Initialized
+INFO - 2016-08-18 16:04:14 --> Model Class Initialized
+INFO - 2016-08-18 16:04:14 --> Model Class Initialized
+INFO - 2016-08-18 16:04:15 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/common/header.php
+ERROR - 2016-08-18 16:04:15 --> Severity: Notice --> unserialize(): Error at offset 0 of 83 bytes C:\xampp\htdocs\ummahstars\application\views\admin\categories\edit.php 98
+ERROR - 2016-08-18 16:04:15 --> Severity: Notice --> unserialize(): Error at offset 0 of 83 bytes C:\xampp\htdocs\ummahstars\application\views\admin\categories\edit.php 98
+ERROR - 2016-08-18 16:04:15 --> Severity: Notice --> unserialize(): Error at offset 0 of 83 bytes C:\xampp\htdocs\ummahstars\application\views\admin\categories\edit.php 98
+INFO - 2016-08-18 16:04:15 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/categories/edit.php
+INFO - 2016-08-18 16:04:15 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/common/footer.php
+INFO - 2016-08-18 16:04:15 --> Final output sent to browser
+DEBUG - 2016-08-18 16:04:15 --> Total execution time: 2.2831

@@ -40,6 +40,7 @@ class Categories_model extends CI_Model {
             $all_categories[] = array(
                 "category_id" => $root_category["category_id"],
                 "category_name" => $root_category["category_name"],
+                "category_name_arabic" => $root_category["category_name_arabic"],
                 "category_type" => $root_category["category_type"],
                 "parent_id" => $root_category["parent_id"],
                 "section_id" => $root_category["section_id"],

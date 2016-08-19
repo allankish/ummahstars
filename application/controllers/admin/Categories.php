@@ -63,6 +63,7 @@ class Categories extends CI_Controller {
 
                 $update_array = array(
                     "category_name" => $this->input->post('category_name'),
+                    "category_name_arabic" => $this->input->post('category_name_arabic'),
                     "category_type" => $this->input->post('category_type'),
                     "parent_id"     => $this->input->post('parent_id'),
                     "section_id"    => $this->input->post('section_id'),
@@ -149,6 +150,7 @@ class Categories extends CI_Controller {
 
                 $update_array = array(
                     "category_name" => $this->input->post('category_name'),
+                    "category_name_arabic" => $this->input->post('category_name_arabic'),
                     "category_type" => $this->input->post('category_type'),
                     "parent_id"     => $this->input->post('parent_id'),
                     "section_id"    => $this->input->post('section_id'),
