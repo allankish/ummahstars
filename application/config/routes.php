@@ -106,7 +106,7 @@ $route['usadmin/categories/delete'] = 'admin/categories/delete_category';
 $route['usadmin/content'] = 'admin/content/list_content';
 $route['usadmin/content/add'] = 'admin/content/add_content';
 $route['usadmin/content/edit/(:num)'] = 'admin/content/edit_content/$1';
-$route['usadmin/content/delete'] = 'admin/content/delete_content';
+$route['usadmin/content/delete/(:num)'] = 'admin/content/delete_content/$1';
 $route['usadmin/content/get_categories_ajax'] = 'admin/content/get_categories_ajax';
 
 // Error

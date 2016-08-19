@@ -124,7 +124,7 @@
         $contents_menu_active = "active";
         $categories_menu_active = "active";
     }
-    if ($this->uri->segment($second_segment) == "articles") {
+    if ($this->uri->segment($second_segment) == "content") {
         $contents_menu_active = "active";
         $articles_menu_active = "active";
     }
@@ -220,7 +220,7 @@
                             <ul class="treeview-menu">
                                 <li <?php echo 'class="' . $sections_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/section"><i class="fa fa-circle-o"></i>Sections</a></li>
                                 <li <?php echo 'class="' . $categories_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/categories"><i class="fa fa-circle-o"></i>Categories</a></li>
-                                <li <?php echo 'class="' . $articles_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/articles"><i class="fa fa-circle-o"></i>Articles</a></li>
+                                <li <?php echo 'class="' . $articles_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/content"><i class="fa fa-circle-o"></i>Content</a></li>
                             </ul>
                         </li>
                         <li class="treeview <?php echo $age_groups_menu_active; ?>">

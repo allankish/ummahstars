@@ -99,12 +99,81 @@ class Content extends CI_Controller {
             }
         }
         
-        $data['root_categories'] = $this->categories_model->getRootCategories();
+       
         $data['sections'] = $this->categories_model->getAllSections();
         $data['age_groups'] = $this->age_groups_model->get_all_age_groups();
         
         $this->load->view('admin/common/header');
         $this->load->view('admin/content/add',$data);
+        $this->load->view('admin/common/footer');
+    }
+    
+     public function edit_content($content_id) {
+        
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') { //allow only the http method is POST
+            $config = array(
+                array(
+                    'field' => 'section_id',
+                    'label' => 'Section Name',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'category_id',
+                    'label' => 'Category Name',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'content_type',
+                    'label' => 'Content Type',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'content',
+                    'label' => 'Content',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'age_group_id',
+                    'label' => 'Age Group',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'sort_order',
+                    'label' => 'Sort Order',
+                    'rules' => 'trim|is_natural_no_zero|required'
+                )
+            );
+
+            $this->form_validation->set_rules($config);
+            
+            if ($this->form_validation->run() != FALSE) {
+
+                $update_array = array(
+                    "section_id"  => $this->input->post('section_id'),
+                    "category_id"  => $this->input->post('category_id'),
+                    "content_type"  => $this->input->post('content_type'),
+                    "content"  => $this->input->post('content'),
+                    "age_group_id"  => $this->input->post('age_group_id'),
+                    "sort_order"    => $this->input->post("sort_order"),
+                    "created_date"    => date('Y-m-d H:i:s')
+                   
+                );
+                
+                 $this->content_model->updateContent($update_array,$content_id);
+                 $this->session->set_flashdata('Success', 'Content updated successfully.');
+                 redirect('usadmin/content', 'refresh');
+         
+            }
+        }
+        
+        
+        $data['sections'] = $this->categories_model->getAllSections();
+        $data['age_groups'] = $this->age_groups_model->get_all_age_groups();
+        $data['content'] = $this->content_model->getContentById($content_id);
+        $data['content_cats'] = $this->categories_model->getCategoriesbySection($data['content'][0]['section_id']);
+        
+        $this->load->view('admin/common/header');
+        $this->load->view('admin/content/edit',$data);
         $this->load->view('admin/common/footer');
     }
 
@@ -118,4 +187,13 @@ class Content extends CI_Controller {
         echo json_encode($cats);
         
     }
+    
+    public function delete_content($content_id)
+    {
+        $this->content_model->deleteContent($content_id);
+        $this->session->set_flashdata('Success', 'Content deleted successfully.');
+        redirect('usadmin/content', 'refresh');
+        
+    }
+    
 }

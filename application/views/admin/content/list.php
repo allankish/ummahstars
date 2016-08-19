@@ -66,7 +66,7 @@
                                     <td><?php echo $content['age_group_name']?></td>
                                     <td><?php echo $content['sort_order']?></td>
                                     <td><?php echo $content['created_date']?></td>
-                                    <td><a href="<?php echo base_url().'usadmin/content/edit/'. $content['content_id']?>">Edit</a> | <a href="<?php echo base_url().'usadmin/content/delete/'. $content['content_id']?>">Delete</a></td>
+                                    <td><a href="<?php echo base_url().'usadmin/content/edit/'. $content['content_id']?>">Edit</a> | <a class="delete_content" href="<?php echo base_url().'usadmin/content/delete/'. $content['content_id']?>">Delete</a></td>
                                     
                                 </tr>
                                     
@@ -170,10 +170,17 @@
             });
         });
         
-        $('.tree').treegrid({
-            initialState: 'collapsed',
-            expanderExpandedClass: 'fa fa-minus-circle',
-            expanderCollapsedClass: 'fa fa-plus-circle'
+       $('.delete_content').click(function(e){
+       
+        var r = confirm('Are you sure want to delete this Content?');
+        
+        if(r == false)
+        {
+        
+        e.preventDefault();
+        
+        }    
+        
         });
 
     });
