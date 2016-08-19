@@ -128,6 +128,19 @@
         $contents_menu_active = "active";
         $articles_menu_active = "active";
     }
+    
+    // Deeds Menu
+    $deeds_menu_active = '';
+    $prizes_menu_active = '';
+    $goals_menu_active = '';
+    if ($this->uri->segment($second_segment) == "prizes") {
+        $deeds_menu_active = "active";
+        $prizes_menu_active = "active";
+    }
+    if ($this->uri->segment($second_segment) == "goals") {
+        $deeds_menu_active = "active";
+        $goals_menu_active = "active";
+    }
     ?>
     <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
@@ -211,7 +224,7 @@
                         </li>
                         <li class="treeview <?php echo $contents_menu_active; ?>">
                             <a href="#">
-                                <i class="fa fa-th-large"></i>
+                                <i class="fa fa-list-alt"></i>
                                 <span>Contents</span>
                                 <span class="pull-right-container">
                                     <span class="fa fa-angle-left pull-right"></span>
@@ -238,7 +251,7 @@
                         </li>
                         <li class="treeview <?php echo $subscription_menu_active; ?>">
                             <a href="#">
-                                <i class="fa fa-th-large"></i>
+                                <i class="fa fa-money"></i>
                                 <span>Subscription Plans</span>
                                 <span class="pull-right-container">
                                     <span class="fa fa-angle-left pull-right"></span>
@@ -247,6 +260,19 @@
                             <ul class="treeview-menu">
                                 <li <?php echo 'class="' . $subscription_list_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/subscription/"><i class="fa fa-circle-o"></i>Plan List</a></li>
                                 <li <?php echo 'class="' . $subscription_add_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/subscription/add"><i class="fa fa-circle-o"></i>Add New</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview <?php echo $deeds_menu_active; ?>">
+                            <a href="#">
+                                <i class="fa fa-trophy"></i>
+                                <span>Deeds</span>
+                                <span class="pull-right-container">
+                                    <span class="fa fa-angle-left pull-right"></span>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li <?php echo 'class="' . $prizes_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/prizes/"><i class="fa fa-circle-o"></i>Prizes</a></li>
+                                <li <?php echo 'class="' . $goals_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/goals/"><i class="fa fa-circle-o"></i>Goals</a></li>
                             </ul>
                         </li>
                         <li>
