@@ -102,6 +102,13 @@ $route['usadmin/categories/add'] = 'admin/categories/add_category';
 $route['usadmin/categories/edit/(:num)'] = 'admin/categories/edit_category/$1';
 $route['usadmin/categories/delete'] = 'admin/categories/delete_category';
 
+// Contents
+$route['usadmin/content'] = 'admin/content/list_content';
+$route['usadmin/content/add'] = 'admin/content/add_content';
+$route['usadmin/content/edit/(:num)'] = 'admin/content/edit_content/$1';
+$route['usadmin/content/delete'] = 'admin/content/delete_content';
+$route['usadmin/content/get_categories_ajax'] = 'admin/content/get_categories_ajax';
+
 // Error
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

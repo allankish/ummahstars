@@ -91,5 +91,17 @@ class Categories_model extends CI_Model {
         $result = $this->db->delete($this->categories_tbl, array('category_id' => $category_id));
         return $result;
     }
+    
+     public function getCategoriesbySection($section_id)
+    {
+        
+        $this->db->select('category_id,category_name')->from($this->categories_tbl)->where('section_id', $section_id)->order_by('sort_order', 'ASC');
+       
+        $query = $this->db->get();
+        $root_categories = $query->result_array();
+        return $root_categories;
+        
+        
+    }
 
 }
