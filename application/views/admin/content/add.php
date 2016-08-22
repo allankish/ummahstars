@@ -57,13 +57,20 @@
                             </div>
                             <div class="form-group col-xs-9">
                                 <label>Content Type</label>
-                                <select class="form-control" name="content_type">
+                                <select class="form-control" id="content_type" name="content_type">
                                     <option value="">Select Type</option>
-                                    <option value="Text">Text</option>
+                                    <option value="text">Text</option>
                                     <option value="video">Video</option>
                                 </select>
                             </div>
-                            <div class="form-group col-xs-9">
+                            
+                            <div class="form-group col-xs-9" id="video_sec" style="display:none;">
+                                <label for="background_image">Upload Video</label><br />
+                                <input type="file" name="video_file" id="video_file">
+                                
+                            </div>
+                            
+                            <div class="form-group col-xs-9" id="content_sec" style="display:none;">
                                 <label>Content</label>
                                 <textarea class="form-control" rows="3" placeholder="Enter Content.." name="content"></textarea>
                             </div>
@@ -133,6 +140,21 @@ $(document).ready(function(){
         }
         });
       
+        });
+        
+        $('#content_type').change(function(){
+        
+         $('#content_sec').hide();
+         $('#video_sec').hide();
+        
+        if($(this).val() == 'text')
+        $('#content_sec').show();
+        
+        if($(this).val() == 'video')
+        $('#video_sec').show();
+        
+        
+        
         });
     
 });

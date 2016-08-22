@@ -61,11 +61,6 @@ class Content extends CI_Controller {
                     'rules' => 'trim|required'
                 ),
                 array(
-                    'field' => 'content',
-                    'label' => 'Content',
-                    'rules' => 'trim|required'
-                ),
-                array(
                     'field' => 'age_group_id',
                     'label' => 'Age Group',
                     'rules' => 'trim|required'
@@ -76,16 +71,27 @@ class Content extends CI_Controller {
                     'rules' => 'trim|is_natural_no_zero|required'
                 )
             );
+            
+            $video_url = '';
+            
+            if($this->input->post('content_type') == 'video')
+            $this->form_validation->set_rules('video_file', 'Video Content', 'callback_video_upload');
 
             $this->form_validation->set_rules($config);
             
             if ($this->form_validation->run() != FALSE) {
-
+                
+                if(isset($this->upload_data['file']['file_name']))
+                {
+                $video_url = 'assets/contentVideos/'.$this->upload_data['file']['file_name'];
+                }
+                
                 $update_array = array(
                     "section_id"  => $this->input->post('section_id'),
                     "category_id"  => $this->input->post('category_id'),
                     "content_type"  => $this->input->post('content_type'),
                     "content"  => $this->input->post('content'),
+                    "video_url" => $video_url,
                     "age_group_id"  => $this->input->post('age_group_id'),
                     "sort_order"    => $this->input->post("sort_order"),
                     "created_date"    => date('Y-m-d H:i:s')
@@ -128,11 +134,6 @@ class Content extends CI_Controller {
                     'rules' => 'trim|required'
                 ),
                 array(
-                    'field' => 'content',
-                    'label' => 'Content',
-                    'rules' => 'trim|required'
-                ),
-                array(
                     'field' => 'age_group_id',
                     'label' => 'Age Group',
                     'rules' => 'trim|required'
@@ -143,16 +144,37 @@ class Content extends CI_Controller {
                     'rules' => 'trim|is_natural_no_zero|required'
                 )
             );
-
+            
+            
+             $video_url = $this->input->post('video_url_val');
+             $content = $this->input->post('content');
+            
+            if($this->input->post('content_type') == 'video')
+            {
+            $this->form_validation->set_rules('video_file', 'Video Content', 'callback_video_upload');
+            $content = "";
+            }
+            
+            if($this->input->post('content_type') == 'text')
+            {
+            $video_url = "";
+            }
+            
             $this->form_validation->set_rules($config);
             
             if ($this->form_validation->run() != FALSE) {
+                
+                 if(isset($this->upload_data['file']['file_name']))
+                {
+                $video_url = 'assets/contentVideos/'.$this->upload_data['file']['file_name'];
+                }
 
                 $update_array = array(
                     "section_id"  => $this->input->post('section_id'),
                     "category_id"  => $this->input->post('category_id'),
                     "content_type"  => $this->input->post('content_type'),
-                    "content"  => $this->input->post('content'),
+                    "content"  => $content,
+                    "video_url" => $video_url,
                     "age_group_id"  => $this->input->post('age_group_id'),
                     "sort_order"    => $this->input->post("sort_order"),
                     "created_date"    => date('Y-m-d H:i:s')
@@ -195,5 +217,34 @@ class Content extends CI_Controller {
         redirect('usadmin/content', 'refresh');
         
     }
+    
+    
+    function video_upload(){
+	  if($_FILES['video_file']['size'] != 0){
+		$upload_dir = './assets/contentVideos';
+		if (!is_dir($upload_dir)) {
+		     mkdir($upload_dir);
+		}	
+		$config['upload_path']   = $upload_dir;
+		$config['allowed_types'] = 'mp4';
+		$config['file_name']     = 'content_vid_'.time().md5(rand());
+		$config['overwrite']     = true;
+		
+
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload('video_file')){
+			$this->form_validation->set_message('video_upload', $this->upload->display_errors());
+			return false;
+		}	
+		else{
+			$this->upload_data['file'] =  $this->upload->data();
+			return true;
+		}	
+	}	
+	else{
+		$this->form_validation->set_message('video_upload', "No file selected");
+		return false;
+	}
+}
     
 }

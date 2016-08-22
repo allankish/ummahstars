@@ -60,13 +60,32 @@
                             </div>
                             <div class="form-group col-xs-9">
                                 <label>Content Type</label>
-                                <select class="form-control" name="content_type">
+                                <select class="form-control" name="content_type" id="content_type">
                                     <option value="">Select Type</option>
                                     <option value="text" <?php if($content[0]['content_type'] == 'text') echo 'selected'?>>Text</option>
                                     <option value="video" <?php if($content[0]['content_type'] == 'video') echo 'selected'?>>Video</option>
                                 </select>
                             </div>
+                            <?php
+                            if($content[0]['video_url']!="")
+                            {
+                                ?>
+                            
                             <div class="form-group col-xs-9">
+                                <label>Video Link</label>
+                                <div><a href="<?php echo base_url().$content[0]['video_url']?>" target="_blank">Video File</a></div>
+                            </div>
+                            <?php
+                            }
+                            ?>
+                            <inpu type="hidden" name="video_url_val" value="<?php echo $content[0]['video_url']?>"/>
+                            <div class="form-group col-xs-9" id="video_sec" <?php if($content[0]['content_type'] == 'text') echo 'style="display:none;"';?>>
+                                <label for="background_image">Upload Video</label><br />
+                                <input type="file" name="video_file" id="video_file">
+                                
+                            </div>
+                            
+                            <div class="form-group col-xs-9" id="content_sec" <?php if($content[0]['content_type'] == 'video') echo 'style="display:none;"';?>>
                                 <label>Content</label>
                                 <textarea class="form-control" rows="3" placeholder="Enter Content.." name="content"><?php echo $content[0]['content']?></textarea>
                             </div>
@@ -136,6 +155,22 @@ $(document).ready(function(){
         }
         });
       
+        });
+        
+        
+         $('#content_type').change(function(){
+        
+         $('#content_sec').hide();
+         $('#video_sec').hide();
+        
+        if($(this).val() == 'text')
+        $('#content_sec').show();
+        
+        if($(this).val() == 'video')
+        $('#video_sec').show();
+        
+        
+        
         });
     
 });
