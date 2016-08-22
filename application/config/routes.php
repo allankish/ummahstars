@@ -112,3 +112,15 @@ $route['usadmin/content/get_categories_ajax'] = 'admin/content/get_categories_aj
 // Error
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// Prizes
+$route['usadmin/prizes'] = 'admin/prizes/list_prizes';
+$route['usadmin/prizes/add'] = 'admin/prizes/add_prize';
+$route['usadmin/prizes/edit/(:num)'] = 'admin/prizes/edit_prize/$1';
+$route['usadmin/prizes/delete'] = 'admin/prizes/delete_prize';
+
+// Goals
+$route['usadmin/goals'] = 'admin/goals/list_goals';
+$route['usadmin/goals/add'] = 'admin/goals/add_goal';
+$route['usadmin/goals/edit/(:num)'] = 'admin/goals/edit_goal/$1';
+$route['usadmin/goals/delete'] = 'admin/goals/delete_goal';
