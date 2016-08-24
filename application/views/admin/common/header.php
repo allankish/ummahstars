@@ -141,6 +141,30 @@
         $deeds_menu_active = "active";
         $goals_menu_active = "active";
     }
+    
+    // Quiz Menu
+    
+    $quiz_menu_active = '';
+    $quiz_list_menu_active = '';
+    $quiz_add_menu_active = '';
+
+    if ($this->uri->segment($second_segment) == "quiz") {
+        $quiz_menu_active = "active";
+        $quiz_list_menu_active = "active";
+    }
+    if (( $this->uri->segment($second_segment) == "quiz" ) && ( $this->uri->segment($third_segment) == "add")) {
+        $quiz_menu_active = "active";
+        $quiz_add_menu_active = "active";
+        $quiz_list_menu_active = "";
+    }
+
+    if (( $this->uri->segment($second_segment) == "quiz" ) && ( $this->uri->segment($third_segment) == "edit")) {
+        $quiz_menu_active = "active";
+        $quiz_list_menu_active = "active";
+    }
+    
+    
+    
     ?>
     <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
@@ -273,6 +297,19 @@
                             <ul class="treeview-menu">
                                 <li <?php echo 'class="' . $prizes_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/prizes/"><i class="fa fa-circle-o"></i>Prizes</a></li>
                                 <li <?php echo 'class="' . $goals_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/goals/"><i class="fa fa-circle-o"></i>Goals</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview <?php echo $quiz_menu_active; ?>">
+                            <a href="#">
+                                <i class="fa fa-question"></i>
+                                <span>Quiz</span>
+                                <span class="pull-right-container">
+                                    <span class="fa fa-angle-left pull-right"></span>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li <?php echo 'class="' . $quiz_list_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/quiz/"><i class="fa fa-circle-o"></i>Quiz List</a></li>
+                                <li <?php echo 'class="' . $quiz_add_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/quiz/add"><i class="fa fa-circle-o"></i>Add New</a></li>
                             </ul>
                         </li>
                         <li>

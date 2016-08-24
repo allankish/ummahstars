@@ -119,6 +119,12 @@ $route['usadmin/prizes/add'] = 'admin/prizes/add_prize';
 $route['usadmin/prizes/edit/(:num)'] = 'admin/prizes/edit_prize/$1';
 $route['usadmin/prizes/delete'] = 'admin/prizes/delete_prize';
 
+// Quiz
+$route['usadmin/quiz'] = 'admin/quiz/list_quiz';
+$route['usadmin/quiz/add'] = 'admin/quiz/add_quiz';
+$route['usadmin/quiz/edit/(:num)'] = 'admin/quiz/edit_quiz/$1';
+$route['usadmin/quiz/delete/(:num)'] = 'admin/quiz/delete_quiz/$1';
+
 // Goals
 $route['usadmin/goals'] = 'admin/goals/list_goals';
 $route['usadmin/goals/add'] = 'admin/goals/add_goal';
