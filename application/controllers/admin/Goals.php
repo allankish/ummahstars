@@ -107,14 +107,12 @@ class Goals extends CI_Controller {
                     "goal_description"  => $this->input->post('goal_description'),
                     "deed_amount"       => $this->input->post('deed_amount'),
                     "prize_id"          => $this->input->post('prize_id'),
-                    "created_by"        => 0,
-                    "assigned_to"       => 0,
                     "age_group"         => $this->input->post('age_group'),
                     "updated_on"        => date('Y-m-d H:i:s'),
                     "status"            => $this->input->post('status')
                 );
                 
-                $this->goals_model->updateGoal($update_array);
+                $this->goals_model->updateGoal($update_array, $goal_id);
                 $this->session->set_flashdata('Success', 'Goal updated successfully.');
                 redirect('usadmin/goals', 'refresh');
             }
@@ -122,6 +120,8 @@ class Goals extends CI_Controller {
         
         $result = $this->goals_model->getGoal($goal_id);
         $data['goal'] = $result[0];
+        $data['prizes'] = $this->prizes_model->getAllPrizes();
+        $data['age_groups'] = $this->age_groups_model->get_all_age_groups();
         
         $this->load->view('admin/common/header');
         $this->load->view('admin/goals/edit', $data);

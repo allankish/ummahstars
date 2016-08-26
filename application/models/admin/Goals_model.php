@@ -20,7 +20,8 @@ class Goals_model extends CI_Model {
     protected $prizes_tbl;
     protected $users_tbl;
     protected $age_groups_tbl;
-                function __construct() {
+
+    function __construct() {
         parent::__construct();
         $this->goals_tbl = "goals";
         $this->prizes_tbl = "prizes";

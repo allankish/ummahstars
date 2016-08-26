@@ -43,7 +43,7 @@
                     <div class="box-body">
                         <a href="<?php echo base_url(); ?>usadmin/goals/add" class="btn btn-primary pull-left">Add New</a>
                         <br /><br />
-                        <table id="categories-table" class="table table-bordered table-striped tree">
+                        <table id="goals-table" class="table table-bordered table-striped tree">
                             <thead>
                                 <tr>
                                     <th>Goal Description</th>
@@ -64,7 +64,7 @@
                                         <td><?php echo ($goal['age_group'] === '0') ? 'All' : $goal['age_group_name']; ?></td>
                                         <td><?php echo ($goal['created_by'] === '0') ? 'Admin' : $goal['uname']; ?></td>
                                         <td><?php echo ($goal['assigned_to'] === '0') ? 'All' : $goal['assigned_uname']; ?></td>
-                                        <td></td>
+                                        <td><a href='<?php echo base_url() ?>usadmin/goals/edit/<?php echo $goal['goal_id'] ?>'>Edit</a> | <a id="delete_goal-<?php echo $goal["goal_id"]; ?>" data-id="<?php echo $goal["goal_id"]; ?>" href='#'>Delete</a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
@@ -93,11 +93,11 @@
                     <h4 class="modal-title">Warning!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure want to delete this category?</p>
+                    <p>Are you sure want to delete this Goal?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline" data-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-outline" id="confirm-delete-category">Yes</button>
+                    <button type="button" class="btn btn-outline" id="confirm-delete-goal">Yes</button>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -127,7 +127,7 @@
 <script>
     $(function () {
 
-        $('#categories-table1').DataTable({
+        $('#goals-table').DataTable({
             "paging": true,
             "deferRender": true,
             "lengthChange": false,
@@ -136,25 +136,21 @@
             "info": true,
             "autoWidth": false
         });
-        $('.category_image').click(function () {
-            // Get the modal
-            $('#category_image_pop').attr('src', $(this).attr('image_url'));
-        });
 
-        $('a[id^="delete_category-"]').on('click', function () {
-            var category_id = $(this).attr('data-id');
+        $('a[id^="delete_goal-"]').on('click', function () {
+            var goal_id = $(this).attr('data-id');
             $('#confirm-modal').modal('toggle');
-            $('#confirm-delete-category').on('click', function () {
+            $('#confirm-delete-goal').on('click', function () {
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo base_url(); ?>usadmin/categories/delete',
+                    url: '<?php echo base_url(); ?>usadmin/goals/delete',
                     dataType: 'html',
-                    data: 'category_id=' + category_id,
+                    data: 'goal_id=' + goal_id,
                     success: function (result) {
                         if (result == 'success') {
                             $('#confirm-modal').modal('hide');
-                            window.location.href = "<?php echo base_url(); ?>usadmin/categories/";
+                            window.location.href = "<?php echo base_url(); ?>usadmin/goals/";
                         } else {
                             $('#confirm-modal').modal('hide');
                             alert(result);
@@ -163,12 +159,6 @@
                 });
             });
         });
-        
-        $('.tree').treegrid({
-            initialState: 'collapsed',
-            expanderExpandedClass: 'fa fa-minus-circle',
-            expanderCollapsedClass: 'fa fa-plus-circle'
-        });
-
+     
     });
 </script>
