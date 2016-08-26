@@ -171,7 +171,6 @@ class Quiz extends CI_Controller {
                     "age_group_id"  => $this->input->post('age_group_id'),
                     "deed"  => $this->input->post('deed'),
                     "no_questions" => $this->input->post('no_questions')
-                   
                 );
                 
                 $quiz_check = $this->quiz_model->quizCatCheck($update_array,$quiz_id);
@@ -207,4 +206,81 @@ class Quiz extends CI_Controller {
         redirect('usadmin/quiz', 'refresh');
         
     }
+    
+    // Add Quiz
+    public function add_quiz_question($quiz_id) {
+         if ($_SERVER['REQUEST_METHOD'] == 'POST') { //allow only the http method is POST
+            $config = array(
+                array(
+                    'field' => 'quiz_question',
+                    'label' => 'Question',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'status',
+                    'label' => 'Status',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'question_type',
+                    'label' => 'Question Type',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'answer',
+                    'label' => 'Answer',
+                    'rules' => 'trim|required'
+                )               
+            );
+            
+            $this->session->set_flashdata('quiz_title', $this->input->post('quiz_title'));
+            $this->session->set_flashdata('section_id', $this->input->post('section_id'));
+            $this->session->set_flashdata('category_id', $this->input->post('category_id'));
+            $this->session->set_flashdata('age_group_id', $this->input->post('age_group_id'));
+            $this->session->set_flashdata('no_questions', $this->input->post('no_questions'));
+            $this->session->set_flashdata('deed', $this->input->post('deed'));
+            
+            
+
+            $this->form_validation->set_rules($config);
+            
+            if ($this->form_validation->run() != FALSE) {
+               
+                $update_array = array(
+                    "quiz_title"  => $this->input->post('quiz_title'),
+                    "section_id"  => $this->input->post('section_id'),
+                    "category_id"  => $this->input->post('category_id'),
+                    "age_group_id"  => $this->input->post('age_group_id'),
+                    "deed"  => $this->input->post('deed'),
+                    "no_questions" => $this->input->post('no_questions'),
+                    "created_date"    => date('Y-m-d H:i:s')
+                   
+                );
+                
+                $quiz_check = $this->quiz_model->quizCatCheck($update_array);
+                
+                if($quiz_check == true)
+                {
+                 $this->quiz_model->addQuiz($update_array);
+                 $this->session->set_flashdata('Success', 'Quiz Created Successfully.');
+                 redirect('usadmin/quiz', 'refresh');
+                }
+                else
+                {
+                 $this->session->set_flashdata('Error', 'Already a Quiz has been created for Selected Category and Age Group.');
+                 redirect('usadmin/quiz/add', 'refresh');
+                }
+                
+         
+            }
+        }
+       
+        $this->load->view('admin/common/header');
+        $this->load->view('admin/quiz/add_question');
+        $this->load->view('admin/common/footer');
+    }
+        
+    
+    
+    
 }
