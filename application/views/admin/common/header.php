@@ -163,6 +163,12 @@
         $quiz_list_menu_active = "active";
     }
     
+    // Settings Menu
+    $settings_menu_active = '';
+    if ( $this->uri->segment($second_segment) == "settings" ) {
+        $settings_menu_active = "active";
+    }
+    
     
     
     ?>
@@ -312,8 +318,8 @@
                                 <li <?php echo 'class="' . $quiz_add_menu_active . '"'; ?>><a href="<?php echo base_url() ?>usadmin/quiz/add"><i class="fa fa-circle-o"></i>Add New</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="#">
+                        <li class="<?php echo $settings_menu_active;?>">
+                            <a href="<?php echo base_url() ?>usadmin/settings">
                                 <i class="fa fa-cog"></i>
                                 <span>Settings</span>
                             </a>

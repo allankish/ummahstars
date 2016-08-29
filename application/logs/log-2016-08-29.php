@@ -2098,3 +2098,136 @@ INFO - 2016-08-29 15:00:16 --> File loaded: D:\xampp\htdocs\ummahstars\applicati
 INFO - 2016-08-29 15:00:16 --> File loaded: D:\xampp\htdocs\ummahstars\application\views\admin/common/footer.php
 INFO - 2016-08-29 15:00:16 --> Final output sent to browser
 DEBUG - 2016-08-29 15:00:16 --> Total execution time: 1.8634
+INFO - 2016-08-29 17:46:54 --> Config Class Initialized
+INFO - 2016-08-29 17:46:54 --> Hooks Class Initialized
+DEBUG - 2016-08-29 17:46:54 --> UTF-8 Support Enabled
+INFO - 2016-08-29 17:46:54 --> Utf8 Class Initialized
+INFO - 2016-08-29 17:46:54 --> URI Class Initialized
+INFO - 2016-08-29 17:46:54 --> Router Class Initialized
+INFO - 2016-08-29 17:46:54 --> Output Class Initialized
+INFO - 2016-08-29 17:46:54 --> Security Class Initialized
+DEBUG - 2016-08-29 17:46:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-08-29 17:46:54 --> Input Class Initialized
+INFO - 2016-08-29 17:46:54 --> Language Class Initialized
+INFO - 2016-08-29 17:46:54 --> Loader Class Initialized
+INFO - 2016-08-29 17:46:54 --> Helper loaded: url_helper
+INFO - 2016-08-29 17:46:54 --> Helper loaded: cookie_helper
+INFO - 2016-08-29 17:46:54 --> Helper loaded: cipl_auth_helper
+INFO - 2016-08-29 17:46:54 --> Helper loaded: cipl_common_helper
+INFO - 2016-08-29 17:46:54 --> Database Driver Class Initialized
+DEBUG - 2016-08-29 17:46:56 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-08-29 17:46:56 --> Session: Class initialized using 'files' driver.
+INFO - 2016-08-29 17:46:56 --> Controller Class Initialized
+DEBUG - 2016-08-29 17:46:56 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-08-29 17:46:56 --> Helper loaded: form_helper
+INFO - 2016-08-29 17:46:56 --> Form Validation Class Initialized
+INFO - 2016-08-29 17:46:56 --> Model Class Initialized
+INFO - 2016-08-29 17:46:57 --> Config Class Initialized
+INFO - 2016-08-29 17:46:57 --> Hooks Class Initialized
+DEBUG - 2016-08-29 17:46:57 --> UTF-8 Support Enabled
+INFO - 2016-08-29 17:46:57 --> Utf8 Class Initialized
+INFO - 2016-08-29 17:46:57 --> URI Class Initialized
+INFO - 2016-08-29 17:46:57 --> Router Class Initialized
+INFO - 2016-08-29 17:46:57 --> Output Class Initialized
+INFO - 2016-08-29 17:46:57 --> Security Class Initialized
+DEBUG - 2016-08-29 17:46:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-08-29 17:46:57 --> Input Class Initialized
+INFO - 2016-08-29 17:46:57 --> Language Class Initialized
+INFO - 2016-08-29 17:46:57 --> Loader Class Initialized
+INFO - 2016-08-29 17:46:57 --> Helper loaded: url_helper
+INFO - 2016-08-29 17:46:57 --> Helper loaded: cookie_helper
+INFO - 2016-08-29 17:46:57 --> Helper loaded: cipl_auth_helper
+INFO - 2016-08-29 17:46:57 --> Helper loaded: cipl_common_helper
+INFO - 2016-08-29 17:46:57 --> Database Driver Class Initialized
+DEBUG - 2016-08-29 17:46:58 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-08-29 17:46:58 --> Session: Class initialized using 'files' driver.
+INFO - 2016-08-29 17:46:58 --> Controller Class Initialized
+INFO - 2016-08-29 17:46:58 --> Helper loaded: form_helper
+INFO - 2016-08-29 17:46:58 --> Form Validation Class Initialized
+INFO - 2016-08-29 17:46:58 --> Model Class Initialized
+INFO - 2016-08-29 17:46:58 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/login/index.php
+INFO - 2016-08-29 17:46:58 --> Final output sent to browser
+DEBUG - 2016-08-29 17:46:58 --> Total execution time: 1.3621
+INFO - 2016-08-29 17:47:11 --> Config Class Initialized
+INFO - 2016-08-29 17:47:11 --> Hooks Class Initialized
+DEBUG - 2016-08-29 17:47:11 --> UTF-8 Support Enabled
+INFO - 2016-08-29 17:47:11 --> Utf8 Class Initialized
+INFO - 2016-08-29 17:47:11 --> URI Class Initialized
+INFO - 2016-08-29 17:47:11 --> Router Class Initialized
+INFO - 2016-08-29 17:47:11 --> Output Class Initialized
+INFO - 2016-08-29 17:47:11 --> Security Class Initialized
+DEBUG - 2016-08-29 17:47:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-08-29 17:47:11 --> Input Class Initialized
+INFO - 2016-08-29 17:47:11 --> Language Class Initialized
+INFO - 2016-08-29 17:47:11 --> Loader Class Initialized
+INFO - 2016-08-29 17:47:11 --> Helper loaded: url_helper
+INFO - 2016-08-29 17:47:11 --> Helper loaded: cookie_helper
+INFO - 2016-08-29 17:47:11 --> Helper loaded: cipl_auth_helper
+INFO - 2016-08-29 17:47:11 --> Helper loaded: cipl_common_helper
+INFO - 2016-08-29 17:47:11 --> Database Driver Class Initialized
+DEBUG - 2016-08-29 17:47:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-08-29 17:47:12 --> Session: Class initialized using 'files' driver.
+INFO - 2016-08-29 17:47:12 --> Controller Class Initialized
+INFO - 2016-08-29 17:47:12 --> Helper loaded: form_helper
+INFO - 2016-08-29 17:47:12 --> Form Validation Class Initialized
+INFO - 2016-08-29 17:47:12 --> Model Class Initialized
+INFO - 2016-08-29 17:47:12 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2016-08-29 17:47:13 --> Config Class Initialized
+INFO - 2016-08-29 17:47:13 --> Hooks Class Initialized
+DEBUG - 2016-08-29 17:47:13 --> UTF-8 Support Enabled
+INFO - 2016-08-29 17:47:13 --> Utf8 Class Initialized
+INFO - 2016-08-29 17:47:13 --> URI Class Initialized
+INFO - 2016-08-29 17:47:13 --> Router Class Initialized
+INFO - 2016-08-29 17:47:13 --> Output Class Initialized
+INFO - 2016-08-29 17:47:13 --> Security Class Initialized
+DEBUG - 2016-08-29 17:47:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-08-29 17:47:13 --> Input Class Initialized
+INFO - 2016-08-29 17:47:13 --> Language Class Initialized
+INFO - 2016-08-29 17:47:13 --> Loader Class Initialized
+INFO - 2016-08-29 17:47:13 --> Helper loaded: url_helper
+INFO - 2016-08-29 17:47:13 --> Helper loaded: cookie_helper
+INFO - 2016-08-29 17:47:13 --> Helper loaded: cipl_auth_helper
+INFO - 2016-08-29 17:47:13 --> Helper loaded: cipl_common_helper
+INFO - 2016-08-29 17:47:13 --> Database Driver Class Initialized
+DEBUG - 2016-08-29 17:47:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-08-29 17:47:15 --> Session: Class initialized using 'files' driver.
+INFO - 2016-08-29 17:47:15 --> Controller Class Initialized
+INFO - 2016-08-29 17:47:15 --> Jquery Class Initialized
+INFO - 2016-08-29 17:47:15 --> Javascript Class Initialized and loaded. Driver used: jquery
+DEBUG - 2016-08-29 17:47:15 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-08-29 17:47:15 --> Helper loaded: form_helper
+INFO - 2016-08-29 17:47:15 --> Form Validation Class Initialized
+INFO - 2016-08-29 17:47:15 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/common/header.php
+INFO - 2016-08-29 17:47:15 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/dashboard/index.php
+INFO - 2016-08-29 17:47:15 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/common/footer.php
+INFO - 2016-08-29 17:47:15 --> Final output sent to browser
+DEBUG - 2016-08-29 17:47:15 --> Total execution time: 1.3951
+INFO - 2016-08-29 17:47:19 --> Config Class Initialized
+INFO - 2016-08-29 17:47:19 --> Hooks Class Initialized
+DEBUG - 2016-08-29 17:47:19 --> UTF-8 Support Enabled
+INFO - 2016-08-29 17:47:19 --> Utf8 Class Initialized
+INFO - 2016-08-29 17:47:19 --> URI Class Initialized
+INFO - 2016-08-29 17:47:19 --> Router Class Initialized
+INFO - 2016-08-29 17:47:19 --> Output Class Initialized
+INFO - 2016-08-29 17:47:19 --> Security Class Initialized
+DEBUG - 2016-08-29 17:47:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-08-29 17:47:19 --> Input Class Initialized
+INFO - 2016-08-29 17:47:19 --> Language Class Initialized
+INFO - 2016-08-29 17:47:19 --> Loader Class Initialized
+INFO - 2016-08-29 17:47:19 --> Helper loaded: url_helper
+INFO - 2016-08-29 17:47:19 --> Helper loaded: cookie_helper
+INFO - 2016-08-29 17:47:19 --> Helper loaded: cipl_auth_helper
+INFO - 2016-08-29 17:47:19 --> Helper loaded: cipl_common_helper
+INFO - 2016-08-29 17:47:19 --> Database Driver Class Initialized
+DEBUG - 2016-08-29 17:47:20 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-08-29 17:47:20 --> Session: Class initialized using 'files' driver.
+INFO - 2016-08-29 17:47:20 --> Controller Class Initialized
+DEBUG - 2016-08-29 17:47:20 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-08-29 17:47:20 --> Helper loaded: form_helper
+INFO - 2016-08-29 17:47:20 --> Form Validation Class Initialized
+INFO - 2016-08-29 17:47:20 --> Model Class Initialized
+INFO - 2016-08-29 17:47:20 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/common/header.php
+INFO - 2016-08-29 17:47:20 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/settings/view.php
+INFO - 2016-08-29 17:47:20 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\admin/common/footer.php
+INFO - 2016-08-29 17:47:20 --> Final output sent to browser
+DEBUG - 2016-08-29 17:47:20 --> Total execution time: 1.5841

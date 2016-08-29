@@ -134,3 +134,6 @@ $route['usadmin/goals'] = 'admin/goals/list_goals';
 $route['usadmin/goals/add'] = 'admin/goals/add_goal';
 $route['usadmin/goals/edit/(:num)'] = 'admin/goals/edit_goal/$1';
 $route['usadmin/goals/delete'] = 'admin/goals/delete_goal';
+
+// Settings
+$route['usadmin/settings'] = 'admin/settings/view_settings';
