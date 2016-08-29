@@ -115,7 +115,7 @@ class Quiz extends CI_Controller {
             }
         }
         
-         $data['sections'] = $this->categories_model->getAllSections();
+        $data['sections'] = $this->categories_model->getAllSections();
         $data['age_groups'] = $this->age_groups_model->get_all_age_groups();
         
         $this->load->view('admin/common/header');
@@ -173,7 +173,7 @@ class Quiz extends CI_Controller {
                     "no_questions" => $this->input->post('no_questions')
                 );
                 
-                $quiz_check = $this->quiz_model->quizCatCheck($update_array,$quiz_id);
+                $quiz_check = $this->quiz_model->quizCatCheck($update_array,$quiz_id); // One quiz only can be created for a category and for one age group
                 
                 if($quiz_check == true)
                 {
@@ -189,7 +189,7 @@ class Quiz extends CI_Controller {
          
             }
         }
-         $data['sections'] = $this->categories_model->getAllSections();
+        $data['sections'] = $this->categories_model->getAllSections();
         $data['age_groups'] = $this->age_groups_model->get_all_age_groups();
         $result = $this->quiz_model->getQuiz($quiz_id);
         $data['quizes'] = $result[0];
@@ -212,7 +212,7 @@ class Quiz extends CI_Controller {
          if ($_SERVER['REQUEST_METHOD'] == 'POST') { //allow only the http method is POST
             $config = array(
                 array(
-                    'field' => 'quiz_question',
+                    'field' => 'question',
                     'label' => 'Question',
                     'rules' => 'trim|required'
                 ),
@@ -222,64 +222,183 @@ class Quiz extends CI_Controller {
                     'rules' => 'trim|required'
                 ),
                 array(
-                    'field' => 'question_type',
-                    'label' => 'Question Type',
-                    'rules' => 'trim|required'
-                ),
-                array(
                     'field' => 'answer',
                     'label' => 'Answer',
                     'rules' => 'trim|required'
-                )               
+                ),
+                array(
+                    'field' => 'option1',
+                    'label' => 'Option1',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'option2',
+                    'label' => 'Option2',
+                    'rules' => 'trim|required'
+                ) 
+                
             );
             
-            $this->session->set_flashdata('quiz_title', $this->input->post('quiz_title'));
-            $this->session->set_flashdata('section_id', $this->input->post('section_id'));
-            $this->session->set_flashdata('category_id', $this->input->post('category_id'));
-            $this->session->set_flashdata('age_group_id', $this->input->post('age_group_id'));
-            $this->session->set_flashdata('no_questions', $this->input->post('no_questions'));
-            $this->session->set_flashdata('deed', $this->input->post('deed'));
+            $this->session->set_flashdata('question', $this->input->post('question'));
             
             
 
             $this->form_validation->set_rules($config);
             
             if ($this->form_validation->run() != FALSE) {
+                
+                
+                $total_options = $this->input->post('total_options');
+                $options = array();
+                $indi = 0;
+                for($i=1;$i<=$total_options;$i++)
+                {
+                   
+                   if(trim($this->input->post('option'.$i))!="")
+                   {
+                   $options[$indi]['option_label'] = $this->input->post('option'.$i);
+                   $options[$indi]['option_value'] = 'option'.$i;
+                   $indi++;
+                   }
+                  
+                    
+                }
+                
+                $options_ser = serialize($options);
                
                 $update_array = array(
-                    "quiz_title"  => $this->input->post('quiz_title'),
-                    "section_id"  => $this->input->post('section_id'),
-                    "category_id"  => $this->input->post('category_id'),
-                    "age_group_id"  => $this->input->post('age_group_id'),
-                    "deed"  => $this->input->post('deed'),
-                    "no_questions" => $this->input->post('no_questions'),
-                    "created_date"    => date('Y-m-d H:i:s')
+                    "question"  => $this->input->post('question'),
+                    "quiz_id" => $quiz_id,
+                    "options"  => $options_ser,
+                    "answer"  => $this->input->post('answer'),
+                    "status"  => $this->input->post('status'),
+                    "question_type"  => 'single',
+                    "created_on"    => date('Y-m-d H:i:s')
                    
                 );
                 
-                $quiz_check = $this->quiz_model->quizCatCheck($update_array);
+               
+                 $this->quiz_model->addQuestion($update_array);
+                 $this->session->set_flashdata('Success', 'Question Added Successfully.');
+                 redirect('usadmin/quiz/question/list/'.$quiz_id, 'refresh');
+                }
                 
-                if($quiz_check == true)
-                {
-                 $this->quiz_model->addQuiz($update_array);
-                 $this->session->set_flashdata('Success', 'Quiz Created Successfully.');
-                 redirect('usadmin/quiz', 'refresh');
-                }
-                else
-                {
-                 $this->session->set_flashdata('Error', 'Already a Quiz has been created for Selected Category and Age Group.');
-                 redirect('usadmin/quiz/add', 'refresh');
-                }
                 
          
-            }
+            
         }
+        
+        $data['quiz_details'] = $this->quiz_model->getQuiz($quiz_id);
        
         $this->load->view('admin/common/header');
-        $this->load->view('admin/quiz/add_question');
+        $this->load->view('admin/quiz/add_question',$data);
+        $this->load->view('admin/common/footer');
+    }
+    
+    // Edit Question
+    
+    public function edit_quiz_question($quiz_id,$question_id) {
+         if ($_SERVER['REQUEST_METHOD'] == 'POST') { //allow only the http method is POST
+            $config = array(
+                array(
+                    'field' => 'question',
+                    'label' => 'Question',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'status',
+                    'label' => 'Status',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'answer',
+                    'label' => 'Answer',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'option1',
+                    'label' => 'Option1',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'option2',
+                    'label' => 'Option2',
+                    'rules' => 'trim|required'
+                ) 
+                
+            );
+            
+            $this->session->set_flashdata('question', $this->input->post('question'));
+            
+            
+
+            $this->form_validation->set_rules($config);
+            
+            if ($this->form_validation->run() != FALSE) {
+                
+                
+                $total_options = $this->input->post('total_options');
+                $options = array();
+                $indi = 0;
+                for($i=1;$i<=$total_options;$i++)
+                {
+                   
+                   if(trim($this->input->post('option'.$i))!="")
+                   {
+                   $options[$indi]['option_label'] = $this->input->post('option'.$i);
+                   $options[$indi]['option_value'] = 'option'.$i;
+                   $indi++;
+                   }
+                  
+                    
+                }
+                
+                $options_ser = serialize($options);
+               
+                $update_array = array(
+                    "question"  => $this->input->post('question'),
+                    "options"  => $options_ser,
+                    "answer"  => $this->input->post('answer'),
+                    "status"  => $this->input->post('status')
+                );
+                
+               
+                 $this->quiz_model->updateQuestion($update_array,$question_id);
+                 $this->session->set_flashdata('Success', 'Question Modified Successfully.');
+                 redirect('usadmin/quiz/question/list/'.$quiz_id, 'refresh');
+                }
+                
+        }
+        
+        $data['quiz_details'] = $this->quiz_model->getQuiz($quiz_id);
+        $data['question_details'] = $this->quiz_model->getQuestion($question_id);
+       
+        $this->load->view('admin/common/header');
+        $this->load->view('admin/quiz/edit_question',$data);
         $this->load->view('admin/common/footer');
     }
         
+    
+     // List Questions
+    public function list_quiz_question($quiz_id) {
+
+        $data['questions'] = $this->quiz_model->getAllQuestion($quiz_id);
+        $data['quiz_details'] = $this->quiz_model->getQuiz($quiz_id);
+        
+       
+        $this->load->view('admin/common/header');
+        $this->load->view('admin/quiz/list_question', $data);
+        $this->load->view('admin/common/footer');
+    }
+    
+    public function delete_question($quiz_id,$question_id)
+    {
+     
+        $this->quiz_model->deleteQuestion($question_id);
+        $this->session->set_flashdata('Success', 'Question deleted successfully.');
+        redirect('usadmin/quiz/question/list/'.$quiz_id, 'refresh');
+        
+    }
     
     
     

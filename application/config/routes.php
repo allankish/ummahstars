@@ -124,8 +124,10 @@ $route['usadmin/quiz'] = 'admin/quiz/list_quiz';
 $route['usadmin/quiz/add'] = 'admin/quiz/add_quiz';
 $route['usadmin/quiz/edit/(:num)'] = 'admin/quiz/edit_quiz/$1';
 $route['usadmin/quiz/delete/(:num)'] = 'admin/quiz/delete_quiz/$1';
-$route['usadmin/quiz/questions/list/(:num)'] = 'admin/quiz/list_quiz_question/$1';
-$route['usadmin/quiz/questions/add/(:num)'] = 'admin/quiz/add_quiz_question/$1';
+$route['usadmin/quiz/question/list/(:num)'] = 'admin/quiz/list_quiz_question/$1';
+$route['usadmin/quiz/question/add/(:num)'] = 'admin/quiz/add_quiz_question/$1';
+$route['usadmin/quiz/question/edit/(:num)/(:num)'] = 'admin/quiz/edit_quiz_question/$1/$2';
+$route['usadmin/quiz/question/delete/(:num)/(:num)'] = 'admin/quiz/delete_question/$1/$2';
 
 // Goals
 $route['usadmin/goals'] = 'admin/goals/list_goals';

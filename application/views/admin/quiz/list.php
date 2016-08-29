@@ -64,7 +64,7 @@
                                     <td><?php echo $quiz['category_name']?></td>
                                     <td><?php echo $quiz['age_group_name']?></td>
                                     <td><?php echo $quiz['created_date']?></td>
-                                    <td><a href="<?php echo base_url().'usadmin/quiz/edit/'. $quiz['quiz_id']?>">Edit</a> | <a class="delete_quiz" href="<?php echo base_url().'usadmin/quiz/delete/'. $quiz['quiz_id']?>">Delete</a> | <a class="questions" href="<?php echo base_url().'usadmin/quiz/questions/list/'. $quiz['quiz_id']?>">Questions</a></td>
+                                    <td><a href="<?php echo base_url().'usadmin/quiz/edit/'. $quiz['quiz_id']?>">Edit</a> | <a class="delete_quiz" href="<?php echo base_url().'usadmin/quiz/delete/'. $quiz['quiz_id']?>">Delete</a> | <a class="questions" href="<?php echo base_url().'usadmin/quiz/question/list/'. $quiz['quiz_id']?>">Questions</a></td>
                                     
                                 </tr>
                                     

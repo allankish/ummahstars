@@ -35,39 +35,53 @@
                 <?php } ?>
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Add Question</h3>
+                        <h3 class="box-title">Edit Question</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" name="question_form" action="<?php echo base_url(); ?>usadmin/quiz/question/add/<?php echo $quiz_details[0]['quiz_id']?>" method="post" enctype="multipart/form-data">
+                    <form role="form" name="question_form" action="<?php echo base_url(); ?>usadmin/quiz/question/edit/<?php echo $quiz_details[0]['quiz_id']?>/<?php echo $question_details[0]['question_id']?>" method="post" enctype="multipart/form-data">
                         <div class="box-body">
                             <div class="form-group col-xs-9">
                                 <label for="quiz_title">Question</label>
-                                <textarea name="question" placeholder="Enter Question" class="form-control"><?php echo $this->session->flashdata('question') ?></textarea>
+                                <textarea name="question" placeholder="Enter Question" class="form-control"><?php echo $question_details[0]['question'] ?></textarea>
                             </div>
+                            
                             <div class="form-group col-xs-7" id="question_options">    
-                                <div class="option-wrapper">
-                                <label>Option1</label>
-                                <input type="text" size="50" name="option1" id="option1">                               
+                            <?php
+                            $options = unserialize($question_details[0]['options']);
+                            $indi = 0;
+                            foreach($options as $opt)
+                            {
+                                $indi++;
+                               ?>
+                                <div class="option-wrapper" id="option_wrapper_<?php echo $indi?>">
+                                <label>Option<?php echo $indi?></label>
+                                <input type="text" size="50" name="<?php echo $opt['option_value']?>" id="<?php echo $opt['option_value']?>" value="<?php echo $opt['option_label']?>">                               
                           
                                 <div class="radio radio-align">
                                 <label>
-                                <input type="radio" name="answer" value="option1">
+                                <input type="radio" name="answer" <?php if($opt['option_value'] == $question_details[0]['answer']) echo 'checked=""'?> value="<?php echo $opt['option_value']?>">
                                 Is Answer
                                 </label>
                                 </div>  
+                                <?php
+                                if($indi > 2)
+                                {
+                                    ?>
+                                    <div class="radio-align"><a href="javascript:void(0);" class="remove_options_val" option_id="<?php echo $indi?>" id="remove_option_<?php echo $indi?>">Remove</a></div>
+                                    <?php
+                                }
+                                ?>
                                 </div>  
-                                <div class="option-wrapper">
-                                <label>Option2</label>
-                                <input type="text" size="50" name="option2" id="option2">                               
-                          
-                                <div class="radio radio-align">
-                                <label>
-                                <input type="radio" name="answer" value="option2">
-                                Is Answer
-                                </label>
-                                </div>  
-                                </div>  
+                                
+                               <?php
+                                
+                            }
+                            ?>
+                            
+                            
+                                
+                               
                             </div>
                             
                             <div class="form-group col-xs-9">
@@ -77,19 +91,19 @@
                             </div>
                             
                             
-                            <input type="hidden" id="total_options" name="total_options" value="2"/>
+                            <input type="hidden" id="total_options" name="total_options" value="<?php echo sizeof($options)?>"/>
                             
                             <div class="form-group col-xs-9">
                                 <label>Status</label>
                                 <div class="radio">
                                 <label>
-                                    <input type="radio" checked="" value="active" id="status" name="status">
+                                    <input type="radio" <?php if($question_details[0]['status'] == 'active') echo 'checked=""'?> value="active" id="status" name="status">
                                      Active
                                 </label>
                                 </div>
                                 <div class="radio">
                                 <label>
-                                    <input type="radio" value="inactive" id="status" name="status">
+                                    <input type="radio" <?php if($question_details[0]['status'] == 'inactive') echo 'checked=""'?> value="inactive" id="status" name="status">
                                      InActive
                                 </label>
                                 </div>
@@ -98,7 +112,7 @@
                         <!-- /.box-body -->
 
                         <div class="box-footer">
-                            <button type="submit" id="section_submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" id="section_submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>
                 </div>		  
@@ -124,7 +138,8 @@ $(document).ready(function(){
      $('#question_options').append('<div class="option-wrapper" id="option_wrapper_'+added_option+'"><label>Option'+added_option+' </label>\n\
                                     <input type="text" size="50" name="option'+added_option+'" id="option'+added_option+'">\n\
                                     <div class="radio radio-align"><label><input type="radio" name="answer" value="option'+added_option+'">Is Answer</label>\n\
-                                    </div><div class="radio-align"><a href="javascript:void(0);" class="remove_options_val" option_id="'+added_option+'" id="remove_option_'+added_option+'">Remove</a></div></div>'); 
+                                    </div><div class="radio-align"><a href="javascript:void(0);" class="remove_options_val" option_id="'+added_option+'" \n\
+                                    id="remove_option_'+added_option+'">Remove</a></div></div>'); 
        
        $('#total_options').val(added_option);
        $('#remove_option_'+curr_options).hide();
