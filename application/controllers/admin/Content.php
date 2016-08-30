@@ -61,6 +61,11 @@ class Content extends CI_Controller {
                     'rules' => 'trim|required'
                 ),
                 array(
+                    'field' => 'template',
+                    'label' => 'Template',
+                    'rules' => 'trim|required'
+                ),
+                array(
                     'field' => 'age_group_id',
                     'label' => 'Age Group',
                     'rules' => 'trim|required'
@@ -90,6 +95,7 @@ class Content extends CI_Controller {
                     "section_id"  => $this->input->post('section_id'),
                     "category_id"  => $this->input->post('category_id'),
                     "content_type"  => $this->input->post('content_type'),
+                    "template" => $this->input->post('template'),
                     "content"  => $this->input->post('content'),
                     "video_url" => $video_url,
                     "age_group_id"  => $this->input->post('age_group_id'),
@@ -105,7 +111,8 @@ class Content extends CI_Controller {
             }
         }
         
-       
+        
+        $data['templates'] = $this->getTemplateFiles();
         $data['sections'] = $this->categories_model->getAllSections();
         $data['age_groups'] = $this->age_groups_model->get_all_age_groups();
         
@@ -245,6 +252,25 @@ class Content extends CI_Controller {
 		$this->form_validation->set_message('video_upload', "No file selected");
 		return false;
 	}
-}
+    }
+    
+    public function getTemplateFiles()
+    {
+        
+        $files = glob('./application/views/front/content-templates/*.php');
+        
+        $templates = array();
+        $indi = 0;
+        foreach($files as $fname) 
+        {
+        $indi++;
+        preg_match( '|Template Name:(.*)$|mi', file_get_contents( $fname ), $header );
+        
+        $templates[$indi]['temp_path'] = $fname;
+        $templates[$indi]['temp_name'] = $header[1];
+        }
+        
+        return $templates;
+    }
     
 }

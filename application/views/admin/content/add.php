@@ -86,6 +86,21 @@
                                 </select>
                             </div>
                             
+                            <div class="form-group col-xs-9">
+                                <label>Template</label>
+                                <select class="form-control" id="template" name="template">
+                                    <option value="">Select Template</option>
+                                    <?php
+                                    foreach($templates as $tempfiles)
+                                    { 
+                                    ?>
+                                    <option value="<?php echo $tempfiles['temp_path']?>"><?php echo $tempfiles['temp_name']?></option>
+                                    <?php  
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            
                              <div class="form-group col-xs-9">
                                 <label for="sort_order">Sort Order</label>
                                 <input type="text" class="form-control" id="sort_order" name="sort_order"  value="<?php echo $this->session->flashdata('sort_order') ?>" placeholder="Enter Sort Order">
