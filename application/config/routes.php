@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+
 //$route['usadmin'] = 'welcome';
 /**
  * ADMIN PANEL
@@ -137,3 +137,9 @@ $route['usadmin/goals/delete'] = 'admin/goals/delete_goal';
 
 // Settings
 $route['usadmin/settings'] = 'admin/settings/view_settings';
+
+// Front End
+
+//Landing page
+
+$route['default_controller'] = 'landing';
