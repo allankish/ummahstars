@@ -141,6 +141,11 @@ class Content extends CI_Controller {
                     'rules' => 'trim|required'
                 ),
                 array(
+                    'field' => 'template',
+                    'label' => 'Template',
+                    'rules' => 'trim|required'
+                ),
+                array(
                     'field' => 'age_group_id',
                     'label' => 'Age Group',
                     'rules' => 'trim|required'
@@ -153,8 +158,8 @@ class Content extends CI_Controller {
             );
             
             
-             $video_url = $this->input->post('video_url_val');
-             $content = $this->input->post('content');
+            $video_url = $this->input->post('video_url_val');
+            $content = $this->input->post('content');
             
             if($this->input->post('content_type') == 'video')
             {
@@ -180,6 +185,7 @@ class Content extends CI_Controller {
                     "section_id"  => $this->input->post('section_id'),
                     "category_id"  => $this->input->post('category_id'),
                     "content_type"  => $this->input->post('content_type'),
+                    "template" => $this->input->post('template'),
                     "content"  => $content,
                     "video_url" => $video_url,
                     "age_group_id"  => $this->input->post('age_group_id'),

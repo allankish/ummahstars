@@ -207,7 +207,7 @@ class Quiz extends CI_Controller {
         
     }
     
-    // Add Quiz
+    // Add Question
     public function add_quiz_question($quiz_id) {
          if ($_SERVER['REQUEST_METHOD'] == 'POST') { //allow only the http method is POST
             $config = array(
