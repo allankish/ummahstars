@@ -78,7 +78,7 @@
                             <?php
                             }
                             ?>
-                            <inpu type="hidden" name="video_url_val" value="<?php echo $content[0]['video_url']?>"/>
+                            <input type="hidden" name="video_url_val" value="<?php echo $content[0]['video_url']?>"/>
                             <div class="form-group col-xs-9" id="video_sec" <?php if($content[0]['content_type'] == 'text') echo 'style="display:none;"';?>>
                                 <label for="background_image">Upload Video</label><br />
                                 <input type="file" name="video_file" id="video_file">
@@ -99,6 +99,22 @@
                                     <?php endforeach; ?>
                                 </select>
                             </div>
+                            
+                            <div class="form-group col-xs-9">
+                                <label>Template</label>
+                                <select class="form-control" id="template" name="template">
+                                    <option value="">Select Template</option>
+                                    <?php
+                                    foreach($templates as $tempfiles)
+                                    { 
+                                    ?>
+                                    <option value="<?php echo $tempfiles['temp_path']?>" <?php if($content[0]['template'] == $tempfiles['temp_path']) echo 'selected'?>><?php echo $tempfiles['temp_name']?></option>
+                                    <?php  
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            
                             
                              <div class="form-group col-xs-9">
                                 <label for="sort_order">Sort Order</label>

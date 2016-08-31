@@ -195,7 +195,7 @@ class Content extends CI_Controller {
             }
         }
         
-        
+        $data['templates'] = $this->getTemplateFiles();
         $data['sections'] = $this->categories_model->getAllSections();
         $data['age_groups'] = $this->age_groups_model->get_all_age_groups();
         $data['content'] = $this->content_model->getContentById($content_id);
