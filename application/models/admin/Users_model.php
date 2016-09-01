@@ -27,6 +27,7 @@ class Users_Model extends CI_Model {
 
     public function get_users_list() {
         $this->db->select('*')->from($this->users_tbl)->order_by('user_id', 'asc');
+        $this->db->where('user_role', '2');
         $query = $this->db->get();
         return $result = $query->result_array();
     }
