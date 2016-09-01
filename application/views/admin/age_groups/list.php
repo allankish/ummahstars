@@ -36,6 +36,7 @@
                                 <tr>
                                     <th>Title</th>
                                     <th>Sort Order</th>
+                                    <th>Password Required</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -44,6 +45,7 @@
                                     <tr>
                                         <td><?php echo $age_group['age_group_name'] ?></td>
                                         <td><?php echo $age_group['sort_order'] ?></td>
+                                        <td><?php echo ($age_group['password_required'] === 'true') ? 'Yes':'No';?></td>
                                         <td><a href='<?php echo base_url() ?>usadmin/age-groups/edit/<?php echo $age_group['age_group_id'] ?>'>Edit</a> | <a id="delete_age_group-<?php echo $age_group["age_group_id"]; ?>" data-id="<?php echo $age_group["age_group_id"]; ?>" href='#'>Delete</a></td>
                                     </tr>
                                 <?php } ?>

@@ -38,6 +38,14 @@
                                 <label for="sort_order">Sort Order</label>
                                 <input type="text" name="sort_order" class="form-control" id="sort_order" placeholder="Enter Sort Order">
                             </div>
+                            <div class="form-group col-xs-9">
+                                <div class="checkbox">
+                                    <label for="password_required">
+                                        <input checked="checked" type="checkbox" name="password_required" id="password_required" value="true" />
+                                        Password required to login
+                                    </label>
+                                </div>
+                            </div>
 
                         </div>
                         <!-- /.box-body -->

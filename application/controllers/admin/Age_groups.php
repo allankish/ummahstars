@@ -41,7 +41,8 @@ class Age_groups extends CI_Controller {
             $this->form_validation->set_rules('sort_order', 'Sort Order', 'trim|required');
             
             if ($this->form_validation->run() != FALSE) {
-                $data = array("age_group_name" => $this->input->post("age_group_name"), "sort_order" => $this->input->post("sort_order"));
+                $password_required = ($this->input->post('password_required') == 'true') ? 'true' : 'false';
+                $data = array("age_group_name" => $this->input->post("age_group_name"), "sort_order" => $this->input->post("sort_order"), "password_required" => $password_required);
                 $this->age_groups_model->add_age_group($data);
                 $this->session->set_flashdata('Success', 'Age Group added successfully.');
                 redirect('usadmin/age-groups', 'refresh');                
@@ -64,10 +65,12 @@ class Age_groups extends CI_Controller {
             $this->form_validation->set_rules('sort_order', 'Sort Order', 'trim|required');
             
             if ($this->form_validation->run() != FALSE) {
+                $password_required = ($this->input->post('password_required') == 'true') ? 'true' : 'false';
                 $data = array(
                             "age_group_id"      => $age_group_id, 
                             "age_group_name"    => $this->input->post("age_group_name"), 
-                            "sort_order"        => $this->input->post("sort_order")
+                            "sort_order"        => $this->input->post("sort_order"),
+                            "password_required" => $password_required
                         );
                 $this->age_groups_model->update_age_group($data);
                 $this->session->set_flashdata('Success', 'Age Group updated successfully.');
