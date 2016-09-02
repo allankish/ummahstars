@@ -16,21 +16,30 @@
                                         <div class="user-avatar-image-circle"><img src="<?php echo ($child['profile_image'] != '') ? base_url() . $child['profile_image'] : base_url() . 'assets/front/images/user.jpg'; ?>" alt="profile"/></div>
                                         <div><?php echo $child['uname']; ?></div>
                                     </div>
-                                    
-                                    <ul>
-                                        <?php if ($age_group['password_required'] === 'true'): ?>
-                                        <li>
-                                            <label>Password</label>
-                                            <input type="password" class="form-filed-style" placeholder="Enter your password"></li>
-                                        <?php endif; ?>
-                                        <li class="center-align"><a class="red-btn sign-in-btn" href="#"> Sign In</a></li>
 
+
+                                    <ul>
+                                        <form name="child_form-<?php echo $child["user_id"]; ?>" action="<?php echo base_url('dashboard'); ?>" method="post">
+                                            <?php if ($age_group['password_required'] === 'true'): ?>
+                                                <li>
+                                                    <label>Password</label>
+                                                    <input name="password" type="password" class="form-filed-style" placeholder="Enter your password">
+                                                </li>
+                                            <?php endif; ?>
+                                            <li class="center-align">
+                                                <input type="hidden" name="child_id" value="<?php echo $child['user_id']; ?>" />
+                                                <input type="hidden" name="passkey" value="<?php echo $child['password']; ?>" />
+                                                <input type="hidden" name="pass_req" value="<?php echo $age_group['password_required']; ?>" />
+                                                <button type="submit" class="red-btn sign-in-btn" >Sign In</button>
+                                            </li>
+                                        </form> 
                                         <li class="center-align"><a href="#">Forgot password?</a></li>
 
                                     </ul>
-                                    
+
                                 </div>
                             </div>
+
                             <?php
                         }
                     } else {
