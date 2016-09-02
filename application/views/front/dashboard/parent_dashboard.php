@@ -12,7 +12,7 @@
             <li><a href="#" class="home-btn-left yellow-btn-left">PROGRESS</a></li>
             <li><a href="#" class="home-btn-left yellow-btn-left">PUZZLES</a></li>
             <li><a href="#" class="home-btn-left yellow-btn-left">SETTINGS</a></li>
-            <li><a href="#" class="home-btn-left yellow-btn-left">LOG OFF</a></li>
+            <li><a href="<?php echo base_url(); ?>logout" class="home-btn-left yellow-btn-left">LOG OFF</a></li>
         </ul>
     </div>
 

@@ -30,3 +30,15 @@ if (!function_exists('cipl_user_auth')) {
     }
 
 }
+
+if (!function_exists('cipl_child_auth')) {
+
+    function cipl_child_auth() {
+        $CI = & get_instance();
+        $is_child_auth = $CI->session->userdata('child_auth');
+        if (!isset($is_child_auth) || $is_child_auth != true) {
+            redirect('/dashboard');
+            die();
+        }
+    }
+}

@@ -19,7 +19,7 @@ class Dashboard extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->model('dashboard_model');
         $this->load->model('auth_model');
-
+        
         cipl_user_auth();
     }
 
@@ -45,6 +45,8 @@ class Dashboard extends CI_Controller {
                     
                     if (isset($result) && sizeof($result) > 0) {
                         $child_details = $result[0];
+                        $age_group_details = $this->dashboard_model->get_age_group($child_details['age_group']);
+
                         $child_array = array(
                             "child_details" => array(
                                 "user_id" => $child_details['user_id'],
@@ -54,6 +56,8 @@ class Dashboard extends CI_Controller {
                                 "profile_image" => $child_details['profile_image'],
                                 "parent_id" => $child_details['parent_id']
                             ),
+                            "child_age_group_id" => $child_details['age_group'],
+                            "child_age_group_name" => $age_group_details[0]['age_group_name'],
                             "child_auth" => true
                         );
 
@@ -73,15 +77,18 @@ class Dashboard extends CI_Controller {
                     
                     if (isset($result) && sizeof($result) > 0) {
                         $child_details = $result[0];
+                        $age_group_details = $this->dashboard_model->get_age_group($child_details['age_group']);
+                        
                         $child_array = array(
                             "child_details" => array(
                                 "user_id" => $child_details['user_id'],
-                                "email_id" => $child_details['email_id'],
                                 "uname" => $child_details['uname'],
                                 "gender" => $child_details['gender'],
                                 "profile_image" => $child_details['profile_image'],
                                 "parent_id" => $child_details['parent_id']
                             ),
+                            "child_age_group_id" => $child_details['age_group'],
+                            "child_age_group_name" => $age_group_details[0]['age_group_name'],
                             "child_auth" => true
                         );
 
@@ -113,17 +120,35 @@ class Dashboard extends CI_Controller {
         $this->load->view('front/common/header');
 
         if ($parent_details['child_mode'] === 'false') {
-            $this->load->view('front/dashboard/parent_index', $data);
+            $this->load->view('front/dashboard/parent_dashboard', $data);
         } else {
-            $this->load->view('front/dashboard/child_index', $data);
+            $this->load->view('front/dashboard/child_login', $data);
         }
 
         $this->load->view('front/common/footer');
     }
     
     public function child() {
+        // check child authentication is valid
+        cipl_child_auth();
+        
+        $child_age_group = $this->session->userdata('child_age_group_name');
+        $child_age_group = str_replace(' ', '', $child_age_group);
         $this->load->view('front/common/header');
-        $this->load->view('front/dashboard/child_sections');
+        $this->load->view('front/dashboard/child_dashboard_' . $child_age_group);
         $this->load->view('front/common/footer');
+    }
+    
+    public function child_logout() {
+        if ($this->session->userdata('child_auth')) {
+            $unset_items = array(
+                            'child_details',
+                            'child_age_group_id',
+                            'child_age_group_name',
+                            'child_auth'
+                            );
+            $this->session->unset_userdata($unset_items);
+        }
+        redirect('dashboard', 'refresh');
     }
 }

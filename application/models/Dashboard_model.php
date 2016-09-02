@@ -34,4 +34,9 @@ class Dashboard_Model extends CI_Model {
         $age_groups = $query->result_array();
         return $age_groups;
     }
+    
+    public function get_age_group($age_group_id) {
+        $query = $this->db->select('*')->where('age_group_id', $age_group_id)->from($this->age_groups_tbl)->get();
+        return $query->result_array();
+    }
 }

@@ -14,7 +14,7 @@ class Logout extends CI_Controller {
 
     public function index() {
         if ($this->session->userdata('user_auth')) {
-            $unset_items = array('user_details' => '', 'user_auth' => '');
+            $unset_items = array('user_details', 'user_auth');
 
             $this->session->unset_userdata($unset_items);
 
