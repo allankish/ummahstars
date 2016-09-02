@@ -25,7 +25,7 @@ class Dashboard extends CI_Controller {
 
     public function index() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if ($this->input->post('pass_required') === 'true') {
+            if ($this->input->post('pass_req') === 'true') {
                 $config = array(
                     array(
                         'field' => 'password',

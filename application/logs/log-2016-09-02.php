@@ -3083,3 +3083,615 @@ DEBUG - 2016-09-02 13:18:32 --> Global POST, GET and COOKIE data sanitized
 INFO - 2016-09-02 13:18:32 --> Input Class Initialized
 INFO - 2016-09-02 13:18:32 --> Language Class Initialized
 ERROR - 2016-09-02 13:18:32 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:23:30 --> Config Class Initialized
+INFO - 2016-09-02 13:23:30 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:23:30 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:23:30 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:23:30 --> URI Class Initialized
+INFO - 2016-09-02 13:23:30 --> Router Class Initialized
+INFO - 2016-09-02 13:23:30 --> Output Class Initialized
+INFO - 2016-09-02 13:23:30 --> Security Class Initialized
+DEBUG - 2016-09-02 13:23:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:23:30 --> Input Class Initialized
+INFO - 2016-09-02 13:23:30 --> Language Class Initialized
+INFO - 2016-09-02 13:23:30 --> Loader Class Initialized
+INFO - 2016-09-02 13:23:30 --> Helper loaded: url_helper
+INFO - 2016-09-02 13:23:30 --> Helper loaded: cookie_helper
+INFO - 2016-09-02 13:23:30 --> Helper loaded: cipl_auth_helper
+INFO - 2016-09-02 13:23:30 --> Helper loaded: cipl_common_helper
+INFO - 2016-09-02 13:23:30 --> Database Driver Class Initialized
+DEBUG - 2016-09-02 13:23:31 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-09-02 13:23:31 --> Session: Class initialized using 'files' driver.
+INFO - 2016-09-02 13:23:31 --> Controller Class Initialized
+DEBUG - 2016-09-02 13:23:31 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-09-02 13:23:31 --> Helper loaded: form_helper
+INFO - 2016-09-02 13:23:31 --> Form Validation Class Initialized
+INFO - 2016-09-02 13:23:31 --> Model Class Initialized
+INFO - 2016-09-02 13:23:31 --> Model Class Initialized
+INFO - 2016-09-02 13:23:31 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/header.php
+INFO - 2016-09-02 13:23:31 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/dashboard/child_dashboard_4-6.php
+INFO - 2016-09-02 13:23:31 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/footer.php
+INFO - 2016-09-02 13:23:31 --> Final output sent to browser
+DEBUG - 2016-09-02 13:23:31 --> Total execution time: 1.2921
+INFO - 2016-09-02 13:23:31 --> Config Class Initialized
+INFO - 2016-09-02 13:23:31 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:23:31 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:23:31 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:23:31 --> URI Class Initialized
+INFO - 2016-09-02 13:23:31 --> Config Class Initialized
+INFO - 2016-09-02 13:23:31 --> Hooks Class Initialized
+INFO - 2016-09-02 13:23:31 --> Router Class Initialized
+INFO - 2016-09-02 13:23:31 --> Output Class Initialized
+DEBUG - 2016-09-02 13:23:31 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:23:31 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:23:31 --> Security Class Initialized
+DEBUG - 2016-09-02 13:23:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:23:31 --> URI Class Initialized
+INFO - 2016-09-02 13:23:31 --> Input Class Initialized
+INFO - 2016-09-02 13:23:31 --> Language Class Initialized
+INFO - 2016-09-02 13:23:31 --> Router Class Initialized
+ERROR - 2016-09-02 13:23:31 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:23:31 --> Output Class Initialized
+INFO - 2016-09-02 13:23:31 --> Security Class Initialized
+DEBUG - 2016-09-02 13:23:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:23:31 --> Input Class Initialized
+INFO - 2016-09-02 13:23:31 --> Language Class Initialized
+ERROR - 2016-09-02 13:23:31 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:23:32 --> Config Class Initialized
+INFO - 2016-09-02 13:23:32 --> Hooks Class Initialized
+INFO - 2016-09-02 13:23:32 --> Config Class Initialized
+INFO - 2016-09-02 13:23:32 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:23:32 --> UTF-8 Support Enabled
+DEBUG - 2016-09-02 13:23:32 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:23:32 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:23:32 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:23:32 --> URI Class Initialized
+INFO - 2016-09-02 13:23:32 --> URI Class Initialized
+INFO - 2016-09-02 13:23:32 --> Router Class Initialized
+INFO - 2016-09-02 13:23:32 --> Router Class Initialized
+INFO - 2016-09-02 13:23:32 --> Output Class Initialized
+INFO - 2016-09-02 13:23:32 --> Output Class Initialized
+INFO - 2016-09-02 13:23:32 --> Security Class Initialized
+INFO - 2016-09-02 13:23:32 --> Security Class Initialized
+DEBUG - 2016-09-02 13:23:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:23:32 --> Input Class Initialized
+DEBUG - 2016-09-02 13:23:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:23:32 --> Language Class Initialized
+INFO - 2016-09-02 13:23:32 --> Input Class Initialized
+INFO - 2016-09-02 13:23:32 --> Language Class Initialized
+ERROR - 2016-09-02 13:23:32 --> 404 Page Not Found: Assets/front
+ERROR - 2016-09-02 13:23:32 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:23:34 --> Config Class Initialized
+INFO - 2016-09-02 13:23:34 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:23:34 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:23:34 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:23:34 --> URI Class Initialized
+DEBUG - 2016-09-02 13:23:34 --> No URI present. Default controller set.
+INFO - 2016-09-02 13:23:34 --> Router Class Initialized
+INFO - 2016-09-02 13:23:34 --> Output Class Initialized
+INFO - 2016-09-02 13:23:34 --> Security Class Initialized
+DEBUG - 2016-09-02 13:23:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:23:34 --> Input Class Initialized
+INFO - 2016-09-02 13:23:34 --> Language Class Initialized
+INFO - 2016-09-02 13:23:34 --> Loader Class Initialized
+INFO - 2016-09-02 13:23:34 --> Helper loaded: url_helper
+INFO - 2016-09-02 13:23:34 --> Helper loaded: cookie_helper
+INFO - 2016-09-02 13:23:34 --> Helper loaded: cipl_auth_helper
+INFO - 2016-09-02 13:23:34 --> Helper loaded: cipl_common_helper
+INFO - 2016-09-02 13:23:35 --> Database Driver Class Initialized
+DEBUG - 2016-09-02 13:23:36 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-09-02 13:23:36 --> Session: Class initialized using 'files' driver.
+INFO - 2016-09-02 13:23:36 --> Controller Class Initialized
+INFO - 2016-09-02 13:23:36 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/landing/home.php
+INFO - 2016-09-02 13:23:36 --> Final output sent to browser
+DEBUG - 2016-09-02 13:23:36 --> Total execution time: 1.3241
+INFO - 2016-09-02 13:23:39 --> Config Class Initialized
+INFO - 2016-09-02 13:23:39 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:23:39 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:23:39 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:23:39 --> URI Class Initialized
+INFO - 2016-09-02 13:23:39 --> Router Class Initialized
+INFO - 2016-09-02 13:23:39 --> Output Class Initialized
+INFO - 2016-09-02 13:23:39 --> Security Class Initialized
+DEBUG - 2016-09-02 13:23:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:23:39 --> Input Class Initialized
+INFO - 2016-09-02 13:23:39 --> Language Class Initialized
+INFO - 2016-09-02 13:23:39 --> Loader Class Initialized
+INFO - 2016-09-02 13:23:39 --> Helper loaded: url_helper
+INFO - 2016-09-02 13:23:39 --> Helper loaded: cookie_helper
+INFO - 2016-09-02 13:23:39 --> Helper loaded: cipl_auth_helper
+INFO - 2016-09-02 13:23:39 --> Helper loaded: cipl_common_helper
+INFO - 2016-09-02 13:23:39 --> Database Driver Class Initialized
+DEBUG - 2016-09-02 13:23:40 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-09-02 13:23:40 --> Session: Class initialized using 'files' driver.
+INFO - 2016-09-02 13:23:40 --> Controller Class Initialized
+DEBUG - 2016-09-02 13:23:40 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-09-02 13:23:40 --> Helper loaded: form_helper
+INFO - 2016-09-02 13:23:40 --> Form Validation Class Initialized
+INFO - 2016-09-02 13:23:40 --> Model Class Initialized
+INFO - 2016-09-02 13:23:40 --> Model Class Initialized
+INFO - 2016-09-02 13:23:40 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/header.php
+INFO - 2016-09-02 13:23:40 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/dashboard/child_dashboard_4-6.php
+INFO - 2016-09-02 13:23:40 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/footer.php
+INFO - 2016-09-02 13:23:40 --> Final output sent to browser
+DEBUG - 2016-09-02 13:23:40 --> Total execution time: 1.3701
+INFO - 2016-09-02 13:24:15 --> Config Class Initialized
+INFO - 2016-09-02 13:24:15 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:24:15 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:24:15 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:24:15 --> URI Class Initialized
+INFO - 2016-09-02 13:24:15 --> Router Class Initialized
+INFO - 2016-09-02 13:24:15 --> Output Class Initialized
+INFO - 2016-09-02 13:24:15 --> Security Class Initialized
+DEBUG - 2016-09-02 13:24:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:24:15 --> Input Class Initialized
+INFO - 2016-09-02 13:24:15 --> Language Class Initialized
+INFO - 2016-09-02 13:24:16 --> Loader Class Initialized
+INFO - 2016-09-02 13:24:16 --> Helper loaded: url_helper
+INFO - 2016-09-02 13:24:16 --> Helper loaded: cookie_helper
+INFO - 2016-09-02 13:24:16 --> Helper loaded: cipl_auth_helper
+INFO - 2016-09-02 13:24:16 --> Helper loaded: cipl_common_helper
+INFO - 2016-09-02 13:24:16 --> Database Driver Class Initialized
+DEBUG - 2016-09-02 13:24:17 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-09-02 13:24:17 --> Session: Class initialized using 'files' driver.
+INFO - 2016-09-02 13:24:17 --> Controller Class Initialized
+DEBUG - 2016-09-02 13:24:17 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-09-02 13:24:17 --> Helper loaded: form_helper
+INFO - 2016-09-02 13:24:17 --> Form Validation Class Initialized
+INFO - 2016-09-02 13:24:17 --> Model Class Initialized
+INFO - 2016-09-02 13:24:17 --> Model Class Initialized
+INFO - 2016-09-02 13:24:17 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/header.php
+INFO - 2016-09-02 13:24:17 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/dashboard/child_dashboard_4-6.php
+INFO - 2016-09-02 13:24:17 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/footer.php
+INFO - 2016-09-02 13:24:17 --> Final output sent to browser
+DEBUG - 2016-09-02 13:24:17 --> Total execution time: 1.3111
+INFO - 2016-09-02 13:24:18 --> Config Class Initialized
+INFO - 2016-09-02 13:24:18 --> Config Class Initialized
+INFO - 2016-09-02 13:24:18 --> Hooks Class Initialized
+INFO - 2016-09-02 13:24:18 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:24:18 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:24:18 --> Utf8 Class Initialized
+DEBUG - 2016-09-02 13:24:18 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:24:18 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:24:18 --> URI Class Initialized
+INFO - 2016-09-02 13:24:18 --> URI Class Initialized
+INFO - 2016-09-02 13:24:18 --> Router Class Initialized
+INFO - 2016-09-02 13:24:18 --> Router Class Initialized
+INFO - 2016-09-02 13:24:18 --> Output Class Initialized
+INFO - 2016-09-02 13:24:18 --> Output Class Initialized
+INFO - 2016-09-02 13:24:18 --> Security Class Initialized
+INFO - 2016-09-02 13:24:18 --> Security Class Initialized
+DEBUG - 2016-09-02 13:24:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:24:18 --> Input Class Initialized
+INFO - 2016-09-02 13:24:18 --> Language Class Initialized
+DEBUG - 2016-09-02 13:24:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:24:18 --> Input Class Initialized
+ERROR - 2016-09-02 13:24:18 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:24:18 --> Language Class Initialized
+ERROR - 2016-09-02 13:24:18 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:24:18 --> Config Class Initialized
+INFO - 2016-09-02 13:24:18 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:24:18 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:24:18 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:24:18 --> URI Class Initialized
+INFO - 2016-09-02 13:24:18 --> Router Class Initialized
+INFO - 2016-09-02 13:24:18 --> Config Class Initialized
+INFO - 2016-09-02 13:24:18 --> Hooks Class Initialized
+INFO - 2016-09-02 13:24:18 --> Output Class Initialized
+DEBUG - 2016-09-02 13:24:18 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:24:18 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:24:18 --> Security Class Initialized
+INFO - 2016-09-02 13:24:18 --> URI Class Initialized
+DEBUG - 2016-09-02 13:24:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:24:18 --> Router Class Initialized
+INFO - 2016-09-02 13:24:18 --> Input Class Initialized
+INFO - 2016-09-02 13:24:18 --> Language Class Initialized
+ERROR - 2016-09-02 13:24:18 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:24:18 --> Output Class Initialized
+INFO - 2016-09-02 13:24:18 --> Security Class Initialized
+DEBUG - 2016-09-02 13:24:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:24:18 --> Input Class Initialized
+INFO - 2016-09-02 13:24:18 --> Language Class Initialized
+ERROR - 2016-09-02 13:24:18 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:24:21 --> Config Class Initialized
+INFO - 2016-09-02 13:24:21 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:24:21 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:24:21 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:24:21 --> URI Class Initialized
+INFO - 2016-09-02 13:24:21 --> Router Class Initialized
+INFO - 2016-09-02 13:24:21 --> Output Class Initialized
+INFO - 2016-09-02 13:24:21 --> Security Class Initialized
+DEBUG - 2016-09-02 13:24:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:24:21 --> Input Class Initialized
+INFO - 2016-09-02 13:24:21 --> Language Class Initialized
+INFO - 2016-09-02 13:24:21 --> Loader Class Initialized
+INFO - 2016-09-02 13:24:21 --> Helper loaded: url_helper
+INFO - 2016-09-02 13:24:21 --> Helper loaded: cookie_helper
+INFO - 2016-09-02 13:24:21 --> Helper loaded: cipl_auth_helper
+INFO - 2016-09-02 13:24:21 --> Helper loaded: cipl_common_helper
+INFO - 2016-09-02 13:24:21 --> Database Driver Class Initialized
+DEBUG - 2016-09-02 13:24:22 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-09-02 13:24:22 --> Session: Class initialized using 'files' driver.
+INFO - 2016-09-02 13:24:22 --> Controller Class Initialized
+DEBUG - 2016-09-02 13:24:22 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-09-02 13:24:22 --> Helper loaded: form_helper
+INFO - 2016-09-02 13:24:22 --> Form Validation Class Initialized
+INFO - 2016-09-02 13:24:22 --> Model Class Initialized
+INFO - 2016-09-02 13:24:22 --> Model Class Initialized
+INFO - 2016-09-02 13:24:23 --> Config Class Initialized
+INFO - 2016-09-02 13:24:23 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:24:23 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:24:23 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:24:23 --> URI Class Initialized
+INFO - 2016-09-02 13:24:23 --> Router Class Initialized
+INFO - 2016-09-02 13:24:23 --> Output Class Initialized
+INFO - 2016-09-02 13:24:23 --> Security Class Initialized
+DEBUG - 2016-09-02 13:24:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:24:23 --> Input Class Initialized
+INFO - 2016-09-02 13:24:23 --> Language Class Initialized
+INFO - 2016-09-02 13:24:23 --> Loader Class Initialized
+INFO - 2016-09-02 13:24:23 --> Helper loaded: url_helper
+INFO - 2016-09-02 13:24:23 --> Helper loaded: cookie_helper
+INFO - 2016-09-02 13:24:23 --> Helper loaded: cipl_auth_helper
+INFO - 2016-09-02 13:24:23 --> Helper loaded: cipl_common_helper
+INFO - 2016-09-02 13:24:23 --> Database Driver Class Initialized
+DEBUG - 2016-09-02 13:24:24 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-09-02 13:24:24 --> Session: Class initialized using 'files' driver.
+INFO - 2016-09-02 13:24:24 --> Controller Class Initialized
+DEBUG - 2016-09-02 13:24:24 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-09-02 13:24:24 --> Helper loaded: form_helper
+INFO - 2016-09-02 13:24:24 --> Form Validation Class Initialized
+INFO - 2016-09-02 13:24:24 --> Model Class Initialized
+INFO - 2016-09-02 13:24:24 --> Model Class Initialized
+INFO - 2016-09-02 13:24:25 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/header.php
+INFO - 2016-09-02 13:24:25 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/dashboard/parent_dashboard.php
+INFO - 2016-09-02 13:24:25 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/footer.php
+INFO - 2016-09-02 13:24:25 --> Final output sent to browser
+DEBUG - 2016-09-02 13:24:25 --> Total execution time: 1.8461
+INFO - 2016-09-02 13:24:25 --> Config Class Initialized
+INFO - 2016-09-02 13:24:25 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:24:25 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:24:25 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:24:25 --> URI Class Initialized
+INFO - 2016-09-02 13:24:25 --> Router Class Initialized
+INFO - 2016-09-02 13:24:25 --> Output Class Initialized
+INFO - 2016-09-02 13:24:25 --> Security Class Initialized
+DEBUG - 2016-09-02 13:24:25 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:24:25 --> Input Class Initialized
+INFO - 2016-09-02 13:24:25 --> Language Class Initialized
+ERROR - 2016-09-02 13:24:25 --> 404 Page Not Found: Assets/userImages
+INFO - 2016-09-02 13:24:25 --> Config Class Initialized
+INFO - 2016-09-02 13:24:25 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:24:25 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:24:25 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:24:25 --> URI Class Initialized
+INFO - 2016-09-02 13:24:25 --> Router Class Initialized
+INFO - 2016-09-02 13:24:25 --> Output Class Initialized
+INFO - 2016-09-02 13:24:25 --> Security Class Initialized
+DEBUG - 2016-09-02 13:24:25 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:24:25 --> Input Class Initialized
+INFO - 2016-09-02 13:24:25 --> Language Class Initialized
+ERROR - 2016-09-02 13:24:25 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:24:25 --> Config Class Initialized
+INFO - 2016-09-02 13:24:25 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:24:25 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:24:25 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:24:25 --> URI Class Initialized
+INFO - 2016-09-02 13:24:25 --> Router Class Initialized
+INFO - 2016-09-02 13:24:25 --> Output Class Initialized
+INFO - 2016-09-02 13:24:25 --> Security Class Initialized
+DEBUG - 2016-09-02 13:24:25 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:24:25 --> Input Class Initialized
+INFO - 2016-09-02 13:24:25 --> Language Class Initialized
+ERROR - 2016-09-02 13:24:25 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:25:17 --> Config Class Initialized
+INFO - 2016-09-02 13:25:17 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:25:17 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:25:17 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:25:17 --> URI Class Initialized
+INFO - 2016-09-02 13:25:17 --> Router Class Initialized
+INFO - 2016-09-02 13:25:17 --> Output Class Initialized
+INFO - 2016-09-02 13:25:17 --> Security Class Initialized
+DEBUG - 2016-09-02 13:25:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:25:17 --> Input Class Initialized
+INFO - 2016-09-02 13:25:17 --> Language Class Initialized
+INFO - 2016-09-02 13:25:17 --> Loader Class Initialized
+INFO - 2016-09-02 13:25:17 --> Helper loaded: url_helper
+INFO - 2016-09-02 13:25:17 --> Helper loaded: cookie_helper
+INFO - 2016-09-02 13:25:17 --> Helper loaded: cipl_auth_helper
+INFO - 2016-09-02 13:25:17 --> Helper loaded: cipl_common_helper
+INFO - 2016-09-02 13:25:17 --> Database Driver Class Initialized
+DEBUG - 2016-09-02 13:25:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-09-02 13:25:18 --> Session: Class initialized using 'files' driver.
+INFO - 2016-09-02 13:25:18 --> Controller Class Initialized
+DEBUG - 2016-09-02 13:25:18 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-09-02 13:25:18 --> Helper loaded: form_helper
+INFO - 2016-09-02 13:25:18 --> Form Validation Class Initialized
+INFO - 2016-09-02 13:25:18 --> Model Class Initialized
+INFO - 2016-09-02 13:25:18 --> Model Class Initialized
+INFO - 2016-09-02 13:25:20 --> Config Class Initialized
+INFO - 2016-09-02 13:25:20 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:25:20 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:25:20 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:25:20 --> URI Class Initialized
+INFO - 2016-09-02 13:25:20 --> Router Class Initialized
+INFO - 2016-09-02 13:25:20 --> Output Class Initialized
+INFO - 2016-09-02 13:25:20 --> Security Class Initialized
+DEBUG - 2016-09-02 13:25:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:25:20 --> Input Class Initialized
+INFO - 2016-09-02 13:25:20 --> Language Class Initialized
+INFO - 2016-09-02 13:25:20 --> Loader Class Initialized
+INFO - 2016-09-02 13:25:20 --> Helper loaded: url_helper
+INFO - 2016-09-02 13:25:20 --> Helper loaded: cookie_helper
+INFO - 2016-09-02 13:25:20 --> Helper loaded: cipl_auth_helper
+INFO - 2016-09-02 13:25:20 --> Helper loaded: cipl_common_helper
+INFO - 2016-09-02 13:25:20 --> Database Driver Class Initialized
+DEBUG - 2016-09-02 13:25:21 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-09-02 13:25:21 --> Session: Class initialized using 'files' driver.
+INFO - 2016-09-02 13:25:21 --> Controller Class Initialized
+DEBUG - 2016-09-02 13:25:21 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-09-02 13:25:21 --> Helper loaded: form_helper
+INFO - 2016-09-02 13:25:21 --> Form Validation Class Initialized
+INFO - 2016-09-02 13:25:21 --> Model Class Initialized
+INFO - 2016-09-02 13:25:21 --> Model Class Initialized
+INFO - 2016-09-02 13:25:21 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/header.php
+INFO - 2016-09-02 13:25:21 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/dashboard/child_dashboard_7-10.php
+INFO - 2016-09-02 13:25:21 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/footer.php
+INFO - 2016-09-02 13:25:21 --> Final output sent to browser
+DEBUG - 2016-09-02 13:25:21 --> Total execution time: 1.2721
+INFO - 2016-09-02 13:25:22 --> Config Class Initialized
+INFO - 2016-09-02 13:25:22 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:25:22 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:25:22 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:25:22 --> URI Class Initialized
+INFO - 2016-09-02 13:25:22 --> Router Class Initialized
+INFO - 2016-09-02 13:25:22 --> Output Class Initialized
+INFO - 2016-09-02 13:25:22 --> Security Class Initialized
+DEBUG - 2016-09-02 13:25:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:25:22 --> Input Class Initialized
+INFO - 2016-09-02 13:25:22 --> Language Class Initialized
+ERROR - 2016-09-02 13:25:22 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:25:22 --> Config Class Initialized
+INFO - 2016-09-02 13:25:22 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:25:22 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:25:22 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:25:22 --> URI Class Initialized
+INFO - 2016-09-02 13:25:22 --> Router Class Initialized
+INFO - 2016-09-02 13:25:22 --> Config Class Initialized
+INFO - 2016-09-02 13:25:22 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:25:22 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:25:22 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:25:22 --> URI Class Initialized
+INFO - 2016-09-02 13:25:22 --> Output Class Initialized
+INFO - 2016-09-02 13:25:22 --> Security Class Initialized
+DEBUG - 2016-09-02 13:25:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:25:22 --> Input Class Initialized
+INFO - 2016-09-02 13:25:22 --> Language Class Initialized
+ERROR - 2016-09-02 13:25:22 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:25:22 --> Router Class Initialized
+INFO - 2016-09-02 13:25:22 --> Output Class Initialized
+INFO - 2016-09-02 13:25:22 --> Security Class Initialized
+DEBUG - 2016-09-02 13:25:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:25:22 --> Input Class Initialized
+INFO - 2016-09-02 13:25:22 --> Language Class Initialized
+ERROR - 2016-09-02 13:25:22 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:25:22 --> Config Class Initialized
+INFO - 2016-09-02 13:25:22 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:25:22 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:25:22 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:25:22 --> URI Class Initialized
+INFO - 2016-09-02 13:25:22 --> Router Class Initialized
+INFO - 2016-09-02 13:25:22 --> Output Class Initialized
+INFO - 2016-09-02 13:25:22 --> Security Class Initialized
+DEBUG - 2016-09-02 13:25:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:25:22 --> Input Class Initialized
+INFO - 2016-09-02 13:25:22 --> Language Class Initialized
+ERROR - 2016-09-02 13:25:22 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:25:32 --> Config Class Initialized
+INFO - 2016-09-02 13:25:32 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:25:32 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:25:32 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:25:32 --> URI Class Initialized
+INFO - 2016-09-02 13:25:32 --> Router Class Initialized
+INFO - 2016-09-02 13:25:32 --> Output Class Initialized
+INFO - 2016-09-02 13:25:32 --> Security Class Initialized
+DEBUG - 2016-09-02 13:25:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:25:32 --> Input Class Initialized
+INFO - 2016-09-02 13:25:32 --> Language Class Initialized
+INFO - 2016-09-02 13:25:32 --> Loader Class Initialized
+INFO - 2016-09-02 13:25:32 --> Helper loaded: url_helper
+INFO - 2016-09-02 13:25:32 --> Helper loaded: cookie_helper
+INFO - 2016-09-02 13:25:32 --> Helper loaded: cipl_auth_helper
+INFO - 2016-09-02 13:25:32 --> Helper loaded: cipl_common_helper
+INFO - 2016-09-02 13:25:32 --> Database Driver Class Initialized
+DEBUG - 2016-09-02 13:25:33 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-09-02 13:25:33 --> Session: Class initialized using 'files' driver.
+INFO - 2016-09-02 13:25:33 --> Controller Class Initialized
+DEBUG - 2016-09-02 13:25:33 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-09-02 13:25:33 --> Helper loaded: form_helper
+INFO - 2016-09-02 13:25:33 --> Form Validation Class Initialized
+INFO - 2016-09-02 13:25:33 --> Model Class Initialized
+INFO - 2016-09-02 13:25:33 --> Model Class Initialized
+INFO - 2016-09-02 13:25:34 --> Config Class Initialized
+INFO - 2016-09-02 13:25:34 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:25:34 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:25:34 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:25:34 --> URI Class Initialized
+INFO - 2016-09-02 13:25:34 --> Router Class Initialized
+INFO - 2016-09-02 13:25:34 --> Output Class Initialized
+INFO - 2016-09-02 13:25:34 --> Security Class Initialized
+DEBUG - 2016-09-02 13:25:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:25:34 --> Input Class Initialized
+INFO - 2016-09-02 13:25:34 --> Language Class Initialized
+INFO - 2016-09-02 13:25:34 --> Loader Class Initialized
+INFO - 2016-09-02 13:25:34 --> Helper loaded: url_helper
+INFO - 2016-09-02 13:25:34 --> Helper loaded: cookie_helper
+INFO - 2016-09-02 13:25:34 --> Helper loaded: cipl_auth_helper
+INFO - 2016-09-02 13:25:34 --> Helper loaded: cipl_common_helper
+INFO - 2016-09-02 13:25:34 --> Database Driver Class Initialized
+DEBUG - 2016-09-02 13:25:36 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-09-02 13:25:36 --> Session: Class initialized using 'files' driver.
+INFO - 2016-09-02 13:25:36 --> Controller Class Initialized
+DEBUG - 2016-09-02 13:25:36 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-09-02 13:25:36 --> Helper loaded: form_helper
+INFO - 2016-09-02 13:25:36 --> Form Validation Class Initialized
+INFO - 2016-09-02 13:25:36 --> Model Class Initialized
+INFO - 2016-09-02 13:25:36 --> Model Class Initialized
+INFO - 2016-09-02 13:25:37 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/header.php
+INFO - 2016-09-02 13:25:37 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/dashboard/parent_dashboard.php
+INFO - 2016-09-02 13:25:37 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/footer.php
+INFO - 2016-09-02 13:25:37 --> Final output sent to browser
+DEBUG - 2016-09-02 13:25:37 --> Total execution time: 2.5051
+INFO - 2016-09-02 13:25:38 --> Config Class Initialized
+INFO - 2016-09-02 13:25:38 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:25:38 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:25:38 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:25:38 --> URI Class Initialized
+INFO - 2016-09-02 13:25:38 --> Router Class Initialized
+INFO - 2016-09-02 13:25:38 --> Output Class Initialized
+INFO - 2016-09-02 13:25:38 --> Security Class Initialized
+DEBUG - 2016-09-02 13:25:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:25:38 --> Input Class Initialized
+INFO - 2016-09-02 13:25:38 --> Language Class Initialized
+ERROR - 2016-09-02 13:25:38 --> 404 Page Not Found: Assets/userImages
+INFO - 2016-09-02 13:25:38 --> Config Class Initialized
+INFO - 2016-09-02 13:25:38 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:25:38 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:25:38 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:25:38 --> URI Class Initialized
+INFO - 2016-09-02 13:25:38 --> Router Class Initialized
+INFO - 2016-09-02 13:25:38 --> Output Class Initialized
+INFO - 2016-09-02 13:25:38 --> Security Class Initialized
+DEBUG - 2016-09-02 13:25:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:25:38 --> Input Class Initialized
+INFO - 2016-09-02 13:25:38 --> Language Class Initialized
+ERROR - 2016-09-02 13:25:38 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:25:38 --> Config Class Initialized
+INFO - 2016-09-02 13:25:38 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:25:38 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:25:38 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:25:38 --> URI Class Initialized
+INFO - 2016-09-02 13:25:38 --> Router Class Initialized
+INFO - 2016-09-02 13:25:38 --> Output Class Initialized
+INFO - 2016-09-02 13:25:38 --> Security Class Initialized
+DEBUG - 2016-09-02 13:25:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:25:38 --> Input Class Initialized
+INFO - 2016-09-02 13:25:38 --> Language Class Initialized
+ERROR - 2016-09-02 13:25:38 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:26:37 --> Config Class Initialized
+INFO - 2016-09-02 13:26:37 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:26:37 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:26:37 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:26:37 --> URI Class Initialized
+INFO - 2016-09-02 13:26:37 --> Router Class Initialized
+INFO - 2016-09-02 13:26:37 --> Output Class Initialized
+INFO - 2016-09-02 13:26:37 --> Security Class Initialized
+DEBUG - 2016-09-02 13:26:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:26:37 --> Input Class Initialized
+INFO - 2016-09-02 13:26:37 --> Language Class Initialized
+INFO - 2016-09-02 13:26:37 --> Loader Class Initialized
+INFO - 2016-09-02 13:26:37 --> Helper loaded: url_helper
+INFO - 2016-09-02 13:26:37 --> Helper loaded: cookie_helper
+INFO - 2016-09-02 13:26:37 --> Helper loaded: cipl_auth_helper
+INFO - 2016-09-02 13:26:37 --> Helper loaded: cipl_common_helper
+INFO - 2016-09-02 13:26:37 --> Database Driver Class Initialized
+DEBUG - 2016-09-02 13:26:38 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-09-02 13:26:38 --> Session: Class initialized using 'files' driver.
+INFO - 2016-09-02 13:26:38 --> Controller Class Initialized
+DEBUG - 2016-09-02 13:26:38 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-09-02 13:26:38 --> Helper loaded: form_helper
+INFO - 2016-09-02 13:26:38 --> Form Validation Class Initialized
+INFO - 2016-09-02 13:26:38 --> Model Class Initialized
+INFO - 2016-09-02 13:26:38 --> Model Class Initialized
+INFO - 2016-09-02 13:27:18 --> Config Class Initialized
+INFO - 2016-09-02 13:27:18 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:27:18 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:27:18 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:27:18 --> URI Class Initialized
+INFO - 2016-09-02 13:27:18 --> Router Class Initialized
+INFO - 2016-09-02 13:27:18 --> Output Class Initialized
+INFO - 2016-09-02 13:27:18 --> Security Class Initialized
+DEBUG - 2016-09-02 13:27:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:27:18 --> Input Class Initialized
+INFO - 2016-09-02 13:27:18 --> Language Class Initialized
+INFO - 2016-09-02 13:27:18 --> Loader Class Initialized
+INFO - 2016-09-02 13:27:18 --> Helper loaded: url_helper
+INFO - 2016-09-02 13:27:18 --> Helper loaded: cookie_helper
+INFO - 2016-09-02 13:27:18 --> Helper loaded: cipl_auth_helper
+INFO - 2016-09-02 13:27:18 --> Helper loaded: cipl_common_helper
+INFO - 2016-09-02 13:27:18 --> Database Driver Class Initialized
+DEBUG - 2016-09-02 13:27:19 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-09-02 13:27:19 --> Session: Class initialized using 'files' driver.
+INFO - 2016-09-02 13:27:19 --> Controller Class Initialized
+DEBUG - 2016-09-02 13:27:19 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-09-02 13:27:19 --> Helper loaded: form_helper
+INFO - 2016-09-02 13:27:19 --> Form Validation Class Initialized
+INFO - 2016-09-02 13:27:19 --> Model Class Initialized
+INFO - 2016-09-02 13:27:19 --> Model Class Initialized
+INFO - 2016-09-02 13:27:35 --> Config Class Initialized
+INFO - 2016-09-02 13:27:35 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:27:35 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:27:35 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:27:35 --> URI Class Initialized
+INFO - 2016-09-02 13:27:35 --> Router Class Initialized
+INFO - 2016-09-02 13:27:35 --> Output Class Initialized
+INFO - 2016-09-02 13:27:35 --> Security Class Initialized
+DEBUG - 2016-09-02 13:27:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:27:35 --> Input Class Initialized
+INFO - 2016-09-02 13:27:35 --> Language Class Initialized
+INFO - 2016-09-02 13:27:35 --> Loader Class Initialized
+INFO - 2016-09-02 13:27:35 --> Helper loaded: url_helper
+INFO - 2016-09-02 13:27:35 --> Helper loaded: cookie_helper
+INFO - 2016-09-02 13:27:35 --> Helper loaded: cipl_auth_helper
+INFO - 2016-09-02 13:27:35 --> Helper loaded: cipl_common_helper
+INFO - 2016-09-02 13:27:36 --> Database Driver Class Initialized
+DEBUG - 2016-09-02 13:27:37 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2016-09-02 13:27:37 --> Session: Class initialized using 'files' driver.
+INFO - 2016-09-02 13:27:37 --> Controller Class Initialized
+DEBUG - 2016-09-02 13:27:37 --> Session class already loaded. Second attempt ignored.
+INFO - 2016-09-02 13:27:37 --> Helper loaded: form_helper
+INFO - 2016-09-02 13:27:37 --> Form Validation Class Initialized
+INFO - 2016-09-02 13:27:37 --> Model Class Initialized
+INFO - 2016-09-02 13:27:37 --> Model Class Initialized
+INFO - 2016-09-02 13:27:37 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2016-09-02 13:27:37 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/header.php
+INFO - 2016-09-02 13:27:37 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/dashboard/parent_dashboard.php
+INFO - 2016-09-02 13:27:37 --> File loaded: C:\xampp\htdocs\ummahstars\application\views\front/common/footer.php
+INFO - 2016-09-02 13:27:37 --> Final output sent to browser
+DEBUG - 2016-09-02 13:27:37 --> Total execution time: 1.7961
+INFO - 2016-09-02 13:27:38 --> Config Class Initialized
+INFO - 2016-09-02 13:27:38 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:27:38 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:27:38 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:27:38 --> URI Class Initialized
+INFO - 2016-09-02 13:27:38 --> Router Class Initialized
+INFO - 2016-09-02 13:27:38 --> Output Class Initialized
+INFO - 2016-09-02 13:27:38 --> Security Class Initialized
+DEBUG - 2016-09-02 13:27:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:27:38 --> Input Class Initialized
+INFO - 2016-09-02 13:27:38 --> Language Class Initialized
+ERROR - 2016-09-02 13:27:38 --> 404 Page Not Found: Assets/userImages
+INFO - 2016-09-02 13:27:38 --> Config Class Initialized
+INFO - 2016-09-02 13:27:38 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:27:38 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:27:38 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:27:38 --> URI Class Initialized
+INFO - 2016-09-02 13:27:38 --> Router Class Initialized
+INFO - 2016-09-02 13:27:38 --> Output Class Initialized
+INFO - 2016-09-02 13:27:38 --> Security Class Initialized
+DEBUG - 2016-09-02 13:27:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:27:38 --> Input Class Initialized
+INFO - 2016-09-02 13:27:38 --> Language Class Initialized
+ERROR - 2016-09-02 13:27:38 --> 404 Page Not Found: Assets/front
+INFO - 2016-09-02 13:27:38 --> Config Class Initialized
+INFO - 2016-09-02 13:27:38 --> Hooks Class Initialized
+DEBUG - 2016-09-02 13:27:38 --> UTF-8 Support Enabled
+INFO - 2016-09-02 13:27:38 --> Utf8 Class Initialized
+INFO - 2016-09-02 13:27:38 --> URI Class Initialized
+INFO - 2016-09-02 13:27:38 --> Router Class Initialized
+INFO - 2016-09-02 13:27:38 --> Output Class Initialized
+INFO - 2016-09-02 13:27:38 --> Security Class Initialized
+DEBUG - 2016-09-02 13:27:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2016-09-02 13:27:38 --> Input Class Initialized
+INFO - 2016-09-02 13:27:38 --> Language Class Initialized
+ERROR - 2016-09-02 13:27:38 --> 404 Page Not Found: Assets/front
