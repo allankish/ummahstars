@@ -39,4 +39,13 @@ class Dashboard_Model extends CI_Model {
         $query = $this->db->select('*')->where('age_group_id', $age_group_id)->from($this->age_groups_tbl)->get();
         return $query->result_array();
     }
+    
+    public function update_child_mode($user_id, $child_mode) {
+        
+        $data = array('child_mode' => $child_mode);
+        $this->db->where('user_id', $user_id);
+        $this->db->update($this->users_tbl, $data);
+        
+        return true;
+    }
 }

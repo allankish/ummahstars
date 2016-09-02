@@ -146,3 +146,5 @@ $route['default_controller'] = 'landing';
 
 // Child Logout
 $route['dashboard/child/logout'] = 'dashboard/child_logout';
+// Change Child Mode
+$route['dashboard/child_mode/update'] = 'dashboard/change_child_mode';

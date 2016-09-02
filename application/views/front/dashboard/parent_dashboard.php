@@ -87,7 +87,12 @@
                 endforeach;
                 ?>
             </div>
-            <div class="hover-child-btn-wrapper"><a href="#" class="hover-child-btn">Hand over to the Child</a></div>
+            <div class="hover-child-btn-wrapper">
+                <form name="child_mode_form" action="<?php echo base_url(); ?>dashboard/child_mode/update" method="post">
+                    <input type="hidden" name="child_mode" value="true" />
+                    <button name="submit" type="submit" class="hover-child-btn">Hand over to the Child</button>
+                </form>
+            </div>
         </div>
 
     </div>

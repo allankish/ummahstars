@@ -151,4 +151,19 @@ class Dashboard extends CI_Controller {
         }
         redirect('dashboard', 'refresh');
     }
+    
+    public function change_child_mode() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $parent_details = $this->session->userdata('user_details');
+            $parent_id = $parent_details['user_id'];
+            $child_mode = $this->input->post('child_mode');
+            $this->dashboard_model->update_child_mode($parent_id, $child_mode);
+            // Update Parent Session
+            $parent_details = $this->session->userdata('user_details');
+            $parent_details['child_mode'] = $child_mode;
+            $updated_parent_details = array("user_details" => $parent_details);
+            $this->session->set_userdata($updated_parent_details);            
+        }
+        redirect('/dashboard', 'refresh');
+    }
 }
