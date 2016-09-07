@@ -22,14 +22,14 @@
                         <li class="center-align"><button type="submit" class="red-btn sign-in-btn">Sign In</button></li>
                         </form>
                         <li class="center-align"><a href="#">Forgot password?</a></li>
-                        <li class="center-align"><span>Not a member?</span><a href="#">Sign up</a></li>
+                        <li class="center-align"><span>Not a member?</span><a href="<?php echo base_url(); ?>register">Sign up</a></li>
                         <li class="center-align"><span>Sign up with social media</span></li>
                     </ul>
                 </div>
 
                 <div class="share-app-wrapper">					
                     <ul class="share-app-icon-list">
-                        <li><a href="#"><img src="<?php echo base_url(); ?>assets/front/images/social-icon/fb_btn.png" alt="Facebook"/></a></li>
+                        <li><a href="<?php echo base_url();?>fblogin"><img src="<?php echo base_url(); ?>assets/front/images/social-icon/fb_btn.png" alt="Facebook"/></a></li>
                         <li><a href="#"><img src="<?php echo base_url(); ?>assets/front/images/social-icon/g+_btn.png" alt="Google+"/></a></li>
                         <li><a href="#"><img src="<?php echo base_url(); ?>assets/front/images/social-icon/twitter_btn.png" alt="Twitter"/></a></li>
                         <li><a href="#"><img src="<?php echo base_url(); ?>assets/front/images/social-icon/linked-in.png" alt="LinkedIn"/></a></li>							
