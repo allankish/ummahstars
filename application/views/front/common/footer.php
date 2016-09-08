@@ -1,5 +1,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/front/js/jquery.mCustomScrollbar.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/front/js/jquery.validate.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/front/js/main.js"></script>
 
         <script>

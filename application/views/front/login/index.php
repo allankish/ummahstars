@@ -19,7 +19,7 @@
                             <label>Password</label>
                             <input name="password" type="password" class="form-filed-style" placeholder="Enter your password">
                         </li>
-                        <li class="center-align"><button type="submit" class="red-btn sign-in-btn">Sign In</button></li>
+                        <li class="center-align"><button name="submit" id="submit" type="submit" class="red-btn sign-in-btn">Sign In</button></li>
                         </form>
                         <li class="center-align"><a href="#">Forgot password?</a></li>
                         <li class="center-align"><span>Not a member?</span><a href="#">Sign up</a></li>
