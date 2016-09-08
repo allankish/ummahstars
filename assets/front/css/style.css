@@ -734,3 +734,14 @@ input[type="submit"].red-btn {
     text-align:center;
     font-size:15px;
 }
+
+.modal{  
+  z-index: 99999 !important;
+}
+
+.cls-pop-vid img{
+    margin-left:-37px;
+    margin-top:10px;
+    width:28px;
+    
+}

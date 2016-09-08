@@ -46,12 +46,13 @@ class Login extends CI_Controller {
                 if (sizeof($result) > 0) {
                     $adminDetail = $result[0];
                     $admin_data = array(
-                        'admin_id'          => $adminDetail['admin_id'],
-                        'admin_email'       => $adminDetail['admin_email'],
-                        'admin_first_name'  => $adminDetail['first_name'],
-                        'admin_last_name'   => $adminDetail['last_name'],
-                        'admin_created_on'  => $adminDetail['created_on'],
-                        'admin_auth'        => True);
+                        'admin_id'            => $adminDetail['admin_id'],
+                        'admin_email'         => $adminDetail['admin_email'],
+                        'admin_profile_image' => $adminDetail['profile_image'],
+                        'admin_first_name'    => $adminDetail['first_name'],
+                        'admin_last_name'     => $adminDetail['last_name'],
+                        'admin_created_on'    => $adminDetail['created_on'],
+                        'admin_auth'          => True);
 
                     $this->session->set_userdata($admin_data);
 
