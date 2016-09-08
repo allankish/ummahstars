@@ -30,7 +30,7 @@
                 <div class="share-app-wrapper">					
                     <ul class="share-app-icon-list">
                         <li><a href="<?php echo base_url();?>fblogin"><img src="<?php echo base_url(); ?>assets/front/images/social-icon/fb_btn.png" alt="Facebook"/></a></li>
-                        <li><a href="#"><img src="<?php echo base_url(); ?>assets/front/images/social-icon/g+_btn.png" alt="Google+"/></a></li>
+                        <li><a href="<?php echo base_url();?>gpluslogin"><img src="<?php echo base_url(); ?>assets/front/images/social-icon/g+_btn.png" alt="Google+"/></a></li>
                         <li><a href="#"><img src="<?php echo base_url(); ?>assets/front/images/social-icon/twitter_btn.png" alt="Twitter"/></a></li>
                         <li><a href="#"><img src="<?php echo base_url(); ?>assets/front/images/social-icon/linked-in.png" alt="LinkedIn"/></a></li>							
 

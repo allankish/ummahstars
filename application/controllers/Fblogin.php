@@ -60,19 +60,21 @@ class Fblogin extends CI_Controller {
 					$checkParent = $this->auth_model->check_parent_exists($user['email']);
 					if(count($user)>0)
 					{
-						$profile_image = '';
-						$image_name = base64_encode($user['name']);
-						$filename = $image_name.'_'.md5(rand(1000000,1000000000)).'.jpg';
-						$profile_image = 'assets/userImages/'.$filename;
-						$url = 'https://graph.facebook.com/'.$user['id'].'/picture?type=large';
-						file_put_contents($profile_image, file_get_contents($url));
-
-						$parent_image = '';
-						if (file_exists($profile_image)) {
-							$parent_image = $profile_image;
-						}
 
 						if(count($checkParent)<=0) {
+
+							$profile_image = '';
+							$image_name = base64_encode($user['name']);
+							$filename = $image_name.'_'.md5(rand(1000000,1000000000)).'.jpg';
+							$profile_image = 'assets/userImages/'.$filename;
+							$url = 'https://graph.facebook.com/'.$user['id'].'/picture?type=large';
+							file_put_contents($profile_image, file_get_contents($url));
+
+							$parent_image = '';
+							if (file_exists($profile_image)) {
+								$parent_image = $profile_image;
+							}
+
 							$data = array(
 								"email_id" => $user['email'],
 								"password" => md5("temp1234"),
