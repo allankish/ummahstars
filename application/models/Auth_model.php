@@ -39,4 +39,11 @@ class Auth_Model extends CI_Model {
         $this->db->set($data);
         return $this->db->insert($this->users_tbl);
     }
+
+    public function check_parent_exists($email) {
+        $this->db->select('*')->from($this->users_tbl)->where("email_id", $email);
+        $query = $this->db->get();
+        $result = $query->row_array();
+        return $result;
+    }
 }
