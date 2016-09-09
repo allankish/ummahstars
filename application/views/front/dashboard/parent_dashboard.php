@@ -93,6 +93,9 @@
                     <button name="submit" type="submit" class="hover-child-btn">Hand over to the Child</button>
                 </form>
             </div>
+            <div class="hover-child-btn-wrapper">
+                <a href="<?php echo base_url(); ?>add_child" class="hover-child-btn">Add Child</a>
+            </div>
         </div>
 
     </div>

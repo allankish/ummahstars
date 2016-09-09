@@ -14,6 +14,14 @@
                             <?php echo validation_errors(); ?>
                         </div>
                     <?php } ?>
+                    <?php if ($this->session->flashdata('Success')) { ?>
+                        <div class="success">
+                            <h4 style="font-weight:bold">
+                                Success!
+                            </h4>
+                            <p><?php echo $this->session->flashdata('Success'); ?></p>
+                        </div>
+                    <?php } ?>
                     <ul>
                         <form id="register_form" name="register_form" action="<?php echo base_url(); ?>register" method="post">
                             <li>

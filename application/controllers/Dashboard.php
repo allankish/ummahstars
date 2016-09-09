@@ -19,7 +19,7 @@ class Dashboard extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->model('dashboard_model');
         $this->load->model('auth_model');
-        
+
         cipl_user_auth();
     }
 
@@ -42,7 +42,7 @@ class Dashboard extends CI_Controller {
                         "password" => md5($this->input->post('password'))
                     );
                     $result = $this->auth_model->user_authentication($where_array);
-                    
+
                     if (isset($result) && sizeof($result) > 0) {
                         $child_details = $result[0];
                         $age_group_details = $this->dashboard_model->get_age_group($child_details['age_group']);
@@ -71,34 +71,34 @@ class Dashboard extends CI_Controller {
                 }
             } else {
                 $where_array = array(
-                        "user_id" => $this->input->post('child_id'),
+                    "user_id" => $this->input->post('child_id'),
+                );
+                $result = $this->auth_model->user_authentication($where_array);
+
+                if (isset($result) && sizeof($result) > 0) {
+                    $child_details = $result[0];
+                    $age_group_details = $this->dashboard_model->get_age_group($child_details['age_group']);
+
+                    $child_array = array(
+                        "child_details" => array(
+                            "user_id" => $child_details['user_id'],
+                            "uname" => $child_details['uname'],
+                            "gender" => $child_details['gender'],
+                            "profile_image" => $child_details['profile_image'],
+                            "parent_id" => $child_details['parent_id']
+                        ),
+                        "child_age_group_id" => $child_details['age_group'],
+                        "child_age_group_name" => $age_group_details[0]['age_group_name'],
+                        "child_auth" => true
                     );
-                    $result = $this->auth_model->user_authentication($where_array);
-                    
-                    if (isset($result) && sizeof($result) > 0) {
-                        $child_details = $result[0];
-                        $age_group_details = $this->dashboard_model->get_age_group($child_details['age_group']);
-                        
-                        $child_array = array(
-                            "child_details" => array(
-                                "user_id" => $child_details['user_id'],
-                                "uname" => $child_details['uname'],
-                                "gender" => $child_details['gender'],
-                                "profile_image" => $child_details['profile_image'],
-                                "parent_id" => $child_details['parent_id']
-                            ),
-                            "child_age_group_id" => $child_details['age_group'],
-                            "child_age_group_name" => $age_group_details[0]['age_group_name'],
-                            "child_auth" => true
-                        );
 
-                        // Update last login date in database
-                        $this->auth_model->update_last_login($child_details['user_id']);
+                    // Update last login date in database
+                    $this->auth_model->update_last_login($child_details['user_id']);
 
-                        $this->session->set_userdata($child_array);
+                    $this->session->set_userdata($child_array);
 
-                        redirect('dashboard/child', 'refresh');
-                    }
+                    redirect('dashboard/child', 'refresh');
+                }
             }
         }
 
@@ -127,31 +127,31 @@ class Dashboard extends CI_Controller {
 
         $this->load->view('front/common/footer');
     }
-    
+
     public function child() {
         // check child authentication is valid
         cipl_child_auth();
-        
+
         $child_age_group = $this->session->userdata('child_age_group_name');
         $child_age_group = str_replace(' ', '', $child_age_group);
         $this->load->view('front/common/header');
         $this->load->view('front/dashboard/child_dashboard_' . $child_age_group);
         $this->load->view('front/common/footer');
     }
-    
+
     public function child_logout() {
         if ($this->session->userdata('child_auth')) {
             $unset_items = array(
-                            'child_details',
-                            'child_age_group_id',
-                            'child_age_group_name',
-                            'child_auth'
-                            );
+                'child_details',
+                'child_age_group_id',
+                'child_age_group_name',
+                'child_auth'
+            );
             $this->session->unset_userdata($unset_items);
         }
         redirect('dashboard', 'refresh');
     }
-    
+
     public function change_child_mode() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $parent_details = $this->session->userdata('user_details');
@@ -162,8 +162,52 @@ class Dashboard extends CI_Controller {
             $parent_details = $this->session->userdata('user_details');
             $parent_details['child_mode'] = $child_mode;
             $updated_parent_details = array("user_details" => $parent_details);
-            $this->session->set_userdata($updated_parent_details);            
+            $this->session->set_userdata($updated_parent_details);
         }
         redirect('/dashboard', 'refresh');
     }
+
+    public function confirm_parent() {
+        $parent_details = $this->session->userdata('user_details');
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $config = array(
+                array(
+                    'field' => 'password',
+                    'label' => 'Password',
+                    'rules' => 'trim|required'
+                )
+            );
+
+            $this->form_validation->set_rules($config);
+
+            if ($this->form_validation->run() != FALSE) {
+                $data = array(
+                    "user_id" => $parent_details['user_id'],
+                    "password" => md5($this->input->post('password')),
+                    "user_role" => "2"
+                );
+                $result = $this->auth_model->user_authentication($data);
+
+                if (isset($result) && sizeof($result) > 0) {
+                    $parent_id = $parent_details['user_id'];
+                    $child_mode = 'false';
+                    $this->dashboard_model->update_child_mode($parent_id, $child_mode);
+                    // Update Parent Session
+                    $parent_details = $this->session->userdata('user_details');
+                    $parent_details['child_mode'] = $child_mode;
+                    $updated_parent_details = array("user_details" => $parent_details);
+                    $this->session->set_userdata($updated_parent_details);
+                    redirect('dashboard', 'refresh');
+                } else {
+                    $this->session->set_flashdata('Error', 'Authentication failed. Please try again.');
+                }
+            }
+        }
+        $data['parent_name'] = $parent_details['uname'];
+        $data['profile_image'] = $parent_details['profile_image'];
+        $this->load->view('front/common/header');
+        $this->load->view('front/dashboard/parent_confirm_login', $data);
+        $this->load->view('front/common/footer');
+    }
+
 }

@@ -69,6 +69,9 @@
                 endforeach;
                 ?>
             </div>
+            <div class="hover-child-btn-wrapper">
+                <a href="<?php echo base_url();?>dashboard/confirm_parent" class="hover-child-btn">Parent Dashboard</a>
+            </div>
         </div>
     </div>
 </div>

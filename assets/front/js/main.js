@@ -139,4 +139,48 @@ $(document).ready(function () {
                             }
                 }
     });
+
+    // CONFIRM PARENT USER FORM
+    $('#confirm_parent_form').validate({
+        rules:
+                {
+                    password:
+                            {
+                                required: true
+                            }
+                },
+        messages:
+                {
+                    password:
+                            {
+                                required: 'Please enter your password.'
+                            }
+                }
+    });
+
+    // ADD CHILD FORM
+    $('#add_child_form').validate({
+        rules:
+                {
+                    uname:
+                            {
+                                required: true,
+                            },
+                    age:
+                            {
+                                required: true
+                            }
+                },
+        messages:
+                {
+                    uname:
+                            {
+                                required: 'Please enter child\'s name'
+                            },
+                    age:
+                            {
+                                required: 'Please enter child\'s age'
+                            }
+                }
+    });
 });
