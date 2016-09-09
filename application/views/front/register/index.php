@@ -10,12 +10,12 @@
                         <div class="user-avatar-image-circle"><img src="<?php echo base_url(); ?>assets/front/images/user.jpg" alt="profile"/></div>
                     </div>
                     <?php if (validation_errors()) { ?>
-                        <div>                            
+                        <div class="error">
                             <?php echo validation_errors(); ?>
                         </div>
                     <?php } ?>
                     <ul>
-                        <form name="register_form" action="<?php echo base_url(); ?>register" method="post">
+                        <form id="register_form" name="register_form" action="<?php echo base_url(); ?>register" method="post">
                             <li>
                                 <label>Parent Name</label>
                                 <input name="uname" type="text" class="form-filed-style" placeholder="Enter Parent Name">
@@ -32,11 +32,11 @@
                             </li>
                             <li>
                                 <label>Password</label>
-                                <input name="password" type="password" class="form-filed-style" placeholder="Enter your password"></li>
+                                <input id="password" name="password" type="password" class="form-filed-style" placeholder="Enter your password"></li>
 
                             <li>
                                 <label>Re-type Password</label>
-                                <input name="retype_password" type="password" class="form-filed-style" placeholder="Re-type your password"></li>
+                                <input id="retype_password" name="retype_password" type="password" class="form-filed-style" placeholder="Re-type your password"></li>
 
 
                             <li class="center-align"><button type="submit" class="red-btn sign-in-btn"> Register</button></li>

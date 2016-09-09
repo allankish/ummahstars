@@ -46,4 +46,10 @@ class Auth_Model extends CI_Model {
         $result = $query->row_array();
         return $result;
     }
+    
+    public function update_user($data, $user_id) {
+        $this->db->where("user_id", $user_id);
+        $this->db->update($this->users_tbl, $data);
+        return true;
+    }
 }

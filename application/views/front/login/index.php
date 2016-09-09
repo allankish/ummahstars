@@ -21,7 +21,7 @@
                         </li>
                         <li class="center-align"><button name="submit" id="submit" type="submit" class="red-btn sign-in-btn">Sign In</button></li>
                         </form>
-                        <li class="center-align"><a href="#">Forgot password?</a></li>
+                        <li class="center-align"><a href="<?php echo base_url();?>forgot_password">Forgot password?</a></li>
                         <li class="center-align"><span>Not a member?</span><a href="<?php echo base_url(); ?>register">Sign up</a></li>
                         <li class="center-align"><span>Sign up with social media</span></li>
                     </ul>
