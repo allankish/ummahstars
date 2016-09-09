@@ -31,5 +31,12 @@ class TryMe_model extends CI_Model {
         return $result;
     }
     
+    public function getDemoVideos(){
+        $this->db->select('content');
+        $this->db->where("section_id",1);
+        $query = $this->db->get('contents');
+       return $query->row();
+    }
+    
     
 }

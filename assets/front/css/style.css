@@ -227,6 +227,9 @@ html, body {
     height: 72px;
     margin: 8px;
     width: 171px;
+    border:0px;
+    color:#fff;
+    padding-left: 22px;
 }
 .orange-btn{	
     background:url("../images/orange-btn.png") no-repeat scroll 0 0 / 100% auto;

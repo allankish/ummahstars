@@ -55,8 +55,8 @@
                                 $indi++;
                                ?>
                                 <div class="option-wrapper" id="option_wrapper_<?php echo $indi?>">
-                                <label>Option<?php echo $indi?></label>
-                                <input type="text" size="50" name="<?php echo $opt['option_value']?>" id="<?php echo $opt['option_value']?>" value="<?php echo $opt['option_label']?>">                               
+                                <label  class="opt-cls">Option<?php echo $indi?></label>
+                                <input class="inpt-cls" type="text" size="50" name="<?php echo $opt['option_value']?>" id="<?php echo $opt['option_value']?>" value="<?php echo $opt['option_label']?>">                               
                           
                                 <div class="radio radio-align">
                                 <label>
@@ -65,12 +65,12 @@
                                 </label>
                                 </div>  
                                 <?php
-                                if($indi > 2)
-                                {
-                                    ?>
-                                    <div class="radio-align"><a href="javascript:void(0);" class="remove_options_val" option_id="<?php echo $indi?>" id="remove_option_<?php echo $indi?>">Remove</a></div>
+                              //  if($indi > 2)
+                              //  {
+                                //    ?>
+                                    <div class="radio-align remove-quiz"><a href="javascript:void(0);" class="remove_options_val" option_id="<?php echo $indi?>" id="remove_option_<?php echo $indi?>">Remove</a></div>
                                     <?php
-                                }
+                               // }
                                 ?>
                                 </div>  
                                 
@@ -129,31 +129,47 @@
 <script type="text/javascript">
 $(document).ready(function(){
     
-   
+     // $('.remove-quiz').hide();
    $('#add_more_options').click(function(){
        
      var curr_options = parseInt($('#total_options').val());
      var added_option = curr_options+1;
      
-     $('#question_options').append('<div class="option-wrapper" id="option_wrapper_'+added_option+'"><label>Option'+added_option+' </label>\n\
-                                    <input type="text" size="50" name="option'+added_option+'" id="option'+added_option+'">\n\
+     $('#question_options').append('<div class="option-wrapper" id="option_wrapper_'+added_option+'"><label class="opt-cls">Option'+added_option+' </label>\n\
+                                    <input class="inpt-cls" type="text" size="50" name="option'+added_option+'" id="option'+added_option+'">\n\
                                     <div class="radio radio-align"><label><input type="radio" name="answer" value="option'+added_option+'">Is Answer</label>\n\
-                                    </div><div class="radio-align"><a href="javascript:void(0);" class="remove_options_val" option_id="'+added_option+'" \n\
-                                    id="remove_option_'+added_option+'">Remove</a></div></div>'); 
+                                    </div><div class="radio-align remove-quiz"><a href="javascript:void(0);" class="remove_options_val" option_id="'+added_option+'" id="remove_option_'+added_option+'">Remove</a></div></div>'); 
        
        $('#total_options').val(added_option);
-       $('#remove_option_'+curr_options).hide();
+       
+        $('.remove-quiz').show();
+      
+      // $('#remove_option_'+curr_options).hide();
+      
    });
    
    $(document).on('click','.remove_options_val',function(){
        
        var option_id = $(this).attr('option_id');
-       $('#option_wrapper_'+option_id).remove();
+    
        var curr_options2 = parseInt($('#total_options').val());
+          $('#option_wrapper_'+option_id).remove();
        var added_option2 = curr_options2-1;
        $('#total_options').val(added_option2);
-       $('#remove_option_'+added_option2).show();
-        
+      // $('#remove_option_'+added_option2).show();
+      if(parseInt($('#total_options').val())==2){
+         $('.remove-quiz').hide();
+      }
+        var total_opt = $('#total_options').val();
+         var i;
+        for( i=0; i<total_opt; i++){ 
+            $("#question_options").find(".option-wrapper .opt-cls").eq(i).text("Option"+(i+1));
+            $("#question_options").find(".option-wrapper").eq(i).attr('id','option_wrapper_'+(i+1));
+            $("#question_options").find(".option-wrapper .inpt-cls").eq(i).attr('id','option'+(i+1));
+            $("#question_options").find(".option-wrapper .inpt-cls").eq(i).attr('name','option'+(i+1));
+            $("#question_options").find(".option-wrapper .remove_options_val").eq(i).attr('id','remove_option_'+(i+1));
+            $("#question_options").find(".option-wrapper .remove_options_val").eq(i).attr('option_id',(i+1));
+        }
     });
   
     

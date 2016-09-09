@@ -124,7 +124,7 @@ class Users extends CI_Controller {
                 array(
                     'field' => 'parent_email',
                     'label' => 'Parent Email',
-                    'rules' => 'trim|required|valid_email|callback_email_check'
+                    'rules' => 'trim|required|valid_email|callback_email_check['.$user_id.']'
                 ),
                 array(
                     'field' => 'password',
@@ -411,8 +411,8 @@ class Users extends CI_Controller {
     }
 
     // Check email 
-    public function email_check($email) {
-        $valid = $this->users_model->validate_email($email);
+    public function email_check($email, $user_id) { 
+        $valid = $this->users_model->validate_email($email,$user_id);
         if ($valid != true) {
             $this->form_validation->set_message('email_check', 'The email id already exists.');
             return FALSE;

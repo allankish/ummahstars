@@ -83,7 +83,7 @@ class Users_Model extends CI_Model {
     
     public function validate_email($email, $user_id = '') {
         if ($user_id != '') {
-            $this->db->select('*')->where(array('email_id = ' => $email, "user_id" => $user_id));
+            $this->db->select('*')->where(array('email_id = ' => $email, "user_id !=" => $user_id));
         } else {
             $this->db->select('*')->where(array('email_id = ' => $email));
         }

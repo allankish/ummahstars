@@ -46,27 +46,33 @@
                                 <textarea name="question" placeholder="Enter Question" class="form-control"><?php echo $this->session->flashdata('question') ?></textarea>
                             </div>
                             <div class="form-group col-xs-7" id="question_options">    
-                                <div class="option-wrapper">
-                                <label>Option1</label>
-                                <input type="text" size="50" name="option1" id="option1">                               
+                                <div class="option-wrapper" id="option_wrapper_1">
+                                <label class="opt-cls">Option1</label>
+                                <input class="inpt-cls" type="text" size="50" name="option1" id="option1">                               
                           
                                 <div class="radio radio-align">
                                 <label>
                                 <input type="radio" name="answer" value="option1">
                                 Is Answer
                                 </label>
+                                </div> 
+                                <div class="radio-align remove-quiz">
+                                    <a id="remove_option_1" option_id="1" class="remove_options_val" href="javascript:void(0);">Remove</a>
+                                </div>
                                 </div>  
-                                </div>  
-                                <div class="option-wrapper">
-                                <label>Option2</label>
-                                <input type="text" size="50" name="option2" id="option2">                               
+                                <div class="option-wrapper" id="option_wrapper_2">
+                                <label class="opt-cls">Option2</label>
+                                <input class="inpt-cls" type="text" size="50" name="option2" id="option2">                               
                           
                                 <div class="radio radio-align">
                                 <label>
                                 <input type="radio" name="answer" value="option2">
                                 Is Answer
                                 </label>
-                                </div>  
+                                </div> 
+                                <div class="radio-align remove-quiz">
+                                    <a id="remove_option_2" option_id="2" class="remove_options_val" href="javascript:void(0);">Remove</a>
+                                </div>
                                 </div>  
                             </div>
                             
@@ -115,30 +121,47 @@
 <script type="text/javascript">
 $(document).ready(function(){
     
-   
+      $('.remove-quiz').hide();
    $('#add_more_options').click(function(){
        
      var curr_options = parseInt($('#total_options').val());
      var added_option = curr_options+1;
      
-     $('#question_options').append('<div class="option-wrapper" id="option_wrapper_'+added_option+'"><label>Option'+added_option+' </label>\n\
-                                    <input type="text" size="50" name="option'+added_option+'" id="option'+added_option+'">\n\
+     $('#question_options').append('<div class="option-wrapper" id="option_wrapper_'+added_option+'"><label class="opt-cls">Option'+added_option+' </label>\n\
+                                    <input class="inpt-cls" type="text" size="50" name="option'+added_option+'" id="option'+added_option+'">\n\
                                     <div class="radio radio-align"><label><input type="radio" name="answer" value="option'+added_option+'">Is Answer</label>\n\
-                                    </div><div class="radio-align"><a href="javascript:void(0);" class="remove_options_val" option_id="'+added_option+'" id="remove_option_'+added_option+'">Remove</a></div></div>'); 
+                                    </div><div class="radio-align remove-quiz"><a href="javascript:void(0);" class="remove_options_val" option_id="'+added_option+'" id="remove_option_'+added_option+'">Remove</a></div></div>'); 
        
        $('#total_options').val(added_option);
-       $('#remove_option_'+curr_options).hide();
+       
+        $('.remove-quiz').show();
+      
+      // $('#remove_option_'+curr_options).hide();
+      
    });
    
    $(document).on('click','.remove_options_val',function(){
        
        var option_id = $(this).attr('option_id');
-       $('#option_wrapper_'+option_id).remove();
+    
        var curr_options2 = parseInt($('#total_options').val());
+          $('#option_wrapper_'+option_id).remove();
        var added_option2 = curr_options2-1;
        $('#total_options').val(added_option2);
-       $('#remove_option_'+added_option2).show();
-        
+      // $('#remove_option_'+added_option2).show();
+      if(added_option2==2){
+         $('.remove-quiz').hide();
+      }
+        var total_opt = $('#total_options').val();
+         var i;
+        for( i=0; i<total_opt; i++){ 
+            $("#question_options").find(".option-wrapper .opt-cls").eq(i).text("Option"+(i+1));
+            $("#question_options").find(".option-wrapper").eq(i).attr('id','option_wrapper_'+(i+1));
+            $("#question_options").find(".option-wrapper .inpt-cls").eq(i).attr('id','option'+(i+1));
+            $("#question_options").find(".option-wrapper .inpt-cls").eq(i).attr('name','option'+(i+1));
+            $("#question_options").find(".option-wrapper .remove_options_val").eq(i).attr('id','remove_option_'+(i+1));
+            $("#question_options").find(".option-wrapper .remove_options_val").eq(i).attr('option_id',(i+1));
+        }
     });
   
     

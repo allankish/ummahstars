@@ -9,6 +9,7 @@ class Landing extends CI_Controller {
         parent::__construct();
 
         $this->load->helper('url');
+        $this->load->model('tryme_model');
         
     }
 
@@ -19,7 +20,8 @@ class Landing extends CI_Controller {
             redirect(base_url()."gpluslogin?code=".$req['code'], 'refresh');
             //redirect(base_url()."user_authentication", 'refresh');
         }
-        $this->load->view('front/landing/home');
+       $result = $this->tryme_model->getDemoVideos();
+        $this->load->view('front/landing/home',$result);
     }
 
 }

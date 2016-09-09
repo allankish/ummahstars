@@ -27,7 +27,7 @@ class TryMe extends CI_Controller {
         
         $this->load->view('front/common/header');
         $this->load->view('front/tryme/index',$data);
-        $this->load->view('front/common/footer');
+        $this->load->view('front/tryme/footer');
     }
     
     public function getTryMeVideos()
