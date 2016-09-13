@@ -512,3 +512,6 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+define('YOUR_CONSUMER_KEY', 'urXwGS8O8zbPln918yrzTrJXG');
+define('YOUR_CONSUMER_SECRET', 'GraWMe0wr9POjSeDo8B9aPvgwKpSmVmarUtAH6Px5IfN67kC7k');
