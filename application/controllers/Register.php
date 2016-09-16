@@ -81,6 +81,27 @@ class Register extends CI_Controller {
                 $this->email->message($message);
                 $this->email->send();
                 $this->session->set_flashdata('Success', 'You are successfully registered. Please check your email to confirm the registration.');
+
+                $checkParent = $this->auth_model->check_parent_exists($this->input->post('email_id'));
+                $user_details = $checkParent;
+                $user_array = array(
+                  "user_details"      => array(
+                    "user_id"           => $user_details['user_id'],
+                    "email_id"          => $user_details['email_id'],
+                    "uname"             => $user_details['uname'],
+                    "gender"            => $user_details['gender'],
+                    "profile_image"     => $user_details['profile_image'],
+                    "child_mode"        => $user_details['child_mode']
+                  ),
+                  "user_auth"         => true
+                );
+
+                //print_r($user_array); exit;
+                // Update last login date in database
+                $this->auth_model->update_last_login($user_details['user_id']);
+
+                $this->session->set_userdata($user_array);
+                redirect('add_child', 'refresh'); exit;
             }
         }
         $this->load->view('front/common/header');

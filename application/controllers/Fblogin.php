@@ -115,7 +115,8 @@ class Fblogin extends CI_Controller {
 
 						$this->session->set_userdata($user_array);
 
-						redirect('dashboard', 'refresh');
+						//redirect('dashboard', 'refresh');
+						redirect('add_child', 'refresh'); exit;
 
 					}
 					else
