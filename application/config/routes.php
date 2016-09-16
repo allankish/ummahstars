@@ -145,6 +145,8 @@ $route['usadmin/settings'] = 'admin/settings/view_settings';
 $route['default_controller'] = 'landing';
 
 // Child Logout
-$route['dashboard/child/logout'] = 'dashboard/child_logout';
+$route['child/logout'] = 'child/child_logout';
 // Change Child Mode
 $route['dashboard/child_mode/update'] = 'dashboard/change_child_mode';
+
+$route['section/(:any)'] = 'child/section/$1';

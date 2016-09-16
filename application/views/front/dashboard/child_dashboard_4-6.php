@@ -12,14 +12,14 @@
             <li><a href="#" class="home-btn-left blue-btn-left">PROGRESS</a></li>
             <li><a href="#" class="home-btn-left blue-btn-left">PUZZLES</a></li>
             <li><a href="#" class="home-btn-left blue-btn-left">SETTINGS</a></li>
-            <li><a href="<?php echo base_url(); ?>dashboard/child/logout" class="home-btn-left blue-btn-left">LOG OFF</a></li>
+            <li><a href="<?php echo base_url(); ?>child/logout" class="home-btn-left blue-btn-left">LOG OFF</a></li>
         </ul>
     </div>
 
     <div class="right-side-section">
         <div class="read-more"><a href="#"><img src="<?php echo base_url(); ?>assets/front/images/4-6_read-more.png" alt="read-more-img"/></a></div>
         <ul class="right-slide-menu-list">
-            <li><a href="#" class="home-btn-right blue-btn-right">What is Islaam?</a></li>
+            <li><a href="<?php base_url()?>section/what-is-islam" class="home-btn-right blue-btn-right">What is Islaam?</a></li>
             <li><a href="#" class="home-btn-right blue-btn-right">Islaamic History</a></li>
             <li><a href="#" class="home-btn-right blue-btn-right">Quraan And Arabic</a></li>
             <li><a href="#" class="home-btn-right blue-btn-right">Islaamic Morals</a></li>

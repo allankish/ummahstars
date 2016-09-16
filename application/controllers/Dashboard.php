@@ -66,7 +66,7 @@ class Dashboard extends CI_Controller {
 
                         $this->session->set_userdata($child_array);
 
-                        redirect('dashboard/child', 'refresh');
+                        redirect('child', 'refresh');
                     }
                 }
             } else {
@@ -97,7 +97,7 @@ class Dashboard extends CI_Controller {
 
                     $this->session->set_userdata($child_array);
 
-                    redirect('dashboard/child', 'refresh');
+                    redirect('child', 'refresh');
                 }
             }
         }

@@ -61,6 +61,7 @@ class Section extends CI_Controller {
 
                 $update_array = array(
                     "section_name"  => $this->input->post('section_name'),
+                    "slug"          => str_replace(' ', '-', strtolower($this->input->post('section_name'))),
                     "sort_order"    => $this->input->post("sort_order"),
                     "created_on"    => date('Y-m-d H:i:s'),
                     "updated_on"    => date('Y-m-d H:i:s')
@@ -136,6 +137,7 @@ class Section extends CI_Controller {
 
                 $update_array = array(
                     "section_name"  => $this->input->post('section_name'),
+                    "slug"          => str_replace(' ', '-', strtolower($this->input->post('section_name'))),
                     "sort_order"    => $this->input->post("sort_order"),
                     "updated_on"    => date('Y-m-d H:i:s')
                 );

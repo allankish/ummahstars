@@ -549,6 +549,8 @@ html, body {
     display:inline-block;
     clear:both;
     margin: 14px 0;
+      position: relative;
+    z-index: 99999999;
 }
 
 .username-profile-img {
@@ -748,3 +750,105 @@ input[type="submit"].red-btn {
     width:28px;
     
 }
+
+.what-is-islam-bg{
+	background:url("../images/4-6/what-is-islam.jpg") no-repeat;
+	background-size:cover;	
+	
+}
+
+.footer-nav-section {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.home-btn {
+    float: right;
+}
+
+.back-btn {
+    float: left;
+}
+
+.footer-nav-section a {
+    margin: 14px 30px;   
+}
+
+.footer-nav-section a img {
+    width: 54px;
+}
+
+.footer-section ul {
+    display: inline-block;
+    position: relative;
+    z-index: 9999;
+}
+
+.footer-section ul li {
+    float: left;
+    margin-right: 18px;
+}
+.footer-section {
+    bottom: 14px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+
+.footer-section ul li a {
+    display: table-cell;
+    height: 100px;
+    vertical-align: middle;
+    width: 100px;
+}
+
+.what-is-islam-option-bg{
+	  background: rgba(0, 0, 0, 0) url("../images/4-6/what-is-islam-option-bg.png") no-repeat scroll 0 0 / 100% auto;
+}
+
+
+.five-pillers-of-islam-bg
+{
+	  background: rgba(0, 0, 0, 0) url("../images/4-6/five-pillers-of-isslam.jpg") no-repeat scroll 0 0 / 100% auto;
+}
+
+.five-piller-option-list {
+	position: absolute;
+    right: 12%;
+    top: 4%;
+}
+
+.five-pillers-option-bg-1{
+	   background: rgba(0, 0, 0, 0) url("../images/4-6/five-piller-option-bg-1.png") no-repeat scroll 0 0 / 100% auto;
+	color: #fff;
+    display: table-cell;
+    height: 116px;
+    padding-left: 45px;
+    text-align: center;
+    vertical-align: middle;
+    width: 208px;
+	}
+.five-pillers-option-bg-2{	
+	background: rgba(0, 0, 0, 0) url("../images/4-6/five-piller-option-bg-2.png") no-repeat scroll 0 0 / 100% auto;
+    height: 120px;
+    width: 208px;	
+	color: #fff;	
+	display:table-cell;
+	vertical-align:middle;
+	padding-right: 45px;
+	}
+	
+	
+	.prayer-salaat-bg-bg{
+		
+		 background: rgba(0, 0, 0, 0) url("../images/4-6/prayer-salaat.jpg") no-repeat scroll 0 0 / 100% auto;
+	}
+	
+	
+.back-btn {
+    float: left;
+    position: absolute;
+    top: 42px;
+}	
