@@ -73,21 +73,20 @@ class Register extends CI_Controller {
                     //echo "<img src='".$this->input->post('profile_img')."'>";
                     $parent_image = $this->input->post('profile_img');
                     $image_name = base64_encode($this->input->post('uname'));
-                    $binary = base64_decode($parent_image);
-                    header("Content-Type: bitmap; charset=utf-8");
+
                     $filename = $image_name.'_'.md5(rand(1000000,1000000000)).'.jpg';
-                    $file = fopen('./assets/userImages/'.$filename, "wb");
-                    fwrite($file, $binary);
                     $profile_image = 'assets/userImages/'.$filename;
 
-                    //echo $profile_image; exit;
+                    $imgdata = $parent_image;
+
+                    list($type, $imgdata) = explode(';', $imgdata);
+                    list(, $imgdata)      = explode(',', $imgdata);
+                    $imgdata = base64_decode($imgdata);
+                    file_put_contents($profile_image, $imgdata);
 
                     $data['profile_image'] = $profile_image;
-                    $image_url = base_url().$profile_image;
 
                 }
-
-                //exit;
 
                 $result = $this->auth_model->add_parent($data);
                 // SEND EMAIL

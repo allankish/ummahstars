@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fb47c228-2bad-463b-8a44-c1b80e04a22a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Add_child.php" afterPath="$PROJECT_DIR$/application/controllers/Add_child.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Fblogin.php" afterPath="$PROJECT_DIR$/application/controllers/Fblogin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Gpluslogin.php" afterPath="$PROJECT_DIR$/application/controllers/Gpluslogin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Register.php" afterPath="$PROJECT_DIR$/application/controllers/Register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Twitterapi.php" afterPath="$PROJECT_DIR$/application/controllers/Twitterapi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/apiLinkedin.php" afterPath="$PROJECT_DIR$/application/controllers/apiLinkedin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front/add_child/index.php" afterPath="$PROJECT_DIR$/application/views/front/add_child/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front/dashboard/parent_dashboard.php" afterPath="$PROJECT_DIR$/application/views/front/dashboard/parent_dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front/register/index.php" afterPath="$PROJECT_DIR$/application/views/front/register/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/front/js/main.js" afterPath="$PROJECT_DIR$/assets/front/js/main.js" />
     </list>
     <ignored path="ummahstars.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,58 +30,8 @@
       <file leaf-file-name="Register.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="677">
-              <caret line="84" column="60" selection-start-line="84" selection-start-column="60" selection-end-line="84" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Fblogin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Fblogin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="117" column="52" selection-start-line="117" selection-start-column="52" selection-end-line="117" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gpluslogin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Gpluslogin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="105" column="10" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Twitterapi.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Twitterapi.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="89" column="10" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apiLinkedin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/apiLinkedin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="49" column="59" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parent_dashboard.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/front/dashboard/parent_dashboard.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
+            <state relative-caret-position="65">
+              <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -96,10 +41,8 @@
         <entry file="file://$PROJECT_DIR$/application/views/front/register/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="32" column="90" selection-start-line="32" selection-start-column="90" selection-end-line="32" selection-end-column="90" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+              <caret line="51" column="0" selection-start-line="44" selection-start-column="28" selection-end-line="51" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,18 +50,26 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/front/add_child/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1079">
-              <caret line="74" column="6" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="285">
+              <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#4;n#ul#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#5;n#ul#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <marker date="1474033459000" expanded="true" signature="4650:5104" placeholder="..." />
+                <marker date="1474033459000" expanded="true" signature="4979:5070" placeholder="..." />
+                <marker date="1474033459000" expanded="true" signature="5251:5398" placeholder="..." />
+                <marker date="1474033459000" expanded="true" signature="5304:5387" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Add_child.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Add_child.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Add_child.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+            <state relative-caret-position="245">
+              <caret line="45" column="63" selection-start-line="45" selection-start-column="63" selection-end-line="45" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -132,15 +83,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/front/add_child/index.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Add_child.php" />
         <option value="$PROJECT_DIR$/application/views/front/register/index.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Register.php" />
         <option value="$PROJECT_DIR$/application/controllers/Fblogin.php" />
         <option value="$PROJECT_DIR$/application/controllers/Gpluslogin.php" />
         <option value="$PROJECT_DIR$/application/controllers/Twitterapi.php" />
         <option value="$PROJECT_DIR$/application/controllers/apiLinkedin.php" />
         <option value="$PROJECT_DIR$/application/views/front/dashboard/parent_dashboard.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Register.php" />
+        <option value="$PROJECT_DIR$/application/views/front/add_child/index.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Add_child.php" />
       </list>
     </option>
   </component>
@@ -291,6 +242,32 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="register" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ummahstars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ummahstars" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="dashboard" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -309,7 +286,33 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="add_child" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ummahstars" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ummahstars" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -330,10 +333,6 @@
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webservice" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -349,11 +348,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -376,12 +371,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474002834058</updated>
-      <workItem from="1474002840067" duration="6450000" />
+      <workItem from="1474002840067" duration="9498000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6450000" />
+    <option name="totallyTimeSpent" value="9498000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="681" extended-state="6" />
@@ -422,32 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front/add_child/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1079">
-          <caret line="74" column="6" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Add_child.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front/register/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="32" column="90" selection-start-line="32" selection-start-column="90" selection-end-line="32" selection-end-column="90" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/admin/Users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -480,34 +449,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Register.php">
+    <entry file="file://$PROJECT_DIR$/application/views/front/dashboard/parent_dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="84" column="60" selection-start-line="84" selection-start-column="60" selection-end-line="84" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Fblogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="117" column="52" selection-start-line="117" selection-start-column="52" selection-end-line="117" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Gpluslogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="105" column="10" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Twitterapi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="89" column="10" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="34" />
+        <state relative-caret-position="122">
+          <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -520,10 +465,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front/dashboard/parent_dashboard.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/Twitterapi.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
+        <state relative-caret-position="375">
+          <caret line="89" column="10" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Gpluslogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="105" column="10" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Fblogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="117" column="52" selection-start-line="117" selection-start-column="52" selection-end-line="117" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="74" column="59" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Dashboard_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front/register/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="51" column="0" selection-start-line="44" selection-start-column="28" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front/add_child/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#4;n#ul#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#5;n#ul#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1474033459000" expanded="true" signature="4650:5104" placeholder="..." />
+            <marker date="1474033459000" expanded="true" signature="4979:5070" placeholder="..." />
+            <marker date="1474033459000" expanded="true" signature="5251:5398" placeholder="..." />
+            <marker date="1474033459000" expanded="true" signature="5304:5387" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Add_child.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="45" column="63" selection-start-line="45" selection-start-column="63" selection-end-line="45" selection-end-column="63" />
           <folding />
         </state>
       </provider>

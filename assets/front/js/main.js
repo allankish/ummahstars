@@ -169,6 +169,15 @@ $(document).ready(function () {
                     age:
                             {
                                 required: true
+                            },
+                    password:
+                            {
+                                required: true
+                            },
+                    retype_password:
+                            {
+                                required: true,
+                                equalTo: '#password'
                             }
                 },
         messages:
@@ -180,6 +189,14 @@ $(document).ready(function () {
                     age:
                             {
                                 required: 'Please enter child\'s age'
+                            },
+                    password:
+                            {
+                                required: 'Please enter password'
+                            },
+                    retype_password:
+                            {
+                                required: 'Please retype your password'
                             }
                 }
     });

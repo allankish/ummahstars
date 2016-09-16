@@ -41,11 +41,31 @@ class Add_child extends CI_Controller {
                 )
             );
 
+            //echo $this->input->post('password_required'); exit;
+
+            if($this->input->post('password_required') != '') {
+                $config[] = array(
+                  'field' => 'password',
+                  'label' => 'Password',
+                  'rules' => 'trim|required'
+                );
+
+                $config[] = array(
+                  'field' => 'retype_password',
+                  'label' => 'Retype Password',
+                  'rules' => 'trim|required|matches[password]'
+                );
+            }
+
             $this->form_validation->set_rules($config);
 
             if ($this->form_validation->run() != FALSE) {
                 $parent_details = $this->session->userdata('user_details');
-                $password = random_string('alnum', 16);
+                $password = '';
+                if($this->input->post('password_required') != '') {
+                    $password = $this->input->post('password');
+                }
+                //$password = random_string('alnum', 16);
                 $input_data = array(
                     "email_id" => '',
                     "password" => md5($password),
@@ -66,6 +86,28 @@ class Add_child extends CI_Controller {
                     "password_reset_key" => '',
                     "register_confirm_key" => ''
                 );
+
+                if($this->input->post('profile_img')!="")
+                {
+
+                    //echo "<img src='".$this->input->post('profile_img')."'>";
+                    $parent_image = $this->input->post('profile_img');
+                    $image_name = base64_encode($this->input->post('uname'));
+
+                    $filename = $image_name.'_'.md5(rand(1000000,1000000000)).'.jpg';
+                    $profile_image = 'assets/userImages/'.$filename;
+
+                    $imgdata = $parent_image;
+
+                    list($type, $imgdata) = explode(';', $imgdata);
+                    list(, $imgdata)      = explode(',', $imgdata);
+                    $imgdata = base64_decode($imgdata);
+                    file_put_contents($profile_image, $imgdata);
+
+                    $input_data['profile_image'] = $profile_image;
+
+                }
+
                 $result = $this->auth_model->add_child($input_data);
                 // SEND EMAIL
                 $this->email->from('admin@colanapps.in', 'Ummahstars.Com');
