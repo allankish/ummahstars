@@ -56,7 +56,7 @@ class Fblogin extends CI_Controller {
 		 } else {
 
 					//print_r($user);
-
+					$redirect = 'dashboard';
 					$checkParent = $this->auth_model->check_parent_exists($user['email']);
 					if(count($user)>0)
 					{
@@ -94,6 +94,8 @@ class Fblogin extends CI_Controller {
 							);
 							$result = $this->auth_model->add_parent($data);
 							$checkParent = $this->auth_model->check_parent_exists($user['email']);
+
+							$redirect = 'add_child';
 						}
 						$user_details = $checkParent;
 
@@ -115,8 +117,8 @@ class Fblogin extends CI_Controller {
 
 						$this->session->set_userdata($user_array);
 
-						//redirect('dashboard', 'refresh');
-						redirect('add_child', 'refresh'); exit;
+						redirect($redirect, 'refresh');
+
 
 					}
 					else

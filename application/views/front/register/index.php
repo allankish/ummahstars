@@ -7,7 +7,10 @@
                 <div class="content mCustomScrollbar light login-wrapper" data-mcs-theme="minimal-dark">
                     <h2 class="popup-header">Create Your Account !</h2>
                     <div class="user-avatar-image">
-                        <div class="user-avatar-image-circle"><img src="<?php echo base_url(); ?>assets/front/images/user.jpg" alt="profile"/></div>
+                        <div class="user-avatar-image-circle">
+                            <input type="file" id='upload' style='display:none;' onchange="previewFile()">
+                            <img src="<?php echo base_url(); ?>assets/front/images/user.jpg" id='testimg' alt="profile"/>
+                        </div>
                     </div>
                     <?php if (validation_errors()) { ?>
                         <div class="error">
@@ -27,6 +30,7 @@
                             <li>
                                 <label>Parent Name</label>
                                 <input name="uname" type="text" class="form-filed-style" placeholder="Enter Parent Name">
+                                <input name="profile_img" id="profile_img" type="hidden" >
                             </li>
                             <li>
                                 <label>Parent E-mail Id</label>
@@ -58,3 +62,33 @@
         </div>
     </div>
 </div>
+
+<!-- Upload Profile Image -->
+<script type='text/javascript'>
+    function previewFile() {
+        var preview = document.getElementById('testimg');
+        var file    = document.querySelector('input[type=file]').files[0];
+        var reader  = new FileReader();
+
+        reader.addEventListener("load", function () {
+            var extension = $('#upload').val().split('.').pop().toUpperCase();
+            if (extension == "PNG" || extension == "JPG" || extension == "GIF" || extension == "JPEG"){
+                //alert(extension);
+                preview.src = reader.result;
+                $( "#profile_img" ).val( reader.result );
+            }
+            else
+            {
+                alert('Invalid Image Uploaded. Please try again');
+            }
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+
+    $( "#testimg" ).on( "click", function() {
+        $( "#upload" ).trigger( "click" );
+    });
+</script>

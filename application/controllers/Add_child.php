@@ -80,7 +80,14 @@ class Add_child extends CI_Controller {
                 $message = $this->load->view('front/email_templates/new_child', $mail_data, TRUE);
                 $this->email->message($message);
                 $this->email->send();
-                $this->session->set_flashdata('Success', 'New child added successfully.');
+
+                if($this->input->post('more_child') != '') {
+                    $this->session->set_flashdata('Success', 'New child added successfully.');
+                }
+                else
+                {
+                    redirect('dashboard', 'refresh');
+                }
             }
         }
         $data['age_groups'] = $this->dashboard_model->get_all_age_groups();

@@ -66,6 +66,29 @@ class Register extends CI_Controller {
                     "password_reset_key" => '',
                     "register_confirm_key" => $auth_key
                 );
+
+                if($this->input->post('profile_img')!="")
+                {
+
+                    //echo "<img src='".$this->input->post('profile_img')."'>";
+                    $parent_image = $this->input->post('profile_img');
+                    $image_name = base64_encode($this->input->post('uname'));
+                    $binary = base64_decode($parent_image);
+                    header("Content-Type: bitmap; charset=utf-8");
+                    $filename = $image_name.'_'.md5(rand(1000000,1000000000)).'.jpg';
+                    $file = fopen('./assets/userImages/'.$filename, "wb");
+                    fwrite($file, $binary);
+                    $profile_image = 'assets/userImages/'.$filename;
+
+                    //echo $profile_image; exit;
+
+                    $data['profile_image'] = $profile_image;
+                    $image_url = base_url().$profile_image;
+
+                }
+
+                //exit;
+
                 $result = $this->auth_model->add_parent($data);
                 // SEND EMAIL
                 $this->email->from('admin@colanapps.in', 'Ummahstars.Com');

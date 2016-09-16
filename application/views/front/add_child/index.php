@@ -53,10 +53,11 @@
                                 </div>
                             </li>
 
-                            <li class="center-align"><a href="#">Add more child</a></li>
+                            <li class="center-align"><a href="javascript:void(0);" id="add_more_child">Add more child</a></li>
 
                             <li class="center-align">
-                                <button type="submit" name="submit" class="red-btn sign-in-btn"> Create</button>
+                                <input type="hidden" name="more_child" id="more_child" value=""/>
+                                <button type="submit" name="submit" id="submit" class="red-btn sign-in-btn"> Create</button>
                                 <a class="red-btn sign-in-btn" href="<?php echo base_url(); ?>dashboard">
                                     Back to Dashboard
                                 </a>
@@ -72,3 +73,10 @@
         </div>
     </div>
 </div>
+
+<script>
+    $( "#add_more_child" ).on( "click", function() {
+        $("#more_child").val(1);
+        $( "#submit" ).trigger( "click" );
+    });
+</script>

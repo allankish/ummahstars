@@ -51,7 +51,7 @@ class Twitterapi extends CI_Controller {
                
                $checkParent = $this->auth_model->check_parent_exists($user_info->email);
                  // echo $user_info->screen_name; exit;
-               
+                 $redirect = 'dashboard';
                 if(count($checkParent)<=0) {
                      $profile_image = '';
                      $image_name = base64_encode($user_info->screen_name);
@@ -87,6 +87,7 @@ class Twitterapi extends CI_Controller {
           );
           $result = $this->auth_model->add_parent($data);
           $checkParent = $this->auth_model->check_parent_exists($user_info->email);
+          $redirect = 'add_child';
           }
         $user_details = $checkParent;
 
@@ -108,8 +109,7 @@ class Twitterapi extends CI_Controller {
 
         $this->session->set_userdata($user_array);
 
-        //redirect('dashboard', 'refresh');
-                 redirect('add_child', 'refresh'); exit;
+        redirect($redirect, 'refresh');
              }
 
            }

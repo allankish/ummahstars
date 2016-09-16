@@ -71,6 +71,7 @@ class ApiLinkedin extends CI_Controller {
 if($success){
 
       $checkParent = $this->auth_model->check_parent_exists($user->emailAddress);
+      $redirect = 'dashboard';
       if(count($user)>0)
       {
 
@@ -113,6 +114,7 @@ if($success){
           );
           $result = $this->auth_model->add_parent($data);
           $checkParent = $this->auth_model->check_parent_exists($user->emailAddress);
+          $redirect = 'add_child';
           }
         $user_details = $checkParent;
 
@@ -134,8 +136,7 @@ if($success){
 
         $this->session->set_userdata($user_array);
 
-        //redirect('dashboard', 'refresh');
-        redirect('add_child', 'refresh'); exit;
+        redirect($redirect, 'refresh');
 
       }
       else

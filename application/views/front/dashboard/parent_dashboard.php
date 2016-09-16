@@ -61,14 +61,14 @@
                         }
                     } else {
                         ?>
-                        <div class="shadow-layer shadow-layer-child-sign-in clearfix sign-in-wrapper">
+                        <!--<div class="shadow-layer shadow-layer-child-sign-in clearfix sign-in-wrapper">
 
-                            <span class="close-btn"><img src="<?php echo base_url(); ?>assets/front/images/Close_btn.png" alt="close-btn"></span>				
+                            <span class="close-btn"><img src="<?php /*echo base_url(); */?>assets/front/images/Close_btn.png" alt="close-btn"></span>
                             <div class="login-wrapper">
 
                                 <div class="user-avatar-image">
-                                    <div class="user-avatar-image-circle"><img src="<?php echo base_url(); ?>assets/front/images/user.jpg" alt="profile"/></div>
-                                    <div><?php echo $age_group['age_group_name']; ?></div>
+                                    <div class="user-avatar-image-circle"><img src="<?php /*echo base_url(); */?>assets/front/images/user.jpg" alt="profile"/></div>
+                                    <div><?php /*echo $age_group['age_group_name']; */?></div>
                                 </div>
 
                                 <ul>
@@ -81,7 +81,7 @@
                                 </ul>
 
                             </div>
-                        </div>
+                        </div>-->
                         <?php
                     }
                 endforeach;
