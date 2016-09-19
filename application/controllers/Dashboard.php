@@ -103,7 +103,9 @@ class Dashboard extends CI_Controller {
         }
 
         $parent_details = $this->session->userdata("user_details");
+        $parentinfo = $this->dashboard_model->get_parent_info($parent_details['user_id']);
         $data["parent_details"] = $parent_details;
+        $data["parent_details"]['child_allowed'] = $parentinfo['child_allowed'];
         $all_childs = $this->dashboard_model->get_childs_by_parent($parent_details['user_id']);
         $age_groups = $this->dashboard_model->get_all_age_groups();
 
@@ -116,6 +118,8 @@ class Dashboard extends CI_Controller {
             }
         }
         $data["childs"] = $childs_array;
+        $data["nchilds"] = count($all_childs);
+        //echo $data["nchilds"]; exit;
         $data["age_groups"] = $age_groups;
         $this->load->view('front/common/header');
 

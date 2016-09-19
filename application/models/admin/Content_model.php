@@ -64,6 +64,12 @@ class Content_model extends CI_Model {
         return $result;
     }
 
+    public function getRootContents() {
+      $this->db->select('content_id,content_name')->from($this->content_tbl)->where('parent_id', '0')->order_by($this->content_tbl . '.sort_order', 'ASC');
+      $query = $this->db->get();
+      return $root_categories = $query->result_array();
+    }
+
    
 
 }

@@ -48,4 +48,10 @@ class Dashboard_Model extends CI_Model {
         
         return true;
     }
+
+    public function get_parent_info($parent_id) {
+        $query = $this->db->select('*')->where(array('user_id' => $parent_id, 'user_role' => '2'))->from($this->users_tbl)->get();
+        $parent = $query->row_array();
+        return $parent;
+    }
 }

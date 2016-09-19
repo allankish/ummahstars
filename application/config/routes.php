@@ -151,5 +151,5 @@ $route['dashboard/child_mode/update'] = 'dashboard/change_child_mode';
 
 $route['section/(:any)'] = 'child/section/$1';
 
-// Child Logout
+// Child Forgotpassword
 $route['child_forgotpassword'] = 'forgot_password/child_forgotpassword';

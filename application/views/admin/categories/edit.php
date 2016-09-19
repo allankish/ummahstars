@@ -65,10 +65,10 @@
                                 <label for="category_name">Category Name</label>
                                 <input type="text" class="form-control" id="category_name" name="category_name" value="<?php echo $category["category_name"]; ?>">
                             </div>
-                            <div class="form-group col-xs-9">
+                            <!--<div class="form-group col-xs-9">
                                 <label for="category_name_arabic">Category Name (Arabic)</label>
-                                <input type="text" class="form-control" id="category_name_arabic" name="category_name_arabic" value="<?php echo $category["category_name_arabic"]; ?>">
-                            </div>
+                                <input type="text" class="form-control" id="category_name_arabic" name="category_name_arabic" value="<?php /*echo $category["category_name_arabic"]; */?>">
+                            </div>-->
                             <div class="form-group col-xs-9">
                                 <?php
                                 $category_type = $category["category_type"];

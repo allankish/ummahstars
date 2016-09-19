@@ -55,6 +55,22 @@
                                     <option value="">Select Category</option>
                                 </select>
                             </div>
+
+                            <div class="form-group col-xs-9">
+                              <label for="content_name">Content Name</label>
+                              <input type="text" class="form-control" id="content_name" name="content_name" placeholder="Enter Content Name">
+                            </div>
+
+                            <div class="form-group col-xs-9">
+                              <label>Parent Content</label>
+                              <select class="form-control" name="parent_id">
+                                <option value="0">Top</option>
+                                <?php foreach ($root_contents as $root_content): ?>
+                                  <option value="<?php echo $root_content['content_id']; ?>"><?php echo $root_content['content_name'];?></option>
+                                <?php endforeach;?>
+                              </select>
+                            </div>
+
                             <div class="form-group col-xs-9">
                                 <label>Content Type</label>
                                 <select class="form-control" id="content_type" name="content_type">

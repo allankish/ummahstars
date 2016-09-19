@@ -56,6 +56,11 @@ class Content extends CI_Controller {
                     'rules' => 'trim|required'
                 ),
                 array(
+                    'field' => 'content_name',
+                    'label' => 'Content Name',
+                    'rules' => 'trim|required'
+                ),
+                array(
                     'field' => 'content_type',
                     'label' => 'Content Type',
                     'rules' => 'trim|required'
@@ -95,6 +100,7 @@ class Content extends CI_Controller {
                     "section_id"  => $this->input->post('section_id'),
                     "category_id"  => $this->input->post('category_id'),
                     "content_type"  => $this->input->post('content_type'),
+                    "content_name"  => $this->input->post('content_name'),
                     "template" => $this->input->post('template'),
                     "content"  => $this->input->post('content'),
                     "video_url" => $video_url,
@@ -115,6 +121,7 @@ class Content extends CI_Controller {
         $data['templates'] = $this->getTemplateFiles();
         $data['sections'] = $this->categories_model->getAllSections();
         $data['age_groups'] = $this->age_groups_model->get_all_age_groups();
+        $data['root_contents'] = $this->content_model->getRootContents();
         
         $this->load->view('admin/common/header');
         $this->load->view('admin/content/add',$data);
@@ -133,6 +140,11 @@ class Content extends CI_Controller {
                 array(
                     'field' => 'category_id',
                     'label' => 'Category Name',
+                    'rules' => 'trim|required'
+                ),
+                array(
+                    'field' => 'content_name',
+                    'label' => 'Content Name',
                     'rules' => 'trim|required'
                 ),
                 array(
@@ -185,6 +197,7 @@ class Content extends CI_Controller {
                     "section_id"  => $this->input->post('section_id'),
                     "category_id"  => $this->input->post('category_id'),
                     "content_type"  => $this->input->post('content_type'),
+                    "content_name"  => $this->input->post('content_name'),
                     "template" => $this->input->post('template'),
                     "content"  => $content,
                     "video_url" => $video_url,

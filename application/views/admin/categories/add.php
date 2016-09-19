@@ -61,10 +61,10 @@
                                 <label for="category_name">Category Name</label>
                                 <input type="text" class="form-control" id="category_name" name="category_name" placeholder="Enter Category Name">
                             </div>
-                            <div class="form-group col-xs-9">
+                            <!--<div class="form-group col-xs-9">
                                 <label for="category_name_arabic">Category Name (Arabic)</label>
                                 <input type="text" class="form-control" id="category_name_arabic" name="category_name_arabic" placeholder="Enter Category Name in Arabic">
-                            </div>
+                            </div>-->
                             <div class="form-group col-xs-9">
                                 <label>Category Type</label>
                                 <select class="form-control" name="category_type">
