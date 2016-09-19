@@ -35,7 +35,7 @@
                                     </div>
 
                                     <ul>
-                                        <form name="child_form-<?php echo $child["user_id"]; ?>" action="<?php echo base_url('dashboard'); ?>" method="post">
+                                        <form name="child_form-<?php echo $child["user_id"]; ?>" class="child-signin-form" id="child_form-<?php echo $child["user_id"]; ?>" action="<?php echo base_url('dashboard'); ?>" method="post" >
                                             <?php if ($age_group['password_required'] === 'true'): ?>
                                                 <li>
                                                     <label>Password</label>
@@ -46,11 +46,13 @@
                                                 <input type="hidden" name="child_id" value="<?php echo $child['user_id']; ?>" />
                                                 <input type="hidden" name="passkey" value="<?php echo $child['password']; ?>" />
                                                 <input type="hidden" name="pass_req" value="<?php echo $age_group['password_required']; ?>" />
-                                                <button type="submit" class="red-btn sign-in-btn" >Sign In</button>
+                                                <button type="submit" class="red-btn sign-in-btn">Sign In</button>
                                             </li>
-                                        </form>                                        
+                                        </form>
 
-                                        <li class="center-align"><a href="#">Forgot password?</a></li>
+                                        <?php if ($age_group['password_required'] === 'true'): ?>
+                                            <li class="center-align"><a href="<?php echo base_url()."child_forgotpassword"; ?>">Forgot password?</a></li>
+                                        <?php endif; ?>
 
                                     </ul>
 

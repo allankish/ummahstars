@@ -169,15 +169,6 @@ $(document).ready(function () {
                     age:
                             {
                                 required: true
-                            },
-                    password:
-                            {
-                                required: true
-                            },
-                    retype_password:
-                            {
-                                required: true,
-                                equalTo: '#password'
                             }
                 },
         messages:
@@ -200,4 +191,23 @@ $(document).ready(function () {
                             }
                 }
     });
+
+    //Child Login Validation
+    $(".child-signin-form").on("click", function () {
+        var childFromId = $(this).attr('id');
+        $( "#"+childFromId ).validate({
+            rules: {
+                password: {
+                    required: true
+                }
+            },
+            messages: {
+                password: {
+                    required: "Please Enter Password"
+                }
+            }
+        });
+    });
+
+
 });

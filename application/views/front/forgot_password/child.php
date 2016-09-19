@@ -29,12 +29,12 @@
                     <ul>
                         <form id="forgot_password_form" name="forgot_password_form" action="<?php echo base_url(); ?>forgot_password" method="post">
                             <li>
-                                <label>Enter your registered Email Id</label>
+                                <label>Enter Parent Email Id</label>
                                 <input id="email_id" name="email_id" type="text" class="form-filed-style" placeholder="Enter your Email Id">
                             </li>
                             <li class="center-align">
                                 <button type="submit" name="submit" class="red-btn sign-in-btn">Submit</button> 
-                                <a href="<?php echo base_url()."login"; ?>" class="red-btn sign-in-btn">Cancel</a>
+                                <button name="cancel" type="button" class="red-btn sign-in-btn">Cancel</button>
                             </li>
                         </form>
                     </ul>

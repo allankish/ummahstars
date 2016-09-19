@@ -19,7 +19,7 @@
 
 
                                     <ul>
-                                        <form name="child_form-<?php echo $child["user_id"]; ?>" action="<?php echo base_url('dashboard'); ?>" method="post">
+                                        <form name="child_form-<?php echo $child["user_id"]; ?>" class="child-signin-form" id="child_form-<?php echo $child["user_id"]; ?>" action="<?php echo base_url('dashboard'); ?>" method="post">
                                             <?php if ($age_group['password_required'] === 'true'): ?>
                                                 <li>
                                                     <label>Password</label>
@@ -32,8 +32,10 @@
                                                 <input type="hidden" name="pass_req" value="<?php echo $age_group['password_required']; ?>" />
                                                 <button type="submit" class="red-btn sign-in-btn" >Sign In</button>
                                             </li>
-                                        </form> 
-                                        <li class="center-align"><a href="#">Forgot password?</a></li>
+                                        </form>
+                                        <?php if ($age_group['password_required'] === 'true'): ?>
+                                        <li class="center-align"><a href="<?php echo base_url()."child_forgotpassword"; ?>">Forgot password?</a></li>
+                                        <?php endif; ?>
 
                                     </ul>
 
@@ -44,14 +46,14 @@
                         }
                     } else {
                         ?>
-                        <div class="shadow-layer shadow-layer-child-sign-in clearfix sign-in-wrapper">
+                        <!--<div class="shadow-layer shadow-layer-child-sign-in clearfix sign-in-wrapper">
 
-                            <span class="close-btn"><img src="<?php echo base_url(); ?>assets/front/images/Close_btn.png" alt="close-btn"></span>				
+                            <span class="close-btn"><img src="<?php /*echo base_url(); */?>assets/front/images/Close_btn.png" alt="close-btn"></span>
                             <div class="login-wrapper">
 
                                 <div class="user-avatar-image">
-                                    <div class="user-avatar-image-circle"><img src="<?php echo base_url(); ?>assets/front/images/user.jpg" alt="profile"/></div>
-                                    <div><?php echo $age_group['age_group_name']; ?></div>
+                                    <div class="user-avatar-image-circle"><img src="<?php /*echo base_url(); */?>assets/front/images/user.jpg" alt="profile"/></div>
+                                    <div><?php /*echo $age_group['age_group_name']; */?></div>
                                 </div>
                                 <ul>
                                     <li>
@@ -63,7 +65,7 @@
 
                                 </ul>
                             </div>
-                        </div>
+                        </div>-->
                         <?php
                     }
                 endforeach;

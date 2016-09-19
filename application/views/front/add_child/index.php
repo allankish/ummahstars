@@ -127,10 +127,19 @@
     $( ".passreq" ).on( "click", function() {
         $( ".passblock" ).show();
         $( "#password_required" ).val(1);
+        $( "#password" ).rules( "add", {
+            required: true
+        });
+        $( "#retype_password" ).rules( "add", {
+            required: true,
+            equalTo: '#password'
+        });
     });
 
     $( ".passnotreq" ).on( "click", function() {
         $( ".passblock" ).hide();
         $( "#password_required" ).val('');
+        $( "#password" ).rules( "remove" );
+        $( "#retype_password" ).rules( "remove" );
     });
 </script>
